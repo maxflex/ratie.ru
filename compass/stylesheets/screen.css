@@ -870,16 +870,15 @@ fieldset.hidden-thoughts legend {
   width: auto;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'RaleWayRegular', sans-serif;
-  font-weight: 600;
+  font-family: 'RaleWayThin', sans-serif;
   opacity: 0.6;
 }
-/* line 777, ../sass/screen.scss */
+/* line 776, ../sass/screen.scss */
 fieldset.hidden-thoughts legend:hover {
   opacity: 1;
 }
 
-/* line 785, ../sass/screen.scss */
+/* line 784, ../sass/screen.scss */
 .glyphicon.big-icon {
   margin: 0;
   font-size: 23px;
