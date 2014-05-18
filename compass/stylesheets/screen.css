@@ -872,14 +872,15 @@ fieldset.hidden-thoughts legend {
   font-size: 14px;
   cursor: pointer;
   font-family: 'RaleWayRegular', sans-serif;
+  font-weight: 600;
   opacity: 0.6;
 }
-/* line 777, ../sass/screen.scss */
+/* line 778, ../sass/screen.scss */
 fieldset.hidden-thoughts legend:hover {
   opacity: 1;
 }
 
-/* line 785, ../sass/screen.scss */
+/* line 786, ../sass/screen.scss */
 .glyphicon.big-icon {
   margin: 0;
   font-size: 23px;
