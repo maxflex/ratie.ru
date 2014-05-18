@@ -1,0 +1,122 @@
+body {
+	overflow: hidden;
+}
+
+.top-div {
+	background: #3686be;
+	height: 90%;
+	width: 100%;
+	position: absolute;
+	
+	background: url("../img/background/2.jpg");
+	background-size: cover;
+}
+
+.imac {
+	position: absolute;
+	right: 10%;
+	top:22%;
+}
+
+.iphone {
+	position: absolute;
+	right: 20%;
+	top:20%;
+	display: none;
+}
+
+.logo {
+	margin: 0 auto;
+	text-align: center;
+	height: 40%;
+	opacity: 0;
+	
+ -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+/*
+	position: absolute;
+	left: 8.5%;
+	top: 10%;
+*/
+}
+
+.description {
+	height: 27.5%;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	font-size: 28px;
+	color: white;
+	padding-top: 5%;
+	position: relative;
+	opacity: 0.9;
+}
+
+.description img {
+	margin-right: 10px;
+	height: 50px;
+}
+
+.login-button {
+	height: 25%;
+	opacity: 0;
+	
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.login {
+	width: 90%;
+	height: 100%;
+	background: transparent;
+	border: 2.5px solid white;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	font-size: 28px;
+	color: white;
+}
+
+.login:hover {
+	background: #567cb5;
+//	background: #3078ab;
+//	background: white;
+//	border-color: white;
+//	color: #3686be;
+}
+
+.login:active {
+//	color: #41bb19;
+//	border-color: #41bb19;
+//	background: #1f6393;
+	background: #456db2;
+}
+
+.left-div {
+	position: absolute;
+	left: 3%;
+	top: 15%;
+	height: 60%;
+	width: 50%;
+//	border: 1px solid white;
+	margin: 0 auto;
+	text-align: center;
+}
+
+div[id^="slide"] {
+	display: inline-block;
+	  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+	display: none;
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    position: absolute;
+}
