@@ -105,7 +105,7 @@ input[id="adjective"]{
   min-width: 135px;
   padding: 22px 30px;
   font-size: 40px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'RaleWayThin', sans-serif;
   font-weight: 100;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
@@ -177,8 +177,8 @@ input[id="adjective"]{
 }
 
 .adjective-toptext {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
+	font-family: 'RaleWayThin', sans-serif;
+	font-weight: 100;
 	font-size: 20px;
 	color: white;
 }
@@ -275,8 +275,7 @@ h3.chat {
 }
 
 .badge.followers {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
+	font-family: 'RaleWayExtraLight', sans-serif;
 	font-size: 14px;
 	min-width: 140px;
 	max-width: 140px;
@@ -293,11 +292,12 @@ h3.chat {
     -moz-border-radius: 5px;
     -o-border-radius: 5px;
     border-radius: 5px;
+    
+    font-family: 'RaleWayLight', sans-serif;
 }
 
 .followers b {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 400;
+	font-family: 'RaleWayRegular', sans-serif;
 	color: #47cd1b;
 	font-weight: 900;
 	font-size: 18px;

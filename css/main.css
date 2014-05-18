@@ -4,12 +4,12 @@ body {
 
 .top-div {
 	background: #3686be;
-	height: 90%;
+	height: 95%;
 	width: 100%;
 	position: absolute;
 	
-	background: url("../img/background/2.jpg");
-	background-size: cover;
+//	background: url("../img/background/2.jpg");
+//	background-size: cover;
 }
 
 .imac {
@@ -44,7 +44,7 @@ body {
 
 .description {
 	height: 27.5%;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'RaleWayThin', sans-serif;
 	font-weight: 100;
 	font-size: 28px;
 	color: white;
@@ -74,15 +74,16 @@ body {
 	background: transparent;
 	border: 2.5px solid white;
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'RaleWayThin', sans-serif;
+	-webkit-font-smoothing: antialiased;
 	font-weight: 100;
 	font-size: 28px;
 	color: white;
 }
 
 .login:hover {
-	background: #567cb5;
-//	background: #3078ab;
+//	background: #567cb5;
+	background: #3078ab;
 //	background: white;
 //	border-color: white;
 //	color: #3686be;
@@ -91,8 +92,8 @@ body {
 .login:active {
 //	color: #41bb19;
 //	border-color: #41bb19;
-//	background: #1f6393;
-	background: #456db2;
+	background: #1f6393;
+//	background: #456db2;
 }
 
 .left-div {

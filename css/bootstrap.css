@@ -1,8 +1,23 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+// @import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+
+@font-face {
+  font-family: "RaleWayThin";
+  src: url(../fonts/Raleway/Raleway-Thin.ttf) format("truetype");
+}
 
 @font-face {
   font-family: "RaleWayExtraLight";
-  src: url(../fonts/Raleway/Raleway-ExtraLight.otf) format("truetype");
+  src: url(../fonts/Raleway/Raleway-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "RaleWayLight";
+  src: url(../fonts/Raleway/Raleway-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "RaleWayRegular";
+  src: url(../fonts/Raleway/Raleway-Regular.ttf) format("truetype");
 }
 
 /*
@@ -252,8 +267,8 @@ textarea {
 
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;
+  font-family: 'RaleWayThin', sans-serif;
+   -webkit-font-smoothing: antialiased;
 //  -webkit-font-smoothing: subpixel-antialiased;
   font-size: 14px;
   line-height: 20px;
@@ -4646,6 +4661,7 @@ input[type="submit"].btn.btn-mini {
   text-transform: uppercase;
   height: 50px;
   overflow: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .navbar .nav > li > a {
@@ -4654,8 +4670,9 @@ input[type="submit"].btn.btn-mini {
   color: #ffffff;
   text-decoration: none;
   text-shadow: 0 1px 0 #080808;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
+  font-family: 'RaleWayExtraRegular', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .navbar .nav .dropdown-toggle .caret {
@@ -6211,7 +6228,7 @@ a.badge:focus {
 }
 
 body {
-  font-weight: 100;
+//  font-weight: 100;
 }
 
 h1 {

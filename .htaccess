@@ -1,0 +1,24 @@
+RewriteEngine On
+
+# На эти папки не использовать правила
+RewriteRule ^(css|js|img|fonts|compass)($|/) - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+###### Правила ######
+
+# Логин
+RewriteRule ^logout$ index.php?controller=index&action=logout [QSA,L]
+RewriteRule ^login$ index.php?controller=index [QSA,L]
+RewriteRule ^login/vk$ index.php?controller=index&action=auth [QSA,L]
+
+# Профиль
+RewriteRule ^profile$ index.php?controller=profile [QSA,L]
+RewriteRule ^profile/([a-zA-Z0-9_-]+)$ index.php?controller=profile&action=$1 [QSA,L]
+
+# Главная
+RewriteRule ^go$ main.php [QSA,L]
+
+# В другом случае – отображаем пользователя
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?controller=user&user=$1 [QSA,L]

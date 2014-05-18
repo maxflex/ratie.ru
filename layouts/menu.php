@@ -18,7 +18,7 @@
 						
 			<!-- ПУНКТ МЕНЮ «ПОЛЬЗОВАТЕЛЬ» -->
 			<li <?=(menuActive("user", null, array("user" => $User->login)))?> >
-        		<a href="/<?= $User->login ?>"><span class="glyphicon glyphicon-user"></span></a>
+        		<a href="<?= $User->login ?>"><span class="glyphicon glyphicon-user"></span></a>
         	 </li>
         	<!-- КОНЕЦ МЕНЮ «ПОЛЬЗОВАТЕЛЬ» -->
 			
