@@ -177,8 +177,7 @@ input[id="adjective"]{
 }
 
 .adjective-toptext {
-	font-family: 'RaleWayThin', sans-serif;
-	font-weight: 100;
+	font-family: 'RaleWayLight', sans-serif;
 	font-size: 20px;
 	color: white;
 }
