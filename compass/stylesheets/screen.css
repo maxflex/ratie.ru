@@ -254,22 +254,21 @@ h3.foll {
 
 /* line 220, ../sass/screen.scss */
 .news-div {
-  font-family: 'RaleWayLight', sans-serif;
-  font-weight: 800;
+  font-family: 'RaleWayThin', sans-serif;
   margin-top: 30px;
   color: white;
   font-size: 17px;
   width: 100%;
 }
-/* line 228, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .news-div .news-row {
   margin-bottom: 10px;
 }
-/* line 231, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .news-div .news-row.old {
   opacity: 0.5;
 }
-/* line 236, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .news-div .subscription-row {
   margin-bottom: -1px;
   cursor: pointer;
@@ -277,40 +276,40 @@ h3.foll {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 3px 0;
 }
-/* line 242, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .news-div .subscription-row:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-/* line 246, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 .news-div .subscription-row:hover .subscription-arrow {
   color: #41ba18;
 }
-/* line 250, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .news-div .subscription-row:hover a.login-link {
   opacity: 1;
 }
-/* line 256, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 .news-div .news-seperator {
   opacity: 0.2;
 }
-/* line 260, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .news-div span.voted-adj {
   letter-spacing: 2px;
   opacity: 0.8;
 }
-/* line 265, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .news-div a.login-link {
   letter-spacing: 2px;
   opacity: 0.8;
   color: white;
 }
-/* line 270, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 .news-div a.login-link:hover {
   opacity: 1;
 }
 
-/* line 276, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -325,33 +324,33 @@ h3.foll {
   cursor: pointer;
   overflow: hidden;
 }
-/* line 288, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 .circle:hover {
   opacity: 1;
 }
-/* line 292, ../sass/screen.scss */
+/* line 291, ../sass/screen.scss */
 .circle span {
   display: block;
   margin-top: 16px;
   color: #6e96d1;
 }
-/* line 293, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .circle span.glyphicon {
   font-size: 32px;
   width: 100%;
 }
 
-/* line 303, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 .regular {
   font-family: 'RaleWayRegular', sans-serif !important;
 }
 
-/* line 307, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 .trans-8 {
   opacity: 0.8;
 }
 
-/* line 311, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 .badge-news {
   width: 70px;
   display: inline-block;
@@ -359,7 +358,7 @@ h3.foll {
   opacity: 0.7;
 }
 
-/* line 318, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 .thumb-circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -378,7 +377,7 @@ h3.foll {
   opacity: 0.8;
   font-size: 20px;
 }
-/* line 331, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 .thumb-circle.old {
   opacity: 1;
   background: white !important;
@@ -388,132 +387,132 @@ h3.foll {
   transition: none;
   cursor: default;
 }
-/* line 336, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .thumb-circle.old.ofor {
   color: #41ba18;
 }
-/* line 339, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 .thumb-circle.old.oagainst {
   color: #ff0039;
 }
-/* line 342, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .thumb-circle.old.oplus {
   color: #0072e6;
 }
-/* line 345, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 .thumb-circle.old.ounsub {
   color: #ff0039;
   text-indent: 9.5px;
 }
-/* line 351, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .thumb-circle:hover {
   background: white !important;
   opacity: 1;
 }
-/* line 356, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 .thumb-circle.for {
   background: #41ba18;
 }
-/* line 358, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 .thumb-circle.for:hover {
   color: #41ba18 !important;
   -webkit-box-shadow: 0px 0px 15px 5px #41ba18;
   -moz-box-shadow: 0px 0px 15px 5px #41ba18;
   box-shadow: 0px 0px 15px 5px #41ba18;
 }
-/* line 364, ../sass/screen.scss */
+/* line 363, ../sass/screen.scss */
 .thumb-circle.against, .thumb-circle.unsub {
   background: #ff0039;
 }
-/* line 366, ../sass/screen.scss */
+/* line 365, ../sass/screen.scss */
 .thumb-circle.against:hover, .thumb-circle.unsub:hover {
   color: #ff0039;
   -webkit-box-shadow: 0px 0px 15px 5px #ff0039;
   -moz-box-shadow: 0px 0px 15px 5px #ff0039;
   box-shadow: 0px 0px 15px 5px #ff0039;
 }
-/* line 372, ../sass/screen.scss */
+/* line 371, ../sass/screen.scss */
 .thumb-circle.plus {
   background: #0072e6;
 }
-/* line 374, ../sass/screen.scss */
+/* line 373, ../sass/screen.scss */
 .thumb-circle.plus:hover {
   color: #0072e6;
   -webkit-box-shadow: 0px 0px 15px 5px #0072e6;
   -moz-box-shadow: 0px 0px 15px 5px #0072e6;
   box-shadow: 0px 0px 15px 5px #0072e6;
 }
-/* line 380, ../sass/screen.scss */
+/* line 379, ../sass/screen.scss */
 .thumb-circle.unsub {
   text-indent: 9.5px;
 }
 
-/* line 386, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .eye {
   opacity: 0.7;
 }
-/* line 389, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 .eye:hover {
   opacity: 1;
 }
-/* line 393, ../sass/screen.scss */
+/* line 392, ../sass/screen.scss */
 .eye.glyphicon-eye-close:hover {
   color: #e60033;
 }
-/* line 397, ../sass/screen.scss */
+/* line 396, ../sass/screen.scss */
 .eye.glyphicon-eye-open:hover {
   color: #379f15;
 }
 
-/* line 402, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 .text-primary {
   color: #0072e6;
 }
 
-/* line 406, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .a-center {
   text-align: center;
 }
 
-/* line 410, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 .a-right {
   text-align: right;
 }
 
-/* line 414, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 .pointer {
   cursor: pointer;
 }
 
-/* line 418, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 .ava-wrap {
   height: 300px;
   width: 300px;
   position: relative;
   margin: 0 auto;
 }
-/* line 424, ../sass/screen.scss */
+/* line 423, ../sass/screen.scss */
 .ava-wrap .btn {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-top: 40%;
 }
-/* line 428, ../sass/screen.scss */
+/* line 427, ../sass/screen.scss */
 .ava-wrap .btn.first {
   width: 200px;
   margin-top: 28%;
 }
-/* line 433, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 .ava-wrap .btn.second {
   width: 200px;
   margin-top: 10px;
 }
-/* line 438, ../sass/screen.scss */
+/* line 437, ../sass/screen.scss */
 .ava-wrap .btn.half {
   width: 96px;
 }
-/* line 444, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 .ava-wrap .ava-blink {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -525,17 +524,17 @@ h3.foll {
   width: 100%;
   z-index: 2;
 }
-/* line 453, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 .ava-wrap .ava-blink.black {
   background: black;
 }
-/* line 457, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 .ava-wrap .ava-blink.edit-profile {
   -webkit-box-shadow: inset 0 0 100px #6e96d1;
   -moz-box-shadow: inset 0 0 100px #6e96d1;
   box-shadow: inset 0 0 100px #6e96d1;
 }
-/* line 461, ../sass/screen.scss */
+/* line 460, ../sass/screen.scss */
 .ava-wrap .ava-blink.half {
   -webkit-border-radius: 300px;
   -moz-border-radius: 300px 300px 0 0;
@@ -552,14 +551,14 @@ h3.foll {
   width: 300px;
 }
 
-/* line 471, ../sass/screen.scss */
+/* line 470, ../sass/screen.scss */
 .path-icon {
   height: 67px;
   width: 67px;
   position: absolute;
   right: 0;
 }
-/* line 477, ../sass/screen.scss */
+/* line 476, ../sass/screen.scss */
 .path-icon.clickable {
   -webkit-transition: all linear;
   -webkit-transition-delay: 0.3s;
@@ -569,22 +568,22 @@ h3.foll {
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 482, ../sass/screen.scss */
+/* line 481, ../sass/screen.scss */
 .path-icon.clickable:hover {
   opacity: 1;
 }
-/* line 487, ../sass/screen.scss */
+/* line 486, ../sass/screen.scss */
 .path-icon.left {
   left: 0;
 }
 
-/* line 492, ../sass/screen.scss */
+/* line 491, ../sass/screen.scss */
 #name-lastname {
   text-align: center;
   color: white;
 }
 
-/* line 498, ../sass/screen.scss */
+/* line 497, ../sass/screen.scss */
 input[type=text], input[type=password], input[type=email] {
   background: rgba(1, 1, 1, 0.1);
   -webkit-font-smoothing: antialiased !important;
@@ -595,65 +594,65 @@ input[type=text], input[type=password], input[type=email] {
   padding: 22px 20px;
   width: calc(100% - 40px);
 }
-/* line 508, ../sass/screen.scss */
+/* line 507, ../sass/screen.scss */
 input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled {
   opacity: 0.5;
 }
-/* line 512, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 input[type=text].icon, input[type=password].icon, input[type=email].icon {
   background-repeat: no-repeat;
   background-position: right center;
   padding-right: 70px;
 }
-/* line 517, ../sass/screen.scss */
+/* line 516, ../sass/screen.scss */
 input[type=text].icon.compose, input[type=password].icon.compose, input[type=email].icon.compose {
   background-image: url("../../img/icon/64/compose.png");
 }
-/* line 520, ../sass/screen.scss */
+/* line 519, ../sass/screen.scss */
 input[type=text].icon.login, input[type=password].icon.login, input[type=email].icon.login {
   background-image: url("../../img/icon/64/email.png");
 }
-/* line 523, ../sass/screen.scss */
+/* line 522, ../sass/screen.scss */
 input[type=text].icon.profile, input[type=password].icon.profile, input[type=email].icon.profile {
   background-image: url("../../img/icon/64/profile.png");
 }
-/* line 526, ../sass/screen.scss */
+/* line 525, ../sass/screen.scss */
 input[type=text].icon.globe, input[type=password].icon.globe, input[type=email].icon.globe {
   background-image: url("../../img/icon/64/globe.png");
 }
-/* line 529, ../sass/screen.scss */
+/* line 528, ../sass/screen.scss */
 input[type=text].icon.mail, input[type=password].icon.mail, input[type=email].icon.mail {
   background-image: url("../../img/icon/64/mail.png");
 }
-/* line 533, ../sass/screen.scss */
+/* line 532, ../sass/screen.scss */
 input[type=text].icon.locked, input[type=password].icon.locked, input[type=email].icon.locked {
   background-image: url("../../img/icon/64/locked.png");
 }
-/* line 537, ../sass/screen.scss */
+/* line 536, ../sass/screen.scss */
 input[type=text].icon.unlocked, input[type=password].icon.unlocked, input[type=email].icon.unlocked {
   background-image: url("../../img/icon/64/unlocked.png");
 }
-/* line 540, ../sass/screen.scss */
+/* line 539, ../sass/screen.scss */
 input[type=text].icon.vk, input[type=password].icon.vk, input[type=email].icon.vk {
   background-image: url("../../img/icon/64/vk.png");
 }
-/* line 543, ../sass/screen.scss */
+/* line 542, ../sass/screen.scss */
 input[type=text].icon.twitter, input[type=password].icon.twitter, input[type=email].icon.twitter {
   background-image: url("../../img/icon/64/twitter.png");
 }
-/* line 546, ../sass/screen.scss */
+/* line 545, ../sass/screen.scss */
 input[type=text].icon.instagram, input[type=password].icon.instagram, input[type=email].icon.instagram {
   background-image: url("../../img/icon/64/instagram.png");
 }
 
-/* line 555, ../sass/screen.scss */
+/* line 554, ../sass/screen.scss */
 .edit-row hr {
   width: 118.5%;
   margin: 10px 0;
   opacity: 0.3;
 }
 
-/* line 562, ../sass/screen.scss */
+/* line 561, ../sass/screen.scss */
 .switchery {
   background-color: #fff;
   border: 1px solid #dfdfdf;
@@ -665,7 +664,7 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   vertical-align: middle;
   width: 50px;
 }
-/* line 573, ../sass/screen.scss */
+/* line 572, ../sass/screen.scss */
 .switchery > small {
   background: #fff;
   border-radius: 100%;
@@ -676,60 +675,60 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   width: 30px;
 }
 
-/* line 584, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 .additional-settings {
   margin: 15px auto;
   font-family: 'RaleWayRegular', sans-serif;
   font-size: 22px;
   color: white;
 }
-/* line 589, ../sass/screen.scss */
+/* line 588, ../sass/screen.scss */
 .additional-settings td {
   padding: 10px 0;
   text-align: left !important;
 }
-/* line 592, ../sass/screen.scss */
+/* line 591, ../sass/screen.scss */
 .additional-settings td span {
   margin-left: 5px;
 }
-/* line 596, ../sass/screen.scss */
+/* line 595, ../sass/screen.scss */
 .additional-settings td img {
   height: 32px;
   width: 32px;
 }
-/* line 601, ../sass/screen.scss */
+/* line 600, ../sass/screen.scss */
 .additional-settings tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 609, ../sass/screen.scss */
+/* line 608, ../sass/screen.scss */
 .btn.br5 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 613, ../sass/screen.scss */
+/* line 612, ../sass/screen.scss */
 .btn.save {
   width: 87%;
 }
-/* line 617, ../sass/screen.scss */
+/* line 616, ../sass/screen.scss */
 .btn.dialog {
   width: 165px;
 }
 
-/* line 626, ../sass/screen.scss */
+/* line 625, ../sass/screen.scss */
 .bootbox-body, .modal-title {
   font-family: 'RaleWayRegular', sans-serif;
   font-size: 20px;
 }
-/* line 629, ../sass/screen.scss */
+/* line 628, ../sass/screen.scss */
 .bootbox-body img, .modal-title img {
   height: 42px;
   width: 42px;
   margin-right: 10px;
 }
 
-/* line 636, ../sass/screen.scss */
+/* line 635, ../sass/screen.scss */
 .bootbox-input-text {
   font-family: "Open Sans", Calibri, Candara, Arial, sans-serif !important;
   font-weight: normal !important;
@@ -741,31 +740,31 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   border: 1px solid black !important;
 }
 
-/* line 647, ../sass/screen.scss */
+/* line 646, ../sass/screen.scss */
 .saved {
   width: 87%;
   margin: 20px auto;
   font-size: 20px;
 }
 
-/* line 653, ../sass/screen.scss */
+/* line 652, ../sass/screen.scss */
 .subscription-arrow {
   opacity: 0.8;
   font-size: 20px;
   top: 9px;
 }
 
-/* line 659, ../sass/screen.scss */
+/* line 658, ../sass/screen.scss */
 .arrow-back {
   position: absolute;
   top: 20px;
   cursor: pointer;
 }
-/* line 664, ../sass/screen.scss */
+/* line 663, ../sass/screen.scss */
 .arrow-back:hover {
   color: #41ba18;
 }
-/* line 668, ../sass/screen.scss */
+/* line 667, ../sass/screen.scss */
 .arrow-back.big {
   color: white;
   font-size: 35px;
@@ -773,37 +772,37 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   top: 0;
   line-height: 61px;
 }
-/* line 674, ../sass/screen.scss */
+/* line 673, ../sass/screen.scss */
 .arrow-back.big:hover {
   opacity: 1;
 }
 
-/* line 680, ../sass/screen.scss */
+/* line 679, ../sass/screen.scss */
 .cursor-default {
   cursor: default;
 }
 
-/* line 685, ../sass/screen.scss */
+/* line 684, ../sass/screen.scss */
 button .glyphicon {
   margin-right: 6px;
   font-size: 15px;
 }
 
-/* line 691, ../sass/screen.scss */
+/* line 690, ../sass/screen.scss */
 h3 {
   font-family: 'RaleWayThin', sans-serif;
 }
-/* line 694, ../sass/screen.scss */
+/* line 693, ../sass/screen.scss */
 h3.mg-top {
   margin-top: 20px;
 }
-/* line 698, ../sass/screen.scss */
+/* line 697, ../sass/screen.scss */
 h3 .glyphicon {
   margin-right: 8px;
   display: inline;
 }
 
-/* line 708, ../sass/screen.scss */
+/* line 707, ../sass/screen.scss */
 .navbar .nav > li .count {
   position: absolute;
   background: #e60033;
@@ -826,35 +825,35 @@ h3 .glyphicon {
   line-height: 20px;
   z-index: 5;
 }
-/* line 728, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .navbar .nav > li .count.d1 {
   font-size: 12px;
 }
-/* line 733, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 .navbar .nav > li .glyphicon {
   font-size: 20px;
   top: 0;
 }
-/* line 737, ../sass/screen.scss */
+/* line 736, ../sass/screen.scss */
 .navbar .nav > li .glyphicon.inline {
   font-size: 14px;
   margin-right: 5px;
   top: 1px;
 }
 
-/* line 748, ../sass/screen.scss */
+/* line 747, ../sass/screen.scss */
 label {
   color: white;
   font-size: 22px;
   float: left;
 }
 
-/* line 754, ../sass/screen.scss */
+/* line 753, ../sass/screen.scss */
 .form-group {
   margin-bottom: 10px;
 }
 
-/* line 760, ../sass/screen.scss */
+/* line 759, ../sass/screen.scss */
 fieldset.hidden-thoughts {
   border-top: 1px dashed rgba(171, 171, 171, 0.7);
   border-bottom: none;
@@ -865,7 +864,7 @@ fieldset.hidden-thoughts {
   margin: 0;
   height: 50px;
 }
-/* line 770, ../sass/screen.scss */
+/* line 769, ../sass/screen.scss */
 fieldset.hidden-thoughts legend {
   padding: 0 10px;
   width: auto;
@@ -875,12 +874,12 @@ fieldset.hidden-thoughts legend {
   font-weight: 600;
   opacity: 0.6;
 }
-/* line 778, ../sass/screen.scss */
+/* line 777, ../sass/screen.scss */
 fieldset.hidden-thoughts legend:hover {
   opacity: 1;
 }
 
-/* line 786, ../sass/screen.scss */
+/* line 785, ../sass/screen.scss */
 .glyphicon.big-icon {
   margin: 0;
   font-size: 23px;
