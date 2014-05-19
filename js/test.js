@@ -7,6 +7,7 @@ $(document).ready(function(){
 	});
 });
 
+var testy;
 // Подключаем модуль NG-Animate к приложению UserPage
 angular.module('TestPage', ['ngAnimate']);
 
@@ -25,14 +26,14 @@ angular.module('TestPage', ['ngAnimate']);
 						
 						$.post("?controller=user&action=ajaxGetFriends", {ids: r.response})
 							.success(function(response) {
-								// console.log(response);
+								// Получаем друзей
+								$scope.friends = $.parseJSON(response);
 								
-								$scope.friends = [{"id_vk" : 1}, {"id_vk" : 2}];
-								
-								$scope.$apply();
-								console.log($scope.friends);
-								
+								$scope.$apply();								
 								//$scope.$apply();
+								
+								bootbox.alert("<center>" + _ALERT_FRIENDS + "Некоторые ваши друзья уже пользуются сайтом <hr></center>" 
+												+ $("#friends").html());
 							});
 					}); 
 				}

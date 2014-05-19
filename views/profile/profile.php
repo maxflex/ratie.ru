@@ -10,7 +10,7 @@
 				<div class="ava-blink edit-profile animate-fade" ng-hide="!ehover">
 					<button class="btn btn-success btn-large" onclick="goTo('profile/edit')"><span class="glyphicon glyphicon-pencil"></span>Редактировать профиль</button>
 				</div>
-			<img class="avatar center nofloat <?=($User->stretch ? "stretch" : "")?>" style="background-image: url('<?=$User->avatar?>')">
+			<?php globalPartial("ava", array("User" => $User)) ?>
 			</div>
 			<div class="row sociallinks">
 <!--

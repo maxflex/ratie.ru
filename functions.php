@@ -157,6 +157,25 @@
 		include_once($called_dir."/_".$string.".php");
 	}
 	
+	
+	/*
+	 * Включить глобальный PARTIAL
+	 * $string	– название включаемого файла
+	 * $vars	– переменные, которые будут доступны в файле
+	 */
+	function globalPartial($string, $vars = array())
+	{
+		// Если передаем переменные в инклуд, то объявляем их здесь (иначе будут недоступны)
+		if (!empty($vars)) {
+			// Объявляем переменные, соответсвующие элементам массива
+			foreach ($vars as $key => $value) {
+				$$key = $value;
+			}
+		}
+					
+		include_once(BASE_ROOT."/views/_partials/_".$string.".php");
+	}
+	
 	/*
 	 * В формат ангуляра
 	 */
@@ -209,12 +228,6 @@
 			 	.ifSet($params["action"])
 			 	.(isset($params["params"]) ? "&".http_build_query($params["params"]) : "")."'>"
 			 	.$params["text"]."</a>";
-		
-		/* Старая версия без HUMAN-READABLE URL
-		echo "<a $htmlOptions href='index.php?controller=".$params['controller']
-			 	.ifSet($params["action"], "&action=")
-			 	.(isset($params["params"]) ? "&".http_build_query($params["params"]) : "")."'>"
-			 	.$params["text"]."</a>";*/
 	}
 	
 	/*
@@ -244,143 +257,5 @@
 		
 		// Если все проверки пройдены, возвращаем активный класс
 		return "class='active'";
-		
-		/*
-		if ($_GET["controller"] == $menu) {
-			if (!empty($action)) {
-				if ($_GET["action"] == $action) {
-					
-				}
-			}
-		}*/
-		/*
-		return ($_GET["controller"] == $controller && $_GET["action"] == $action) ? "class='active'" : "";*/
-	}
-	
-	/* 
-	 * Показать новости
-	 * $id_last_seen	– если FALSE, то отображать свои же новости (иначе указать LAST_SEEN_ID - с какого ID считаются новыми новости)
-	 * $tophr 			– разделительный <hr> будет вверху, вместо отделения между новыми/старыми голосами
-	 */
-	function displayNews($User, $id_last_seen = false, $tophr = false)
-	{
-		if ($tophr) {
-			echo '<hr class="news-seperator">';
-		}
-		
-		// Проверяем, есть ли вообще новости (После регистрации ничего нет. Проверяем старые голоса - если их нет, то никаких новостей не было вообще)
-		$OldVotes = $User->oldVotes($id_last_seen);
-		
-		// Если совсем никаких новостей не было
-		if (!$OldVotes) {
-			echo "<h3 class='trans center-content text-white badge-success animate-show mg-top'>"
-				 ."<span class='glyphicon glyphicon-file'></span>Новостная лента пуста</h3>";
-			return;
-		}
-		
-		/* НОВЫЕ ГОЛОСА */		
-		foreach ($User->newVotes($id_last_seen) as $Vote) {
-			echo '<div class="news-row">';
-			
-			if ($Vote->id_user) {
-				// Находим проголосовавшего пользователя
-				$VotedUser = User::findById($Vote->id_user);
-				
-				// Выводим аву
-				createUrl(array(
-					"controller"=> "user",
-					"params"	=> array(
-						"user"	=> $VotedUser->login,
-					),
-					"text"		=> '<img style="background-image: url('.$VotedUser->avatar.')" class="news-ava '.($VotedUser->stretch ? "stretch" : "").'">',
-				));
-				
-				createUrl(array(
-					"controller"	=> "user",
-					"params"		=> array(
-						"user"	=> $VotedUser->login,
-					),
-					"text"			=> $VotedUser->login,
-					"htmlOptions"	=> array(
-						"class"	=> "login-link",
-					),
-				));
-				
-				$User->initConnection();	// Переподключаемся к пользователю
-				//echo "<a href='index.php?controller=user&user=gamezo$VotedUser->login;
-			} else {
-				echo '<img src="img/profile/noava.png" class="news-rounded">';
-				echo "Аноним";
-			}
-			
-			// Если это первый голос
-			if ($Vote->isFirst()) {
-				echo " оставил новую оценку – ";
-				$icon_class = "plus plus";	// Класс иконки
-			} else {
-				echo " проголосовал ".($Vote->type ? "за" : "против");
-				$icon_class = "thumbs-".($Vote->type ? "up" : "down")." ".($Vote->type ? "for" : "against"); // Класс иконки
-			}
-			
-			echo '<span class="voted-adj"> '.$Vote->Adjective()->adjective.'</span>';
-			echo '<span class="thumb-circle glyphicon glyphicon-'.$icon_class.' pull-right"></span>';
-			echo '</div>';
-		}
-		/* КОНЕЦ НОВЫЕ ГОЛОСА */
-		if (!$tophr) {
-			echo '<hr class="news-seperator">';
-		}			
-		
-					
-		/* СТАРЫЕ ГОЛОСА */
-		// $OldVotes уже получали вверху функции
-		foreach ($OldVotes as $Vote) {
-			echo '<div class="news-row old">';
-			
-			if ($Vote->id_user) {
-				// Находим проголосовавшего пользователя
-				$VotedUser = User::findById($Vote->id_user);
-				
-				// Выводим аву
-				createUrl(array(
-					"controller"=> "user",
-					"params"	=> array(
-						"user"	=> $VotedUser->login,
-					),
-					"text"		=> '<img style="background-image: url('.$VotedUser->avatar.')" class="news-ava '.($VotedUser->stretch ? "stretch" : "").'">',
-				));
-				
-				createUrl(array(
-					"controller"	=> "user",
-					"params"		=> array(
-						"user"	=> $VotedUser->login,
-					),
-					"text"			=> $VotedUser->login,
-					"htmlOptions"	=> array(
-						"class"	=> "login-link",
-					),
-				));
-				
-				$User->initConnection();	// Переподключаемся к пользователю
-				//echo "<a href='index.php?controller=user&user=gamezo$VotedUser->login;
-			} else {
-				echo '<img src="img/profile/noava.png" class="news-rounded">';
-				echo "Аноним";
-			}
-			
-			// Если это первый голос
-			if ($Vote->isFirst()) {
-				echo " оставил новую оценку – ";
-				$icon_class = "plus oplus";	// Класс иконки
-			} else {
-				echo " проголосовал ".($Vote->type ? "за" : "против");
-				$icon_class = "thumbs-".($Vote->type ? "up" : "down")." ".($Vote->type ? "ofor" : "oagainst"); // Класс иконки
-			}
-			
-			echo '<span class="voted-adj"> '.$Vote->Adjective()->adjective.'</span>';
-			echo '<span class="thumb-circle old glyphicon glyphicon-'.$icon_class.' pull-right"></span>';
-			echo '</div>';
-		}
-		/* КОНЕЦ СТАРЫЕ ГОЛОСА */
 	}
 ?>

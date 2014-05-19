@@ -4,7 +4,7 @@
 	
 	<div class="row effect2">
 		<div class="col-md-4 center-content">
-			<img class="avatar center nofloat <?=($User->stretch ? "stretch" : "")?>" style="background-image: url('<?=$User->avatar?>')">
+			<?php globalPartial("ava", array("User" => $User)) ?>
 			<!-- СОЦИАЛЬНЫЕ КНОПКИ -->
 			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id)) ?>
 				

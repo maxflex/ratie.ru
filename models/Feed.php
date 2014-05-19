@@ -158,7 +158,7 @@
 				// Выводим аву
 				createUrl(array(
 					"controller"=> $User->login,
-					"text"		=> '<img style="background-image: url('.$User->avatar.')" class="news-ava '.($User->stretch ? "stretch" : "").'">',
+					"text"		=> '<div style="background-image: url('.$User->avatar.')" class="news-ava '.($User->stretch ? "stretch" : "").'"></div>',
 				));
 				
 				createUrl(array(

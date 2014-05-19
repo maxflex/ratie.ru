@@ -8,7 +8,7 @@
 	var _ALERT_CAMERA			=	"<img src='img/icon/64/camera.png'>";
 	var _ALERT_POLAROID			=	"<img src='img/icon/64/polaroids.png'>";
 	var _ALERT_SECURITY			=	"<img src='img/icon/64/security.png'>";
-	
+	var _ALERT_FRIENDS			=	"<img src='img/icon/64/friends.png'>";
 	
 	$(document).ready(function() {
 		// Анимируем новости на всех страницах

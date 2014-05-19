@@ -1,0 +1,1 @@
+<div class="avatar center nofloat <?=($User->stretch ? "stretch" : "")?>" style="background-image: url('<?=$User->avatar?>')"></div>

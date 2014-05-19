@@ -20,7 +20,7 @@
 				// Выводим аву
 				createUrl(array(
 					"controller"=> $SubscriptionUser->login,
-					"text"		=> '<img style="background-image: url('.$SubscriptionUser->avatar.')" class="news-ava '.($SubscriptionUser->stretch ? "stretch" : "").'">',
+					"text"		=> '<div style="background-image: url('.$SubscriptionUser->avatar.')" class="news-ava '.($SubscriptionUser->stretch ? "stretch" : "").'"></div>',
 				));
 				
 				createUrl(array(

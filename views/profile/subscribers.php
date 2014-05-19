@@ -10,7 +10,7 @@
 				<div class="ava-blink edit-profile animate-fade" ng-hide="!ehover">
 					<button class="btn btn-success btn-large" onclick="goTo('profile', 'edit')"><span class="glyphicon glyphicon-pencil"></span>Редактировать профиль</button>
 				</div>
-			<img class="avatar center nofloat <?=($User->stretch ? "stretch" : "")?>" style="background-image: url('<?=$User->avatar?>')">
+			<?php globalPartial("ava", array("User" => $User)) ?>
 			</div>
 			<div class="row sociallinks">
 					<div class="circle cursor-default"><span class="glyphicon glyphicon-user"></span></div>
@@ -54,18 +54,12 @@
 							
 							// Выводим аву
 							createUrl(array(
-								"controller"=> "user",
-								"params"	=> array(
-									"user"	=> $SubscriberUser->login,
-								),
-								"text"		=> '<img style="background-image: url('.$SubscriberUser->avatar.')" class="news-ava '.($SubscriberUser->stretch ? "stretch" : "").'">',
+								"controller"=> $SubscriberUser->login,
+								"text"		=> '<div style="background-image: url('.$SubscriberUser->avatar.')" class="news-ava '.($SubscriberUser->stretch ? "stretch" : "").'"></div>',
 							));
 							
 							createUrl(array(
-								"controller"	=> "user",
-								"params"		=> array(
-									"user"	=> $SubscriberUser->login,
-								),
+								"controller"	=> $SubscriberUser->login,
 								"text"			=> $SubscriberUser->login,
 								"htmlOptions"	=> array(
 										"class"	=> "login-link",
