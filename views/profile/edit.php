@@ -12,7 +12,7 @@
 					<button class="btn first half btn-success btn-large" ng-click="updateAva()"><span class="glyphicon big-icon glyphicon-repeat"></span></button>
 					<button class="btn second btn-danger btn-large" ng-click="deleteAva()" ng-disabled="delete_disable"><span class="glyphicon big-icon glyphicon-remove"></span></button>
 				</div>
-				<img class="avatar center nofloat" ng-class="{'stretch' : user.stretch == 1}" style="background-image: url('{{ user.avatar }}')">
+				<div class="avatar center nofloat" ng-class="{'stretch' : user.stretch == 1}" style="background-image: url('{{ user.avatar }}')"></div>
 			</div>
 			
 			<!--
