@@ -5,10 +5,11 @@
 		</div>
 		
 		
-		<div id="friends" class="col-md-6 news-div" style="width: 50%">
-			<div class='subscription-row' ng-repeat="friend in friends">
-				<a href="{{friend.login}}"><div style="background-image: url({{friend.avatar}})" class="news-ava" ng-class="{stretch : friend.stretch}"></div></a><a class="login-link" href="{{friend.login}}">{{friend.first_name}} {{friend.last_name}}</a>
-				<span class="subscription-arrow glyphicon glyphicon-chevron-right pull-right"></span>
+		<div id="friends" class="col-md-6 news-div" style="width: 50%; display: none">
+		 	<div style="max-height: 150px; overflow-y: auto; text-align: center">
+			<div ng-repeat="friend in friends" style="display: inline-block">
+				<a target="_blank" href="{{friend.login}}"><div style="background-image: url({{friend.avatar}})" class="ava-60" ng-class="{stretch : friend.stretch}"></div></a><!-- <a class="login-link" href="{{friend.login}}">{{friend.first_name}} {{friend.last_name}}</a> -->
 			</div>
+		 	</div>
 		</div>
 </div>

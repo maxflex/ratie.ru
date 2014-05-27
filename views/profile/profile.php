@@ -22,11 +22,13 @@
 </svg></a>
 
 -->
-					<div class="circle cursor-default"><span class="glyphicon glyphicon-user"></span></div>
+					<div class="circle" ng-mouseenter="friends = true" ng-mouseleave="friends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
 					<div class="circle" ng-mouseenter="followers = true" ng-mouseleave="followers = false" onclick="goTo('profile/subscribers')"><span><?= $User->subscribers ?></span></div>
 <!-- 					<div class="circle" ng-mouseenter="following = true" ng-mouseleave="following = false"><span>23</span></div>	 -->
 			
-					<h3 ng-show="followers" class="foll center-content text-white badge-primary animate-show-hide"><span class="glyphicon glyphicon-user"></span>Подписчики</h3>
+					<h3 ng-show="followers" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-ok"></span>Подписчики</h3>
+					
+					<h3 ng-show="friends" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-user"></span>Друзья на Ratie</h3>
 <!-- 					<h3 ng-show="following" class="foll center-content text-white badge-primary animate-show">Подписки</h3>						 -->
 			</div>				
 		</div>
@@ -69,7 +71,19 @@
 						
 		</div>
 		
+<!-- ДРУЗЬЯ НА САЙТЕ -->
+<div id="friends" class="col-md-6 news-div" style="width: 50%; display: none">
+    <div style="max-height: 150px; overflow-y: auto; text-align: center">
+        <div ng-repeat="friend in friends" style="display: inline-block">
+            <a target="_blank" href="{{friend.login}}">
+            	<div style="background-image: url({{friend.avatar}})" class="ava-60" ng-class="{stretch : friend.stretch}"></div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- КОНЕЦ ДРУЗЬЯ НА САЙТЕ -->
 		
 	</div>
 </div>
+
 

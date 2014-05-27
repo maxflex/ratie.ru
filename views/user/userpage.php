@@ -59,7 +59,10 @@
 		<?php
 			/*******  ЕСЛИ ПОЛЬЗОВАТЕЛЬ ПРОСМАТРИВАЕТ СВОЮ ЖЕ СТРАНИЦУ *********/
 			if ($own_page) {
-				partial("own", array("hidden_count" => $hidden_count));
+				partial("own", array(
+					"hidden_count"	=> $hidden_count,
+					"show_friends"	=> $show_friends,
+				));
 			} else {
 			/*******  ЕСЛИ СТРАНИЦУ ПОЛЬЗОВАТЕЛЯ ПРОСМАТРИВАЕТ ГОСТЬ *********/
 				partial("guest");

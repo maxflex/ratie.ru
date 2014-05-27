@@ -7,7 +7,9 @@
 		// Если подписок нет, выводим сообщение об этом
 		if (!$Subscriptions) {
 			echo "<h3 class='trans center-content text-white badge-success animate-show mg-top'>"
-				 ."<span class='glyphicon glyphicon-user'></span>Вы ни на кого не подписаны</h3>";
+				 ."<span class='glyphicon glyphicon-user'></span>Вы ни на кого не подписаны</h3>"
+				 ."<fieldset class='hidden-thoughts'>"
+				 	."<legend class='text-white' ng-click='getFriends()'>ПОДПИСАТЬСЯ НА СВОИХ ДРУЗЕЙ</legend></fieldset>";
 		} else {
 		// Иначе отображаем подписки
 		

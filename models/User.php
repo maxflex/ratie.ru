@@ -4,7 +4,7 @@
 	
 		/*====================================== ПЕРЕМЕННЫЕ И КОНСТАНТЫ ======================================*/
 
-		protected $_serialized = array("social"); // поле social в БД сериализовано
+		protected $_serialized = array("social", "intro"); // поле social в БД сериализовано
 
 		public static $mysql_table	= "users";
 		

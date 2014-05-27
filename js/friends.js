@@ -1,19 +1,14 @@
-$(document).ready(function(){
-	//$("#main-page").addClass(_page_start_animation);
-	
-	// Инициализация приложения ВК
-	VK.init({
-	  apiId: _vk_app_id
-	});
-});
-
-var testy;
 // Подключаем модуль NG-Animate к приложению UserPage
-angular.module('TestPage', ['ngAnimate']);
+angular.module('FriendsPage', ['ngAnimate']);
 
 	// Контроллер страницы пользователя
-	function TestCtrl($scope) {
-	
+	function FriendsCtrl($scope) {
+		
+		// Для плавной загрузки баров, сначала у них ширина 0%, после загрузки – настоящая
+		angular.element(document).ready(function(){
+			$scope.getFriends();
+		});
+		
 		$scope.getFriends = function() {
 			// Проверяем, залогинен ли
 			VK.Auth.getLoginStatus(function(response) {
@@ -25,7 +20,7 @@ angular.module('TestPage', ['ngAnimate']);
 					}, function(r) { 
 						
 						$.post("?controller=user&action=ajaxGetFriends", {ids: r.response})
-							.success(function(response) {								
+							.success(function(response) {
 								// Если есть хоть какие-то друзья на сайте
 								if (response != "false") {
 									// Получаем друзей
@@ -57,10 +52,7 @@ angular.module('TestPage', ['ngAnimate']);
 									$scope.$apply();								
 									bootbox.alert("<center>" + _ALERT_FRIENDS + friends_count + " " + text + " уже есть на Ratie: <hr></center>" 
 													+ $("#friends").html());
-								} else {
-									bootbox.alert("<center>" + _ALERT_FRIENDS + " Никто из ваших друзей пока не использует Ratie</center>");
-								}
-								
+									}
 							});
 					}); 
 				}

@@ -28,7 +28,7 @@
 		
 		<div class="left-div">
 			<div class="logo">
-				<img alt="Shots Selfies and Self Expressions" src="http://shots.me/img/landing/logo.png">
+				<img alt="Ratie – анонимные мнения и оценки" src="img/logo/white.png">
 			</div>
 			
 			<div class="description">
