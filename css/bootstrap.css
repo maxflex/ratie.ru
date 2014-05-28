@@ -1,9 +1,9 @@
-// @import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
-
+/*
 @font-face {
   font-family: "RaleWayThin";
   src: url(../fonts/Raleway/Raleway-Thin.ttf) format("truetype");
 }
+*/
 
 @font-face {
   font-family: "RaleWayExtraLight";
@@ -20,27 +20,10 @@
   src: url(../fonts/Raleway/Raleway-Regular.ttf) format("truetype");
 }
 
-/*
 @font-face {
-  font-family: "RaleWayThin";
-  src: url(../fonts/Raleway/Raleway-Thin.otf) format("truetype");
+  font-family: "RalewayMedium";
+  src: url(../fonts/Raleway/Raleway-Medium.ttf) format("truetype");
 }
-
-@font-face {
-  font-family: "RaleWayExtraLight";
-  src: url(../fonts/Raleway/Raleway-ExtraLight.otf) format("truetype");
-}
-
-@font-face {
-  font-family: "RaleWayLight";
-  src: url(../fonts/Raleway/Raleway-Light.otf) format("truetype");
-}
-
-@font-face {
-  font-family: "RaleWayRegular";
-  src: url(../fonts/Raleway/Raleway-Regular.otf) format("truetype");
-}
-*/
 
 /*!
  * Bootstrap v2.3.2
@@ -267,7 +250,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: 'RaleWayThin', sans-serif;
+  font-family: 'RaleWayLight', sans-serif;
    -webkit-font-smoothing: antialiased;
 //  -webkit-font-smoothing: subpixel-antialiased;
   font-size: 14px;

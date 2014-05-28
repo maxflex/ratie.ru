@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'RaleWayThin', sans-serif;
+  font-family: 'RaleWayLight', sans-serif;
 }
 
 // Анимация добавления нового прилагательного
@@ -194,7 +194,7 @@ h2 {
 		&.selected {
 			opacity: 1 !important;
 			& .badge-success {
-			//	opacity: 1;
+				box-shadow: 0px 0px 8px 2px rgba(56,158,21,0.5);
 			}
 //			border-left: $border-width solid $success-badge;
 		}
@@ -218,7 +218,7 @@ h3 {
 }
 
 .news-div {
-	font-family: 'RaleWayThin', sans-serif;
+	font-family: 'RaleWayRegular', sans-serif;
 	margin-top: 30px;
 	color: white;
 	font-size: 17px;
@@ -688,10 +688,11 @@ button {
 }
 
 h3 {
-	font-family: 'RaleWayThin', sans-serif;
-		
+	font-family: 'RaleWayRegular', sans-serif;
+	
 	&.mg-top {
-		margin-top: 20px;	
+		font-family: 'RaleWayLight', sans-serif;
+		margin-top: 20px;
 	}
 	
 	& .glyphicon {
@@ -771,7 +772,7 @@ fieldset {
 		    width: auto;
 		    font-size: 14px;
 		    cursor: pointer;
-		    font-family: 'RaleWayThin', sans-serif;
+		    font-family: 'RaleWayMedium', sans-serif;
 		    opacity: 0.6;
 		    &:hover {
 				opacity: 1;

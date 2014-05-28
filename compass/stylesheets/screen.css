@@ -5,7 +5,7 @@ h1 {
 
 /* line 19, ../sass/screen.scss */
 h2 {
-  font-family: 'RaleWayThin', sans-serif;
+  font-family: 'RaleWayLight', sans-serif;
 }
 
 /* line 27, ../sass/screen.scss */
@@ -234,6 +234,10 @@ h2.news:hover {
 h2.news.selected {
   opacity: 1 !important;
 }
+/* line 196, ../sass/screen.scss */
+h2.news.selected .badge-success {
+  box-shadow: 0px 0px 8px 2px rgba(56, 158, 21, 0.5);
+}
 
 /* line 205, ../sass/screen.scss */
 h3.foll {
@@ -254,7 +258,7 @@ h3.foll {
 
 /* line 220, ../sass/screen.scss */
 .news-div {
-  font-family: 'RaleWayThin', sans-serif;
+  font-family: 'RaleWayRegular', sans-serif;
   margin-top: 30px;
   color: white;
   font-size: 17px;
@@ -790,19 +794,20 @@ button .glyphicon {
 
 /* line 690, ../sass/screen.scss */
 h3 {
-  font-family: 'RaleWayThin', sans-serif;
+  font-family: 'RaleWayRegular', sans-serif;
 }
 /* line 693, ../sass/screen.scss */
 h3.mg-top {
+  font-family: 'RaleWayLight', sans-serif;
   margin-top: 20px;
 }
-/* line 697, ../sass/screen.scss */
+/* line 698, ../sass/screen.scss */
 h3 .glyphicon {
   margin-right: 8px;
   display: inline;
 }
 
-/* line 707, ../sass/screen.scss */
+/* line 708, ../sass/screen.scss */
 .navbar .nav > li .count {
   position: absolute;
   background: #e60033;
@@ -825,35 +830,35 @@ h3 .glyphicon {
   line-height: 20px;
   z-index: 5;
 }
-/* line 727, ../sass/screen.scss */
+/* line 728, ../sass/screen.scss */
 .navbar .nav > li .count.d1 {
   font-size: 12px;
 }
-/* line 732, ../sass/screen.scss */
+/* line 733, ../sass/screen.scss */
 .navbar .nav > li .glyphicon {
   font-size: 20px;
   top: 0;
 }
-/* line 736, ../sass/screen.scss */
+/* line 737, ../sass/screen.scss */
 .navbar .nav > li .glyphicon.inline {
   font-size: 14px;
   margin-right: 5px;
   top: 1px;
 }
 
-/* line 747, ../sass/screen.scss */
+/* line 748, ../sass/screen.scss */
 label {
   color: white;
   font-size: 22px;
   float: left;
 }
 
-/* line 753, ../sass/screen.scss */
+/* line 754, ../sass/screen.scss */
 .form-group {
   margin-bottom: 10px;
 }
 
-/* line 759, ../sass/screen.scss */
+/* line 760, ../sass/screen.scss */
 fieldset.hidden-thoughts {
   border-top: 1px dashed rgba(171, 171, 171, 0.7);
   border-bottom: none;
@@ -864,21 +869,21 @@ fieldset.hidden-thoughts {
   margin: 0;
   height: 50px;
 }
-/* line 769, ../sass/screen.scss */
+/* line 770, ../sass/screen.scss */
 fieldset.hidden-thoughts legend {
   padding: 0 10px;
   width: auto;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'RaleWayThin', sans-serif;
+  font-family: 'RaleWayMedium', sans-serif;
   opacity: 0.6;
 }
-/* line 776, ../sass/screen.scss */
+/* line 777, ../sass/screen.scss */
 fieldset.hidden-thoughts legend:hover {
   opacity: 1;
 }
 
-/* line 784, ../sass/screen.scss */
+/* line 785, ../sass/screen.scss */
 .glyphicon.big-icon {
   margin: 0;
   font-size: 23px;

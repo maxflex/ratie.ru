@@ -44,7 +44,7 @@ body {
 
 .description {
 	height: 27.5%;
-	font-family: 'RaleWayThin', sans-serif;
+	font-family: 'RaleWayLight', sans-serif;
 	font-weight: 100;
 	font-size: 28px;
 	color: white;
@@ -74,7 +74,7 @@ body {
 	background: transparent;
 	border: 2.5px solid white;
 	text-transform: uppercase;
-	font-family: 'RaleWayThin', sans-serif;
+	font-family: 'RaleWayLight', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 100;
 	font-size: 28px;
