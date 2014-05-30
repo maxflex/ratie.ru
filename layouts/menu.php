@@ -58,7 +58,7 @@
 			// Иначе пункты меню для незалогененных
 			?>
 			<li>
-        		<a href="login"><span class="glyphicon glyphicon-log-in inline"></span>Вход</a>
+        		<a href="/#login"><span class="glyphicon glyphicon-log-in inline"></span>Вход</a>
         	</li>
 			<?php
 		}

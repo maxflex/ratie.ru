@@ -5,14 +5,19 @@
 	
 	<!-- ПАЛЬЦЫ ВВЕРХ/ВНИЗ -->
 	<div class="adj-vote-block pull-right trans">
-		<div class="voting a-right">
+		<div class="voting">
 			<span class="glyphicon glyphicon-thumbs-up text-white"></span>
 			<span class="vote-count">{{adj._ang_pos_count}}</span>
 		</div>
 		
-		<div class="voting a-right">
+		<div class="voting">
 			<span class="glyphicon glyphicon-thumbs-down text-white"></span>
 			<span class="vote-count">{{adj._ang_neg_count}}</span>
+		</div>
+		
+		<div class="voting">
+					<span ng-click="comment(adj.id)" class="glyphicon glyphicon-comment text-white trans-h"></span>
+					<span class="vote-count">{{adj._ang_comment_count}}</span>
 		</div>
 		
 		<div class="voting a-center">
@@ -51,14 +56,19 @@
 		
 		<!-- ПАЛЬЦЫ ВВЕРХ/ВНИЗ -->
 		<div class="adj-vote-block pull-right trans">
-			<div class="voting a-right">
+			<div class="voting">
 				<span class="glyphicon glyphicon-thumbs-up text-white"></span>
 				<span class="vote-count">{{adj._ang_pos_count}}</span>
 			</div>
 			
-			<div class="voting a-right">
+			<div class="voting">
 				<span class="glyphicon glyphicon-thumbs-down text-white"></span>
 				<span class="vote-count">{{adj._ang_neg_count}}</span>
+			</div>
+			
+			<div class="voting">
+					<span ng-click="comment(adj.id)" class="glyphicon glyphicon-comment text-white trans-h"></span>
+					<span class="vote-count">{{adj._ang_comment_count}}</span>
 			</div>
 			
 			<div class="voting a-center">

@@ -22,6 +22,7 @@
 </head>
 
 <body ng-app="Auth" ng-controller="AuthCtrl">
+<div class="lightbox" id="lightbox"></div>
 	<div class="top-div">
 		<img id="imac" class="imac animated" src="img/main/imac.png">
 		<img id="iphone" class="iphone animated" src="img/main/iphone.png">

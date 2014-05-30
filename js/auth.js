@@ -17,6 +17,13 @@
 		angular.element(document).ready(function(){
 			$scope.logged_in = false;
 			
+			// Получаем хеш, чтобы делать авто-логин по адресу ratie.ru/#login
+			hash = window.location.hash.substring(1);
+			
+			// Если хэш получен
+			if (hash == "login") {
+				$scope.login();
+			}
 			// Проверяем, если залогинен
 			/*
 			VK.Auth.getLoginStatus(function(response) {
@@ -34,6 +41,7 @@
 		
 		// Логин
 		$scope.login = function() {
+			$("#lightbox").css("display", "block");
 			// Посылаем запрос на логин
 			VK.Auth.login(function(response) {
 				// Если залогинен
@@ -42,6 +50,9 @@
 				} else {
 					$scope.logged_in = false;
 					$scope.$apply();
+					
+					$("#lightbox").css("display", "none");
+					bootbox.alert(_ALERT_CAUTION + " <b>Не удалось войти.</b> <br><br> Необходимо разрешить доступ приложению Ratie для входа на сайт. Приложение запрашивает доступ ТОЛЬКО к основной информации, чтобы получить данные для быстрой автоматической регистрации! Мы не запрашиваем никаких дополнительных прав.");
 				}
 			});			
 		}
@@ -83,6 +94,9 @@
 						console.log($scope.user);
 						$scope.$apply();
 					}); 
+				} else {
+					$("#lightbox").css("display", "none");
+					bootbox.alert(_ALERT_CAUTION + "<b>Не удалось войти.<b><hr>Необходимо разрешить доступ приложению Ratie входа на сайт. Приложение запрашивает доступ ТОЛЬКО к основной информации, чтобы получить данные для быстрой автоматической регистрации! Мы не запрашиваем никаких других прав.");
 				}
 			});
 		}

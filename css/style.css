@@ -310,3 +310,12 @@ h3.chat {
 	font-weight: 900;
 	font-size: 18px;
 }
+
+.trans-h {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.trans-h:hover {
+	opacity: 1;
+}

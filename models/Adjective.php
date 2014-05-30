@@ -38,7 +38,17 @@
 		
 		
 		/*====================================== ФУНКЦИИ КЛАССА ============================================*/
-
+		
+		/*
+		 * Возвратить комментарии к текущему прилагательному
+		 * $count - возвратить только количество комментариев
+		 */
+		public function getComments($count = false)
+		{
+			return Comment::findAll(array(
+				"condition" => "id_adjective={$this->id}",
+			), $count);
+		}
 		
 		/*
 		 * Возвратить прилагательное с форматированием
@@ -209,5 +219,6 @@
 			$this->_ang_order		= $this->adjRate();											// Сортировка по рейтингу
 			$this->_ang_new_order   = 0;														// Дополнительная сортировка по новизне записи
 			$this->_ang_hidden		= $this->hidden;											// Копия HIDDEN, чтобы в FILTER можно было менять
+			$this->_ang_comment_count = $this->getComments(true);								// Кол-во комментариев к прилагательному
 		}
 	}

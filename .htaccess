@@ -22,8 +22,8 @@ RewriteRule ^login/vk$ index.php?controller=index&action=auth [QSA,L]
 RewriteRule ^profile$ index.php?controller=profile [QSA,L]
 RewriteRule ^profile/([a-zA-Z0-9_-]+)$ index.php?controller=profile&action=$1 [QSA,L]
 
-# Главная
-RewriteRule ^go$ main.php [QSA,L]
+# Комментарии прилагательного
+RewriteRule ^([a-zA-Z0-9_-]+)/comments-([0-9]+)$ index.php?controller=user&user=$1&comment=$2 [QSA,L]
 
 # В другом случае – отображаем пользователя
 RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?controller=user&user=$1 [QSA,L]

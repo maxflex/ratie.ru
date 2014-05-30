@@ -18,7 +18,7 @@
 	
 	$_models		= array(
 	 	"Model", "User", "Adjective", "Vote", "DefaultAdjective", "Subscription", "Subscriber", "NewsType",
-	 	"Feed",
+	 	"Feed", "Comment",
 	 );
 	
 	/********************************************************************/

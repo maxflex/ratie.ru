@@ -3,7 +3,7 @@
 	{
 	
 		/*====================================== ПЕРЕМЕННЫЕ И КОНСТАНТЫ ======================================*/
-
+		
 		public static $mysql_table	= "feed";
 		
 		/*====================================== СИСТЕМНЫЕ ФУНКЦИИ ======================================*/
@@ -192,9 +192,28 @@
 				}
 			}
 			
+			// Формируем ссылку
+			switch ($NewsType->id) {
+				case NewsType::SUBSCRIBED:
+				case NewsType::UNSUBSCRIBED: {
+					$link = $User->login;
+					break;
+				}
+				
+				case NewsType::COMMENT: {
+					$link = User::fromSession(false)->login."/comments-".$this->id_adjective;
+					break;
+				}
+				
+				default: {
+					$link = User::fromSession(false)->login."#".$this->id_adjective;
+				}
+			}
+			
 			// Иконка
+			echo "<a href='$link'>";
 			echo '<span class="thumb-circle glyphicon glyphicon-'.($old ? $NewsType->class_old." old " : $NewsType->class_new).' pull-right"></span>';
 			
-			echo '</div>';
+			echo '</a></div>';
 		}
 	}

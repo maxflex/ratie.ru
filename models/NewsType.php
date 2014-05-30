@@ -6,6 +6,15 @@
 
 		public static $mysql_table	= "news_types";
 		
+		const NEW_VOTE		= 1;
+		const VOTE_FOR		= 2;
+		const VOTE_AGAINST	= 3;
+		const CHANGE_FOR	= 4;
+		const CHANGE_AGAINST= 5;
+		const SUBSCRIBED	= 6;
+		const UNSUBSCRIBED	= 7; 
+		const COMMENT 		= 8;
+		
 		/*====================================== СИСТЕМНЫЕ ФУНКЦИИ ======================================*/
 		
 		

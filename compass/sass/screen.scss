@@ -218,7 +218,7 @@ h3 {
 }
 
 .news-div {
-	font-family: 'RaleWayRegular', sans-serif;
+	font-family: 'RaleWayMedium', sans-serif;
 	margin-top: 30px;
 	color: white;
 	font-size: 17px;
@@ -323,7 +323,7 @@ h3 {
 	text-indent: 10.5px;	
 	line-height: 40px;
 	top: 0;
-//	cursor: pointer;
+	cursor: pointer;
 	opacity: 0.8;
 	font-size: 20px;
 	
@@ -331,7 +331,7 @@ h3 {
 		opacity: 1;
 		background: white !important;
 		@include transition(none);
-		cursor: default;
+//		cursor: default;
 		&.ofor {
 			color: $success;
 		}
@@ -496,7 +496,7 @@ h3 {
 input {
 	&[type=text], &[type=password], &[type=email] {
 		background: rgba(1,1,1,0.1);
-		 -webkit-font-smoothing: antialiased !important;
+		 -webkit-font-smoothing: antialiased;
 		font-family: 'RaleWayLight', sans-serif;
 		font-size: 28px;
 		color: white;
@@ -785,5 +785,125 @@ fieldset {
 	&.big-icon {
 		margin: 0;
 		font-size: 23px;
+	}
+}
+
+.comments-box {
+	@include transition(all linear 0.2s !important);
+	width: calc(98% - 184px) !important;
+//	width: calc(98% - 124px) !important; // Если убрать кнопку ОК, то ширина должна быть такой
+	color: black !important;
+	-webkit-font-smoothing: subpixel-antialiased !important;
+//	background-color: rgba(255,255,255,0.01);
+//	background: rgba(1, 1, 1, 0.1);
+//	background: white;
+	background: rgba(255,255,255,0.85) !important;
+	border: 0 !important;
+	height: 20px !important;
+	overflow: hidden !important;
+	font-family: "RaleWayLight" !important;
+//	text-align: right;
+	padding: 18px 34px !important;
+	font-size: 18px !important;
+//	color: white;
+	resize: none !important;
+	outline: none !important;
+	margin: 0 !important;
+	
+	$br: 5px;
+	@include border-radius($br 0 0 $br !important);
+}
+
+.comments-box:focus {
+	background: white;
+	outline: none;
+	outline-style:none;
+	box-shadow:none;
+	border-color:transparent;
+//	text-align: left;
+}
+
+.comment-button {
+	width: 60px;
+	max-height: 56px;
+	overflow: hidden;
+	padding: 18px 0;
+	font-size: 18px;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	
+	$br: 5px;
+	@include border-radius(0 $br $br 0 !important);
+}
+
+.comment-row {
+	border-bottom: 1px dashed rgba(255,255,255,0.5); 
+	border-top: 1px dashed rgba(255,255,255,0.5); 
+	padding: 15px 0; 
+	margin: 20px 0 10px;
+}
+
+.bubble {
+//	white-space: nowrap;
+	position: relative;
+//	width: 82%;
+	width: auto;
+//	min-width: 20%;
+	max-width: 60%;
+	min-height: 25px;
+	padding: 20px;
+	background: rgba(255,255,255,0.4);
+	@include border-radius(22px);
+	@include transition(all linear 0.2s);
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 7.5px;
+	
+	font-family: "RaleWayMedium";
+	font-size: 16px;
+	
+	&:after {
+		@include transition(all linear 0.2s);
+		content: "";
+		position: absolute;
+		top: 23px;
+		left: -15px;
+		border-style: solid;
+		border-width: 9px 15px 9px 0;
+		border-color: transparent rgba(255,255,255,0.4);
+		display: block;
+		width: 0;
+		z-index: 1;
+	}
+	
+	&:hover {
+		background: rgba(255,255,255,1);
+		&:after {
+			border-color: transparent rgba(255,255,255,1)
+		}
+	}
+	
+	&.right {
+		margin-left: 0;
+		margin-right: 7.5px;
+		float: right;
+		
+		&:after {
+			border-width: 9px 0 9px 15px;
+			left: auto;
+			right: -15px;
+		}
+	}
+}
+
+.comment-ava {
+	float: left;
+	margin-top: 17px;
+	margin-right: 15px;
+	
+	&.right {
+		float: right;
+		margin-right: 0;
+		margin-left: 15px;
 	}
 }

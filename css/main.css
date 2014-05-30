@@ -121,3 +121,15 @@ div[id^="slide"] {
     margin: auto auto;
     position: absolute;
 }
+
+.lightbox {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: url("../img/loader/spinner.gif") no-repeat center center;
+	background-color: rgba(255,255,255,0.96);
+	z-index: 999;
+	display: none;
+}

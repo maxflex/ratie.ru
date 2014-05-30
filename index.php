@@ -1,4 +1,10 @@
 <?php	
+	// Если не установлен контроллер, то главная страница
+	if (empty($_GET["controller"])) {
+		include_once("main.php");
+		exit();	
+	}
+	
 	// Для редиректа после отправки HEADERS
 	ob_start();
 	
@@ -11,7 +17,6 @@
 	// Получаем названия контроллеров и экшена	
 	$_controller	 = $_GET["controller"];	// Получаем название контроллера
 	$_action		 = $_GET["action"];		// Получаем название экшена
-
 	
 	// Проверка на аякс-запрос
 	if (strtolower(mb_strimwidth($_action, 0, 4)) == "ajax") {

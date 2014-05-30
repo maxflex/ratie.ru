@@ -13,6 +13,11 @@
 					<span ng-click="vote(adj, 0)" class="glyphicon glyphicon-thumbs-down text-white adj-vote against {{adj._ang_neg}}" id="vote-against-{{adj.id}}"></span>
 					<span class="vote-count" id="vote-against-count-{{adj.id}}">{{adj._ang_neg_count}}</span>
 				</div>
+				
+				<div class="voting">
+					<span ng-click="comment(adj.id)" class="glyphicon glyphicon-comment text-white trans-h"></span>
+					<span class="vote-count">{{adj._ang_comment_count}}</span>
+				</div>
 			</div>
 			<!-- КОНЕЦ ПАЛЫМ -->
 			

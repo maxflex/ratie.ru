@@ -54,7 +54,7 @@
 				}
 		?>
 		
-		<div class="row" style="margin-top: 30px" id="adjective-list-angular" ng-init="adjectives = <?=htmlspecialchars(json_encode($Adjectives, JSON_NUMERIC_CHECK))?>">
+		<div class="row" style="margin-top: 30px" id="adjective-list-angular" ng-init="<?= angInit("adjectives", $Adjectives) ?>">
 		
 		<?php
 			/*******  ЕСЛИ ПОЛЬЗОВАТЕЛЬ ПРОСМАТРИВАЕТ СВОЮ ЖЕ СТРАНИЦУ *********/

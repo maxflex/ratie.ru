@@ -8,6 +8,8 @@ angular.module('UserPage', ['ngAnimate']);
 
 	// Контроллер страницы пользователя
 	function UserCtrl($scope) {
+		// Для дополнительной сортировки (каждому новому поднятию в списке $scope.order++, чтоб всегда новое было вверху)
+		$scope.order = 1;
 		
 		// Для плавной загрузки баров, сначала у них ширина 0%, после загрузки – настоящая
 		angular.element(document).ready(function(){
@@ -32,11 +34,31 @@ angular.module('UserPage', ['ngAnimate']);
 				$scope.$apply();
 			}, 200);	
 			
+			// Получаем хеш, чтобы поднимать в списке конкретное прилагательное через url#id_adjective
+			hash = window.location.hash.substring(1);
+			
+			// Если хэш получен
+			if (hash.length !== 0) {
+				// Искомое прилагательное – это ID который был передан в хэш
+				sought_adj = $.grep($scope.adjectives, function(adjective) {
+					return adjective.id == hash;
+				});
+				
+				// Если прилагательное найдено
+				if (sought_adj.length !== 0) {
+					// Поднимаем прилагательное в списке;
+					sought_adj[0]._ang_new_order = $scope.order++;
 					
+					// Если это прилагательное скрыто
+					if (sought_adj[0].hidden) {
+						$scope.showHidden(); // То отображаем скрытые 
+					}
+					
+					// Применяем изменения
+					$scope.$apply();
+				}
+			}
 		});
-		
-		// Для дополнительной сортировки (каждому новому поднятию в списке $scope.order++, чтоб всегда новое было вверху)
-		$scope.order = 1;
 		
 		// По ходу печати пишет прилагательное сверху
 		$scope.updateHello = function() {
@@ -84,7 +106,7 @@ angular.module('UserPage', ['ngAnimate']);
 		
 		// Сообщение о том, что необходимо войти
 		$scope.notLoggedIn = function() {
-			bootbox.alert(_ALERT_CAUTION + "<a href='?controller=index'>Войдите</a>, чтобы подписаться на пользователя");
+			bootbox.alert(_ALERT_CAUTION + "<a href='login'>Войдите</a>, чтобы подписаться на пользователя");
 		}
 		
 		// Добавить мысль о человеке
@@ -251,6 +273,11 @@ angular.module('UserPage', ['ngAnimate']);
 			
 			$scope.show_hidden = !$scope.show_hidden;
 		}
+		
+		// Комментировать прилагательное
+		$scope.comment = function(id_adj) {
+			window.location = document.URL + "/comments-" + id_adj;
+		}
 	}
 	
 
@@ -297,7 +324,7 @@ angular.module('UserPage', ['ngAnimate']);
 		}
 		
 		// Проверяем, был ли голос за, если да, убираем его
-		if (like.hasClass("voted")) {
+			if (like.hasClass("voted")) {
 			like.removeClass("voted");
 			like_count.html(parseInt(like_count.html()) - 1);
 		}
