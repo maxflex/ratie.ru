@@ -283,6 +283,7 @@ h3 {
 	font-family: 'RaleWayRegular', sans-serif;
 	cursor: pointer;
 	overflow: hidden;
+	vertical-align: top;
 	
 	&:hover {
 		opacity: 1;
@@ -858,6 +859,7 @@ fieldset {
 	display: inline-block;
 	margin-top: 15px;
 	margin-left: 7.5px;
+	word-wrap: break-word;
 	
 	font-family: "RaleWayMedium";
 	font-size: 16px;
@@ -880,6 +882,13 @@ fieldset {
 		background: rgba(255,255,255,1);
 		&:after {
 			border-color: transparent rgba(255,255,255,1)
+		}
+	}
+	
+	&.active {
+		background: white;
+		&:after {
+			border-color: transparent rgba(255,255,255,1);
 		}
 	}
 	

@@ -28,19 +28,21 @@
 			<table class="additional-settings">
 				<tr>
 					<td><img src="img/icon/64/megaphone.png"></td>
-					<td width="250px"><span>Голосовать анонимно</span></td>
+					<td width="250px"><span>Анонимность</span></td>
 					<td>
 						<input type="checkbox" ui-switch ng-model="user.anonymous">
 					</td>
 				</tr>
 				
-				<tr>
+				<!--
+<tr>
 					<td><img src="img/icon/64/locked.png"></td>
 					<td width="250px"><span>Приватный профиль</span></td>
 					<td>
 						<input type="checkbox" ui-switch ng-model="user.private">
 					</td>
 				</tr>
+-->
 			</table>
 			
 			<button class="btn btn-primary btn-large br5 save" ng-click="save()" ng-disabled="saving || login_error || email_error || password_error">Сохранить</button>	

@@ -1,18 +1,41 @@
+<?php
+	// Проверяем залогинен ли пользователь
+	if (isset($_SESSION["user"])){
+		header("Location: ".$_SESSION["user"]->login);
+	} else {
+		// Если сессии пользователя нет, проверяем куки
+		if (isset($_COOKIE["ratie_token"])) {
+			// Подключаем файл конфигураций
+			include_once("config.php");
+						
+			// Пытаемся войти по token в КУКАХ
+			User::rememberMeLogin();
+		}
+	}
+	
+	/* // Если установлена КУКА с залогиненым пользователем
+	if (isset($_COOKIE["logged"])) {
+		// Сразу редиректим на страницу пользователя
+		header("Location: ".$_COOKIE["logged"]);
+	} */
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ratie – анонимные мнения, сообщения и оценка характера</title>
+	<title>Ratie | Анонимные мнения о друзьях, комментарии и оценки</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <base href="http://localhost:8888/ratie.ru/">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon_main.ico">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootbox.js"></script>
 	<script type="text/javascript" src="js/angular.js"></script>
 	<script type="text/javascript" src="js/angular-animate.js"></script>
+	<script type="text/javascript" src="js/jquery-cookie.js"></script>
 	<script type="text/javascript" src="//vk.com/js/api/openapi.js"></script>
 	<script type="text/javascript" src="js/_settings.js"></script>
 	<script type="text/javascript" src="js/engine.js"></script>

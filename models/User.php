@@ -4,6 +4,8 @@
 	
 		/*====================================== ПЕРЕМЕННЫЕ И КОНСТАНТЫ ======================================*/
 
+		const SALT 				= "32dg9823dldfg2o001-2134>?erj&*(&(*^";	// Для генерации кук
+		
 		protected $_serialized = array("social", "intro"); // поле social в БД сериализовано
 
 		public static $mysql_table	= "users";
@@ -119,6 +121,43 @@
 			// Если пользователь найден, то логин уже занят
 			return ($User ? true : false);
 		}
+		
+		/*
+		 * Автовход по Remember-me
+		 */
+		public static function rememberMeLogin()
+		{
+			// Кука токена хранится в виде: 
+			// 1) Первые 16 символов MD5-хэш
+			// 2) Остальные символы – id_user (код пользователя)
+			// $cookie_hash = mb_strimwidth($_COOKIE["ratie_token"], 0, 32); // Нам не надо получать хэш из кук -- мы создаем новый здесь для сравнения
+			$cookie_user = substr($_COOKIE["ratie_token"], 32);
+			
+			// Получаем пользователя по ID (чтобы из его параметров генерировать хэш)
+			$User = User::findById($cookie_user);
+			
+			// Если пользователь найден
+			if ($User) {
+				// Генерируем хэш для сравнения с хешем в БД
+				$hash = md5(self::SALT . $User->id . $User->password . self::SALT);
+				
+				// Пытаемся найти пользователя
+				$RememberMeUser = self::find(array(
+					"condition"	=> "id=".$cookie_user." AND token='{$hash}'",
+				));
+				
+				// Если пользователь найден
+				if ($RememberMeUser) {
+					// Стартуем сессию (обязательно, почему-то без нее не работало)
+					session_start();
+					
+					// Логинимся
+					$RememberMeUser->toSession();
+					
+					header("Location: ".$RememberMeUser->login);
+				}
+			}
+		}
 				
 		/*====================================== ФУНКЦИИ КЛАССА ======================================*/
 		
@@ -161,7 +200,50 @@
 				exit();
 			}
 			
-
+			/***** Проверяем лимит мыслей подряд от одного пользователя *****/
+			/* $count_limit = dbUser()->query("
+				SELECT adjectives.id_first_vote, votes.id, votes.ip
+				FROM adjectives
+				JOIN votes ON adjectives.id_first_vote = votes.id
+				WHERE votes.ip = '".realIp()."'
+				ORDER BY id DESC 
+				LIMIT ".Adjective::INAROW_LIMIT)->num_rows;
+			
+			// Если превышен лимит 
+			if ($count_limit >= Adjective::INAROW_LIMIT) {
+				if ($ajax) {
+					echo "Вы уже оставили слишком много мыслей подряд!";					
+				}
+				// throw new Exception("Пустое или слишком длинное прилагательное");	
+				exit();
+			}
+			/************* КОНЕЦ ПРОВЕРКИ МЫСЛЕЙ ПОДРЯД ***************/
+			/***** Проверяем лимит комментариев подряд от одного пользователя *****/
+			// Получем последние комментарии
+			$LastAdjectives = Adjective::findAll(array(
+				"order"		=> "id DESC",
+				"limit"		=> Adjective::INAROW_LIMIT,
+			));
+			
+			// Подсчитываем количество от текущего пользователя
+			if ($LastAdjectives) {
+				$count_limit = 0;
+				foreach ($LastAdjectives as $Adjective) {
+					if ($Adjective->getFirstVote()->ip != realIp()) {
+						break;
+					} else {
+						$count_limit++;
+					}
+				}
+				
+				// Если превышен лимит 
+				if ($count_limit >= Adjective::INAROW_LIMIT) {
+					exit("Слишком много комментариев подряд!");					
+				}
+			}
+			/************* КОНЕЦ ПРОВЕРКИ МЫСЛЕЙ ПОДРЯД ***************/
+			
+			
 			// Обрезаем пробелы и теги в прилагательном
 			$adjective = strtolower(secureString($adjective));
 			
@@ -246,60 +328,7 @@
 				$this->id_last_seen_news = $id_last_news;
 				$this->save();
 			}
-		}
-		
-
-		/*
-		 * Получаем новые голоса
-		 * $id_last_seen_vote – id последнего просмотренного голоса, если не указан, то $this 
-		 * COMMENT: если из $this, то пользователь просматривает свои же новости, если передается переменная 
-		 * - то просмативает кто-то другой (с какой новости отображать новые/старые)
-		 */
-		 /*
-		public function newVotes($id_last_seen_vote = false)
-		{
-			// Если установлен $id_last_seen_vote, то просматриваем новые с него, если нет, берем из $this
-			$id_last_seen_vote = ($id_last_seen_vote ? $id_last_seen_vote : $this->id_last_seen_vote);
-
-			if ($id_last_seen_vote) {
-				// Находим новые голоса
-				$NewVotes = Vote::findAll(array(
-					"condition"	=> "id > ".$id_last_seen_vote,
-					"order"		=> "id DESC",
-				));
-			} else {
-				// Находим все голоса
-				$NewVotes = Vote::findAll(array(
-					"order"		=> "id DESC",
-				));
-			}
-			
-			return ($NewVotes ? $NewVotes : array());	// Чтобы если нет новых голосов, не было WARNING: Invalid argument supplied for foreach
-		}
-		
-		/*
-		 * Получаем старые голоса
-		 * см. описание newVotes()
-		 */
-		 /*
-		public function oldVotes($id_last_seen_vote = false)
-		{
-			// Если установлен $id_last_seen_vote, то просматриваем новые с него, если нет, берем из $this
-			$id_last_seen_vote = ($id_last_seen_vote ? $id_last_seen_vote : $this->id_last_seen_vote);
-
-			if ($id_last_seen_vote) {
-				// Находим новые голоса
-				$OldVotes = Vote::findAll(array(
-					"condition"	=> "id <= ".$id_last_seen_vote,
-					"order"		=> "id DESC",
-					"limit"		=> 20,
-				));
-			}
-			
-			return ($OldVotes ? $OldVotes : array());	// Чтобы если нет новых голосов, не было WARNING: Invalid argument supplied for foreach
-		}
-*/
-		
+		}		
 		
 		/*
 		 * Получаем новости
@@ -351,9 +380,16 @@
 		
 		/*
 		 * Вход/запись пользователя в сессию
+		 * $update_token – обновлять ли токен в БД (делаеться при авторизации)
 		 */
-		public function toSession()
+		public function toSession($update_token = false)
 		{
+			// Если обновлять токен
+			if ($update_token) {
+				self::updateToken();
+				self::save();
+			}
+			
 			$_SESSION["user"] = $this;
 		}
 		
@@ -527,6 +563,19 @@
 		 }
 		 
 		 /*
+		  * Возвращает Имя, Фамалия
+		  * $reverse – Фамилия, Имя
+		  */
+		 public function getName($reverse = false)
+		 {
+			if ($reverse) {
+				return $this->last_name." ".$this->first_name;
+			} else {
+				return $this->first_name." ".$this->last_name;
+			}
+		 }
+		 
+		 /*
 		  * Устанавливаем значения по умолчанию
 		  */
 		 public function setDefaults()
@@ -536,6 +585,19 @@
 			$this->subscriptions	= isset($this->subscriptions) ? $this->subscriptions : 0;
 			$this->anonymous		= 1;
 		 }
+		 
+		 
+		 /*
+		  * Создаем/Обновляем token для автологина
+		  */
+		public function updateToken()
+		{
+			$this->token = md5(self::SALT . $this->id . $this->password . self::SALT);
+			
+			// Remember me token в КУКУ
+			$cookie_time = time() + 3600 * 24 * 30 * 3; // час - сутки - месяц * 3 = КУКА на 3 месяца
+			setcookie("ratie_token", $this->token . $this->id, $cookie_time);	// КУКА ТОКЕНА (первые 16 символов - токен, последние - id_user)
+		}
 		 
 		 /*
 		 * Создаем таблицу пользователя

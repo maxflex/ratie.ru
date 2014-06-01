@@ -9,6 +9,9 @@
 	var _ALERT_POLAROID			=	"<img src='img/icon/64/polaroids.png'>";
 	var _ALERT_SECURITY			=	"<img src='img/icon/64/security.png'>";
 	var _ALERT_FRIENDS			=	"<img src='img/icon/64/friends.png'>";
+	var _ALERT_MEGAPHONE		=	"<img src='img/icon/64/megaphone.png'>";
+	var _ALERT_PROFILE			=	"<img src='img/icon/64/profile.png'>";
+	var _ALERT_CHAT				=	"<img src='img/icon/64/chat.png'>";
 	
 	$(document).ready(function() {
 		// Анимируем новости на всех страницах

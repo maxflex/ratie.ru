@@ -10,7 +10,9 @@
 	
 	<div class="row effect2">
 		<div class="col-md-4 center-content">
-			<?php globalPartial("ava", array("User" => $User)) ?>
+			<a href="<?= $User->login ?>">
+				<?php globalPartial("ava", array("User" => $User)) ?>
+			</a>
 			<!-- СОЦИАЛЬНЫЕ КНОПКИ -->
 			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id)) ?>
 				
@@ -40,11 +42,22 @@
 					
 					<div ng-if="!comment._ang_login" style="background-image: url('img/profile/noava.png')" class="ava-60 comment-ava cursor-default"></div>
 					
-					<div class="bubble" ng-class="{right : comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>)}">
+					<div class="bubble" ng-class="{
+						right : comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>),
+						active : (comment.order > 0)
+					}">
 						{{comment.comment}}
 					</div>
 				</div>
 			</div>
 		
 	</div>
+	
+<?php
+	// Инициализация сообщений, которые показываются только один раз после регистрации 
+	// (о публичности или анонимности мнения)
+	if (!empty($_intro_for_anonymous_or_public)) {
+		echo "<div ng-init=\"intro_message = $_intro_for_anonymous_or_public; user_name = '".$User->first_name."'\"></div>";
+	}
+?>
 </div>

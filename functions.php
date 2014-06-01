@@ -65,38 +65,6 @@
 	}
 	
 	/*
-	 * Добавляет JavaScript
-	 * Добавление скриптов через запятую ( addJs('script_1, script_2') )
-	 * $side – подключается сторонний JS (не размещенний на сайте в папке /js) (тогда скрипт передается строкой)
-	 */
-	function addJs($js, $side = false)
-	{
-		// если подключается сторонний JS
-		if ($side) {
-			echo "<script src='$js' type='text/javascript'></script>";
-		} else {
-		// подключаем внутренний JS
-			$js = explode(", ", $js);
-			
-			foreach ($js as $script_name) {
-				echo "<script src='js/{$script_name}.js' type='text/javascript'></script>";
-			}
-		}
-	}
-	
-	/*
-	 * Добавляет CSS
-	 */
-	function addCss($css)
-	{
-		$css = explode(", ", $css);
-		
-		foreach ($css as $css_name) {
-			echo "<link href='css/{$css_name}.css' rel='stylesheet'>";
-		}
-	}
-	
-	/*
 	 * Получает текущее время
 	 */
 	function now()
@@ -257,5 +225,23 @@
 		
 		// Если все проверки пройдены, возвращаем активный класс
 		return "class='active'";
+	}
+	
+	/*
+	 * Удаляем куку
+	 * $cookie_name – какую куку удаляем
+	 */
+	function removeCookie($cookie_name) 
+	{
+		unset($_COOKIE[$cookie_name]);
+		setcookie($cookie_name, '', time() - 3600);
+	}
+	
+	/*
+	 * Функция просто отображает через H1 (для тестирования)
+	 */
+	function h1($text)
+	{
+		echo "<h1 class='text-white'>$text</h1><br>";
 	}
 ?>

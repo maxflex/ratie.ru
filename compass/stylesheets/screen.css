@@ -327,34 +327,35 @@ h3.foll {
   font-family: 'RaleWayRegular', sans-serif;
   cursor: pointer;
   overflow: hidden;
+  vertical-align: top;
 }
-/* line 287, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .circle:hover {
   opacity: 1;
 }
-/* line 291, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .circle span {
   display: block;
   margin-top: 16px;
   color: #6e96d1;
 }
-/* line 292, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 .circle span.glyphicon {
   font-size: 32px;
   width: 100%;
 }
 
-/* line 302, ../sass/screen.scss */
+/* line 303, ../sass/screen.scss */
 .regular {
   font-family: 'RaleWayRegular', sans-serif !important;
 }
 
-/* line 306, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 .trans-8 {
   opacity: 0.8;
 }
 
-/* line 310, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .badge-news {
   width: 70px;
   display: inline-block;
@@ -362,7 +363,7 @@ h3.foll {
   opacity: 0.7;
 }
 
-/* line 317, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 .thumb-circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -382,7 +383,7 @@ h3.foll {
   opacity: 0.8;
   font-size: 20px;
 }
-/* line 330, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 .thumb-circle.old {
   opacity: 1;
   background: white !important;
@@ -391,132 +392,132 @@ h3.foll {
   -o-transition: none;
   transition: none;
 }
-/* line 335, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 .thumb-circle.old.ofor {
   color: #41ba18;
 }
-/* line 338, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 .thumb-circle.old.oagainst {
   color: #ff0039;
 }
-/* line 341, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .thumb-circle.old.oplus {
   color: #0072e6;
 }
-/* line 344, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 .thumb-circle.old.ounsub {
   color: #ff0039;
   text-indent: 9.5px;
 }
-/* line 350, ../sass/screen.scss */
+/* line 351, ../sass/screen.scss */
 .thumb-circle:hover {
   background: white !important;
   opacity: 1;
 }
-/* line 355, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .thumb-circle.for {
   background: #41ba18;
 }
-/* line 357, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .thumb-circle.for:hover {
   color: #41ba18 !important;
   -webkit-box-shadow: 0px 0px 15px 5px #41ba18;
   -moz-box-shadow: 0px 0px 15px 5px #41ba18;
   box-shadow: 0px 0px 15px 5px #41ba18;
 }
-/* line 363, ../sass/screen.scss */
+/* line 364, ../sass/screen.scss */
 .thumb-circle.against, .thumb-circle.unsub {
   background: #ff0039;
 }
-/* line 365, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 .thumb-circle.against:hover, .thumb-circle.unsub:hover {
   color: #ff0039;
   -webkit-box-shadow: 0px 0px 15px 5px #ff0039;
   -moz-box-shadow: 0px 0px 15px 5px #ff0039;
   box-shadow: 0px 0px 15px 5px #ff0039;
 }
-/* line 371, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 .thumb-circle.plus {
   background: #0072e6;
 }
-/* line 373, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 .thumb-circle.plus:hover {
   color: #0072e6;
   -webkit-box-shadow: 0px 0px 15px 5px #0072e6;
   -moz-box-shadow: 0px 0px 15px 5px #0072e6;
   box-shadow: 0px 0px 15px 5px #0072e6;
 }
-/* line 379, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 .thumb-circle.unsub {
   text-indent: 9.5px;
 }
 
-/* line 385, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 .eye {
   opacity: 0.7;
 }
-/* line 388, ../sass/screen.scss */
+/* line 389, ../sass/screen.scss */
 .eye:hover {
   opacity: 1;
 }
-/* line 392, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 .eye.glyphicon-eye-close:hover {
   color: #e60033;
 }
-/* line 396, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 .eye.glyphicon-eye-open:hover {
   color: #379f15;
 }
 
-/* line 401, ../sass/screen.scss */
+/* line 402, ../sass/screen.scss */
 .text-primary {
   color: #0072e6;
 }
 
-/* line 405, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .a-center {
   text-align: center;
 }
 
-/* line 409, ../sass/screen.scss */
+/* line 410, ../sass/screen.scss */
 .a-right {
   text-align: right;
 }
 
-/* line 413, ../sass/screen.scss */
+/* line 414, ../sass/screen.scss */
 .pointer {
   cursor: pointer;
 }
 
-/* line 417, ../sass/screen.scss */
+/* line 418, ../sass/screen.scss */
 .ava-wrap {
   height: 300px;
   width: 300px;
   position: relative;
   margin: 0 auto;
 }
-/* line 423, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 .ava-wrap .btn {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-top: 40%;
 }
-/* line 427, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 .ava-wrap .btn.first {
   width: 200px;
   margin-top: 28%;
 }
-/* line 432, ../sass/screen.scss */
+/* line 433, ../sass/screen.scss */
 .ava-wrap .btn.second {
   width: 200px;
   margin-top: 10px;
 }
-/* line 437, ../sass/screen.scss */
+/* line 438, ../sass/screen.scss */
 .ava-wrap .btn.half {
   width: 96px;
 }
-/* line 443, ../sass/screen.scss */
+/* line 444, ../sass/screen.scss */
 .ava-wrap .ava-blink {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -528,17 +529,17 @@ h3.foll {
   width: 100%;
   z-index: 2;
 }
-/* line 452, ../sass/screen.scss */
+/* line 453, ../sass/screen.scss */
 .ava-wrap .ava-blink.black {
   background: black;
 }
-/* line 456, ../sass/screen.scss */
+/* line 457, ../sass/screen.scss */
 .ava-wrap .ava-blink.edit-profile {
   -webkit-box-shadow: inset 0 0 100px #6e96d1;
   -moz-box-shadow: inset 0 0 100px #6e96d1;
   box-shadow: inset 0 0 100px #6e96d1;
 }
-/* line 460, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 .ava-wrap .ava-blink.half {
   -webkit-border-radius: 300px;
   -moz-border-radius: 300px 300px 0 0;
@@ -555,14 +556,14 @@ h3.foll {
   width: 300px;
 }
 
-/* line 470, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 .path-icon {
   height: 67px;
   width: 67px;
   position: absolute;
   right: 0;
 }
-/* line 476, ../sass/screen.scss */
+/* line 477, ../sass/screen.scss */
 .path-icon.clickable {
   -webkit-transition: all linear;
   -webkit-transition-delay: 0.3s;
@@ -572,22 +573,22 @@ h3.foll {
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 481, ../sass/screen.scss */
+/* line 482, ../sass/screen.scss */
 .path-icon.clickable:hover {
   opacity: 1;
 }
-/* line 486, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 .path-icon.left {
   left: 0;
 }
 
-/* line 491, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 #name-lastname {
   text-align: center;
   color: white;
 }
 
-/* line 497, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 input[type=text], input[type=password], input[type=email] {
   background: rgba(1, 1, 1, 0.1);
   -webkit-font-smoothing: antialiased;
@@ -598,65 +599,65 @@ input[type=text], input[type=password], input[type=email] {
   padding: 22px 20px;
   width: calc(100% - 40px);
 }
-/* line 507, ../sass/screen.scss */
+/* line 508, ../sass/screen.scss */
 input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled {
   opacity: 0.5;
 }
-/* line 511, ../sass/screen.scss */
+/* line 512, ../sass/screen.scss */
 input[type=text].icon, input[type=password].icon, input[type=email].icon {
   background-repeat: no-repeat;
   background-position: right center;
   padding-right: 70px;
 }
-/* line 516, ../sass/screen.scss */
+/* line 517, ../sass/screen.scss */
 input[type=text].icon.compose, input[type=password].icon.compose, input[type=email].icon.compose {
   background-image: url("../../img/icon/64/compose.png");
 }
-/* line 519, ../sass/screen.scss */
+/* line 520, ../sass/screen.scss */
 input[type=text].icon.login, input[type=password].icon.login, input[type=email].icon.login {
   background-image: url("../../img/icon/64/email.png");
 }
-/* line 522, ../sass/screen.scss */
+/* line 523, ../sass/screen.scss */
 input[type=text].icon.profile, input[type=password].icon.profile, input[type=email].icon.profile {
   background-image: url("../../img/icon/64/profile.png");
 }
-/* line 525, ../sass/screen.scss */
+/* line 526, ../sass/screen.scss */
 input[type=text].icon.globe, input[type=password].icon.globe, input[type=email].icon.globe {
   background-image: url("../../img/icon/64/globe.png");
 }
-/* line 528, ../sass/screen.scss */
+/* line 529, ../sass/screen.scss */
 input[type=text].icon.mail, input[type=password].icon.mail, input[type=email].icon.mail {
   background-image: url("../../img/icon/64/mail.png");
 }
-/* line 532, ../sass/screen.scss */
+/* line 533, ../sass/screen.scss */
 input[type=text].icon.locked, input[type=password].icon.locked, input[type=email].icon.locked {
   background-image: url("../../img/icon/64/locked.png");
 }
-/* line 536, ../sass/screen.scss */
+/* line 537, ../sass/screen.scss */
 input[type=text].icon.unlocked, input[type=password].icon.unlocked, input[type=email].icon.unlocked {
   background-image: url("../../img/icon/64/unlocked.png");
 }
-/* line 539, ../sass/screen.scss */
+/* line 540, ../sass/screen.scss */
 input[type=text].icon.vk, input[type=password].icon.vk, input[type=email].icon.vk {
   background-image: url("../../img/icon/64/vk.png");
 }
-/* line 542, ../sass/screen.scss */
+/* line 543, ../sass/screen.scss */
 input[type=text].icon.twitter, input[type=password].icon.twitter, input[type=email].icon.twitter {
   background-image: url("../../img/icon/64/twitter.png");
 }
-/* line 545, ../sass/screen.scss */
+/* line 546, ../sass/screen.scss */
 input[type=text].icon.instagram, input[type=password].icon.instagram, input[type=email].icon.instagram {
   background-image: url("../../img/icon/64/instagram.png");
 }
 
-/* line 554, ../sass/screen.scss */
+/* line 555, ../sass/screen.scss */
 .edit-row hr {
   width: 118.5%;
   margin: 10px 0;
   opacity: 0.3;
 }
 
-/* line 561, ../sass/screen.scss */
+/* line 562, ../sass/screen.scss */
 .switchery {
   background-color: #fff;
   border: 1px solid #dfdfdf;
@@ -668,7 +669,7 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   vertical-align: middle;
   width: 50px;
 }
-/* line 572, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 .switchery > small {
   background: #fff;
   border-radius: 100%;
@@ -679,60 +680,60 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   width: 30px;
 }
 
-/* line 583, ../sass/screen.scss */
+/* line 584, ../sass/screen.scss */
 .additional-settings {
   margin: 15px auto;
   font-family: 'RaleWayRegular', sans-serif;
   font-size: 22px;
   color: white;
 }
-/* line 588, ../sass/screen.scss */
+/* line 589, ../sass/screen.scss */
 .additional-settings td {
   padding: 10px 0;
   text-align: left !important;
 }
-/* line 591, ../sass/screen.scss */
+/* line 592, ../sass/screen.scss */
 .additional-settings td span {
   margin-left: 5px;
 }
-/* line 595, ../sass/screen.scss */
+/* line 596, ../sass/screen.scss */
 .additional-settings td img {
   height: 32px;
   width: 32px;
 }
-/* line 600, ../sass/screen.scss */
+/* line 601, ../sass/screen.scss */
 .additional-settings tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 608, ../sass/screen.scss */
+/* line 609, ../sass/screen.scss */
 .btn.br5 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 612, ../sass/screen.scss */
+/* line 613, ../sass/screen.scss */
 .btn.save {
   width: 87%;
 }
-/* line 616, ../sass/screen.scss */
+/* line 617, ../sass/screen.scss */
 .btn.dialog {
   width: 165px;
 }
 
-/* line 625, ../sass/screen.scss */
+/* line 626, ../sass/screen.scss */
 .bootbox-body, .modal-title {
   font-family: 'RaleWayRegular', sans-serif;
   font-size: 20px;
 }
-/* line 628, ../sass/screen.scss */
+/* line 629, ../sass/screen.scss */
 .bootbox-body img, .modal-title img {
   height: 42px;
   width: 42px;
   margin-right: 10px;
 }
 
-/* line 635, ../sass/screen.scss */
+/* line 636, ../sass/screen.scss */
 .bootbox-input-text {
   font-family: "Open Sans", Calibri, Candara, Arial, sans-serif !important;
   font-weight: normal !important;
@@ -744,31 +745,31 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   border: 1px solid black !important;
 }
 
-/* line 646, ../sass/screen.scss */
+/* line 647, ../sass/screen.scss */
 .saved {
   width: 87%;
   margin: 20px auto;
   font-size: 20px;
 }
 
-/* line 652, ../sass/screen.scss */
+/* line 653, ../sass/screen.scss */
 .subscription-arrow {
   opacity: 0.8;
   font-size: 20px;
   top: 9px;
 }
 
-/* line 658, ../sass/screen.scss */
+/* line 659, ../sass/screen.scss */
 .arrow-back {
   position: absolute;
   top: 20px;
   cursor: pointer;
 }
-/* line 663, ../sass/screen.scss */
+/* line 664, ../sass/screen.scss */
 .arrow-back:hover {
   color: #41ba18;
 }
-/* line 667, ../sass/screen.scss */
+/* line 668, ../sass/screen.scss */
 .arrow-back.big {
   color: white;
   font-size: 35px;
@@ -776,38 +777,38 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   top: 0;
   line-height: 61px;
 }
-/* line 673, ../sass/screen.scss */
+/* line 674, ../sass/screen.scss */
 .arrow-back.big:hover {
   opacity: 1;
 }
 
-/* line 679, ../sass/screen.scss */
+/* line 680, ../sass/screen.scss */
 .cursor-default {
   cursor: default;
 }
 
-/* line 684, ../sass/screen.scss */
+/* line 685, ../sass/screen.scss */
 button .glyphicon {
   margin-right: 6px;
   font-size: 15px;
 }
 
-/* line 690, ../sass/screen.scss */
+/* line 691, ../sass/screen.scss */
 h3 {
   font-family: 'RaleWayRegular', sans-serif;
 }
-/* line 693, ../sass/screen.scss */
+/* line 694, ../sass/screen.scss */
 h3.mg-top {
   font-family: 'RaleWayLight', sans-serif;
   margin-top: 20px;
 }
-/* line 698, ../sass/screen.scss */
+/* line 699, ../sass/screen.scss */
 h3 .glyphicon {
   margin-right: 8px;
   display: inline;
 }
 
-/* line 708, ../sass/screen.scss */
+/* line 709, ../sass/screen.scss */
 .navbar .nav > li .count {
   position: absolute;
   background: #e60033;
@@ -830,35 +831,35 @@ h3 .glyphicon {
   line-height: 20px;
   z-index: 5;
 }
-/* line 728, ../sass/screen.scss */
+/* line 729, ../sass/screen.scss */
 .navbar .nav > li .count.d1 {
   font-size: 12px;
 }
-/* line 733, ../sass/screen.scss */
+/* line 734, ../sass/screen.scss */
 .navbar .nav > li .glyphicon {
   font-size: 20px;
   top: 0;
 }
-/* line 737, ../sass/screen.scss */
+/* line 738, ../sass/screen.scss */
 .navbar .nav > li .glyphicon.inline {
   font-size: 14px;
   margin-right: 5px;
   top: 1px;
 }
 
-/* line 748, ../sass/screen.scss */
+/* line 749, ../sass/screen.scss */
 label {
   color: white;
   font-size: 22px;
   float: left;
 }
 
-/* line 754, ../sass/screen.scss */
+/* line 755, ../sass/screen.scss */
 .form-group {
   margin-bottom: 10px;
 }
 
-/* line 760, ../sass/screen.scss */
+/* line 761, ../sass/screen.scss */
 fieldset.hidden-thoughts {
   border-top: 1px dashed rgba(171, 171, 171, 0.7);
   border-bottom: none;
@@ -869,7 +870,7 @@ fieldset.hidden-thoughts {
   margin: 0;
   height: 50px;
 }
-/* line 770, ../sass/screen.scss */
+/* line 771, ../sass/screen.scss */
 fieldset.hidden-thoughts legend {
   padding: 0 10px;
   width: auto;
@@ -878,18 +879,18 @@ fieldset.hidden-thoughts legend {
   font-family: 'RaleWayMedium', sans-serif;
   opacity: 0.6;
 }
-/* line 777, ../sass/screen.scss */
+/* line 778, ../sass/screen.scss */
 fieldset.hidden-thoughts legend:hover {
   opacity: 1;
 }
 
-/* line 785, ../sass/screen.scss */
+/* line 786, ../sass/screen.scss */
 .glyphicon.big-icon {
   margin: 0;
   font-size: 23px;
 }
 
-/* line 791, ../sass/screen.scss */
+/* line 792, ../sass/screen.scss */
 .comments-box {
   -webkit-transition: all linear 0.2s;
   -webkit-transition-delay: !important;
@@ -914,7 +915,7 @@ fieldset.hidden-thoughts legend:hover {
   border-radius: 5px 0 0 5px !important;
 }
 
-/* line 817, ../sass/screen.scss */
+/* line 818, ../sass/screen.scss */
 .comments-box:focus {
   background: white;
   outline: none;
@@ -923,7 +924,7 @@ fieldset.hidden-thoughts legend:hover {
   border-color: transparent;
 }
 
-/* line 826, ../sass/screen.scss */
+/* line 827, ../sass/screen.scss */
 .comment-button {
   width: 60px;
   max-height: 56px;
@@ -937,7 +938,7 @@ fieldset.hidden-thoughts legend:hover {
   border-radius: 0 5px 5px 0 !important;
 }
 
-/* line 839, ../sass/screen.scss */
+/* line 840, ../sass/screen.scss */
 .comment-row {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
   border-top: 1px dashed rgba(255, 255, 255, 0.5);
@@ -945,7 +946,7 @@ fieldset.hidden-thoughts legend:hover {
   margin: 20px 0 10px;
 }
 
-/* line 846, ../sass/screen.scss */
+/* line 847, ../sass/screen.scss */
 .bubble {
   position: relative;
   width: auto;
@@ -964,10 +965,11 @@ fieldset.hidden-thoughts legend:hover {
   display: inline-block;
   margin-top: 15px;
   margin-left: 7.5px;
+  word-wrap: break-word;
   font-family: "RaleWayMedium";
   font-size: 16px;
 }
-/* line 865, ../sass/screen.scss */
+/* line 867, ../sass/screen.scss */
 .bubble:after {
   -webkit-transition: all linear;
   -webkit-transition-delay: 0.2s;
@@ -985,34 +987,42 @@ fieldset.hidden-thoughts legend:hover {
   width: 0;
   z-index: 1;
 }
-/* line 879, ../sass/screen.scss */
+/* line 881, ../sass/screen.scss */
 .bubble:hover {
   background: white;
 }
-/* line 881, ../sass/screen.scss */
+/* line 883, ../sass/screen.scss */
 .bubble:hover:after {
   border-color: transparent white;
 }
-/* line 886, ../sass/screen.scss */
+/* line 888, ../sass/screen.scss */
+.bubble.active {
+  background: white;
+}
+/* line 890, ../sass/screen.scss */
+.bubble.active:after {
+  border-color: transparent white;
+}
+/* line 895, ../sass/screen.scss */
 .bubble.right {
   margin-left: 0;
   margin-right: 7.5px;
   float: right;
 }
-/* line 891, ../sass/screen.scss */
+/* line 900, ../sass/screen.scss */
 .bubble.right:after {
   border-width: 9px 0 9px 15px;
   left: auto;
   right: -15px;
 }
 
-/* line 899, ../sass/screen.scss */
+/* line 908, ../sass/screen.scss */
 .comment-ava {
   float: left;
   margin-top: 17px;
   margin-right: 15px;
 }
-/* line 904, ../sass/screen.scss */
+/* line 913, ../sass/screen.scss */
 .comment-ava.right {
   float: right;
   margin-right: 0;

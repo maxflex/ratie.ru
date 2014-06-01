@@ -5,9 +5,6 @@
 		exit();	
 	}
 	
-	// Для редиректа после отправки HEADERS
-	ob_start();
-	
 	// Подключаем файл конфигураций
 	include_once("config.php");
 	
@@ -18,7 +15,7 @@
 	$_controller	 = $_GET["controller"];	// Получаем название контроллера
 	$_action		 = $_GET["action"];		// Получаем название экшена
 	
-	// Проверка на аякс-запрос
+	/* // Проверка на аякс-запрос
 	if (strtolower(mb_strimwidth($_action, 0, 4)) == "ajax") {
 		
 		$_ajax_request = true;
@@ -29,18 +26,7 @@
 		}
 	} else {
 		$_ajax_request = false;
-	}
-	
-	
-	// Если не аякс запрос – грузим лэйаут
-	if (!$_ajax_request) {
-		// Лэйаут
-		include_once("layouts/header.php");
-		include_once("layouts/menu.php");	
-	}
-	
-	// preType($_GET);
-	// DELETE echo "<h2>".$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."</h2>";
+	} */
 	
 	/* Основные действия */	
 	$_controllerName = ucfirst(strtolower($_controller))."Controller";	// Преобразуем название контроллера в NameController
@@ -71,14 +57,4 @@
 	} */
 	
 	/*********************/
-	
-	
-	
-	// Лэйаут
-	if (!$_ajax_request) {
-		include_once("layouts/footer.php");	
-	}
-	
-	// Для редиректа после HEADERS
-	ob_flush();
 ?>

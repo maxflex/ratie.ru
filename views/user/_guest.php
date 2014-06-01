@@ -28,3 +28,11 @@
 			</div>
 		</div>
 </div>
+
+<?php
+	// Инициализация сообщений, которые показываются только один раз после регистрации 
+	// (о публичности или анонимности мнения)
+	if (!empty($_intro_for_anonymous_or_public)) {
+		echo "<div ng-init=\"intro_message = $_intro_for_anonymous_or_public; user_name = '$user_name'\"></div>";
+	}
+?>

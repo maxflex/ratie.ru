@@ -111,7 +111,44 @@ angular.module('UserPage', ['ngAnimate']);
 		
 		// Добавить мысль о человеке
 		$scope.think = function(){			
-			
+			// Если нужно показывать
+			if ($scope.intro_message) {
+				
+				message = "<span style='font-family: RaleWayMedium'><center>";
+				
+				switch ($scope.intro_message) {
+					case 1: {
+						message += _ALERT_MEGAPHONE + "Мнение будет оставлено публично";
+						
+						message += "</center></span><hr>" + $scope.user_name + " будет знать, что проголосовали именно Вы."
+						+ "<br><br> Но можно <a href='profile/edit' target='_blank'>включить анонимность</a>"
+						+ " в настройках и оставаться незамеченным!";
+						
+						break;
+					}
+					case 2: {
+						message += _ALERT_PROFILE + " Мнение будет оставлено анонимно";
+						
+						message += "</center></span><hr>" + $scope.user_name + " <span style='font-family: RaleWayMedium'>не</span> увидит автора этого мнения."
+						+ "<br><br> Можно <a href='profile/edit' target='_blank'>выключить анонимность</a>"
+						+ " и пользователи будут видеть, что голосуете именно Вы!";
+						
+						break;
+					}
+				}
+				
+				bootbox.confirm(message, function(ans) {
+					if (ans === true) {
+						$scope.submitThought();
+					}
+				});
+			} else {
+				$scope.submitThought();
+			}
+		}
+		
+		// Оставить мысль
+		$scope.submitThought = function() {
 			// Перед добавлением в список проверяем было ли добавлено такое прилагательное ранее
 			result = $.grep($scope.adjectives, function(e){
 				return (angular.lowercase(e._ang_adjective) == $scope.adjective);
@@ -119,6 +156,7 @@ angular.module('UserPage', ['ngAnimate']);
 			
 			// Если прилагательное НЕ было добавлено ранее
 			if (result.length == 0) {
+				
 				// Анимация загрузки
 				ajaxStart();
 				// Пост-запрос
@@ -149,6 +187,7 @@ angular.module('UserPage', ['ngAnimate']);
 								"_ang_pos_percent"	: 100,
 								"_ang_new_order"	: $scope.order++,
 								"_ang_order"		: 1,
+								"_ang_comment_count": 0,
 								"id"				: response
 							});
 						
@@ -177,7 +216,7 @@ angular.module('UserPage', ['ngAnimate']);
 					
 					$scope.clearInput();		
 				}
-			}
+		}
 		
 		// Функция голосования
 		$scope.vote = function(adj, type) {

@@ -65,7 +65,10 @@
 				));
 			} else {
 			/*******  ЕСЛИ СТРАНИЦУ ПОЛЬЗОВАТЕЛЯ ПРОСМАТРИВАЕТ ГОСТЬ *********/
-				partial("guest");
+				partial("guest", array(
+					"_intro_for_anonymous_or_public" => $_intro_for_anonymous_or_public,
+					"user_name" => $User->first_name,
+				));
 			}
 		?>
 		

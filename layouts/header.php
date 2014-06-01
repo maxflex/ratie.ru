@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RateMe – оценка характера</title>
+    <title><?= $this->_html_title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <base href="http://localhost:8888/ratie.ru/">
@@ -11,6 +11,7 @@
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
 	<link href="compass/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<?= $this->_css_additional ?>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootbox.js"></script>
@@ -24,5 +25,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <?= $this->_js_additional ?>
   </head>
   <body>

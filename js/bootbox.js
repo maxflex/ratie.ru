@@ -765,7 +765,7 @@ window.bootbox = window.bootbox || (function init($, undefined) {
     ru : {
       OK      : "OK",
       CANCEL  : "Отмена",
-      CONFIRM : "Да"
+      CONFIRM : "OK"
     },
     zh_CN : {
       OK      : "OK",

@@ -17,15 +17,12 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 
 			// Если хэш получен
 			if (hash.length !== 0) {
-				console.log(hash);
-				
+							
 				// Искомое прилагательное – это ID который был передан в хэш
 				sought_comment = $.grep($scope.comments, function(e) {
 					return e.id == hash;
 				});
-				
-				console.log(sought_comment);
-				
+								
 				// Если прилагательное найдено
 				if (sought_comment.length !== 0) {
 					// Поднимаем прилагательное в списке;
@@ -64,33 +61,80 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 			if (!$scope.comment) {
 				return;
 			}
+			
+			// Если нужно показывать сообщение (один раз только показывается для зарегистрированных)
+			if ($scope.intro_message) {
+				
+				message = "<span style='font-family: RaleWayMedium'><center>";
+				
+				switch ($scope.intro_message) {
+					case 1: {
+						message += _ALERT_CHAT + "Комментарий будет оставлен публично";
+						
+						message += "</center></span><hr>" + $scope.user_name + " будет видеть, что это Ваш комментарий."
+						+ "<br><br><a href='profile/edit' target='_blank'>Включив анонимность</a> в настройках, никто не узнает"
+						+ " кто это написал!";
+						
+						break;
+					}
+					case 2: {
+						message += _ALERT_PROFILE + " Комментарий будет оставлен анонимно";
+						
+						message += "</center></span><hr>" + $scope.user_name + " <span style='font-family: RaleWayMedium'>не</span> увидит автора этого комментария."
+						+ "<br><br> Можно <a href='profile/edit' target='_blank'>выключить анонимность</a>"
+						+ " и пользователи будут видеть, что комментируете именно Вы!";
+						
+						break;
+					}
+				}
+				
+				bootbox.confirm(message, function(ans) {
+					if (ans === true) {
+						$scope.submitComment();
+					}
+				});
+			} else {
+				$scope.submitComment();
+			}
+		}
+		
+		// Отправить комментарий
+		$scope.submitComment = function()
+		{
 			ajaxStart();
 			$.post("?controller=user&action=AjaxLeaveComment", {"comment" : $scope.comment, "id_adjective" : $scope.id_adjective})
 				.success(function(resp) {
 					ajaxEnd();
 					
-					// Если добавляем в первый раз
-					if (!$scope.comments) {
-						// Инициализируем объект
-						$scope.comments = [];
+					// Если ответ от сервера – число (ID нового комметария), то добавляем в список 
+					if (parseInt(resp)) {
+						// Если добавляем в первый раз
+						if (!$scope.comments) {
+							// Инициализируем объект
+							$scope.comments = [];
+						}
+						
+						$scope.comments.push({
+							"id"			: resp,
+							"comment"		: $scope.comment,
+							"id_user"		: $scope.commentator.id,
+							"_ang_login"	: $scope.commentator.login,
+							"_ang_ava"		: $scope.commentator.avatar,
+							"_ang_stretch"	: $scope.commentator.stretch,
+							"order"			: $scope.order++,
+						});
+						
+						$scope.comment = "";
+						$scope.$apply();
+					} else {
+						// Иначе это ошибка
+						bootbox.alert(_ALERT_CAUTION + resp);
 					}
 					
-					$scope.comments.push({
-						"id"			: resp,
-						"comment"		: $scope.comment,
-						"id_user"		: $scope.commentator.id,
-						"_ang_login"	: $scope.commentator.login,
-						"_ang_ava"		: $scope.commentator.avatar,
-						"_ang_stretch"	: $scope.commentator.stretch,
-						"order"			: $scope.order++,
-					});
-					
-					$scope.comment = "";
-					$scope.$apply();
 				})
 				.error(function(){
 					ajaxEnd();
-					bootbox.alert(_ALERT_CAUTION + "<b>Произошла ошибка! Не удалось оставить комментарий.");					
+					bootbox.alert(_ALERT_CAUTION + "Произошла ошибка! Не удалось оставить комментарий.");					
 				});
 		}
 		

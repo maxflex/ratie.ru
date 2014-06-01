@@ -24,24 +24,38 @@
 			if (hash == "login") {
 				$scope.login();
 			}
-			// Проверяем, если залогинен
-			/*
-			VK.Auth.getLoginStatus(function(response) {
-				// Проверяем, залогинен ли пользователь
-				if (response.session) {
-					$scope.getUserData();
-				} else {
-					$scope.logged_in = false;
-					$scope.$apply();
-				}
-				
-			});*/
+			
+			
+			
+			if (hash == "logout") {
+				// Убиваем куку о том, что залогинены
+				// $.removeCookie("logged");
+			}
+			
+			if (hash == "dev_vk_logout") {
+				$scope.logout();
+			}
+			// Если залогинены -- автовход
+			/* if ($.cookie("logged")) {
+				VK.Auth.getLoginStatus(function(response) {
+					// Проверяем, залогинен ли пользователь
+					if (response.session) {
+						$scope.getUserData();
+					} else {
+						$scope.logged_in = false;
+						$scope.$apply();
+						// Убиваем куку о том, что залогинены
+						// $.removeCookie("logged");
+					}
+					
+				});
+			} */
+			
 		});	
 		
 		
 		// Логин
 		$scope.login = function() {
-			$("#lightbox").css("display", "block");
 			// Посылаем запрос на логин
 			VK.Auth.login(function(response) {
 				// Если залогинен
@@ -52,7 +66,7 @@
 					$scope.$apply();
 					
 					$("#lightbox").css("display", "none");
-					bootbox.alert(_ALERT_CAUTION + " <b>Не удалось войти.</b> <br><br> Необходимо разрешить доступ приложению Ratie для входа на сайт. Приложение запрашивает доступ ТОЛЬКО к основной информации, чтобы получить данные для быстрой автоматической регистрации! Мы не запрашиваем никаких дополнительных прав.");
+					bootbox.alert(_ALERT_CAUTION + " <span style='font-family: RaleWayMedium'>Не удалось войти</span><!--<br><br>Необходимо разрешить доступ приложению Ratie входа на сайт. Приложение запрашивает доступ ТОЛЬКО к основной информации, чтобы получить данные для быстрой автоматической регистрации! Мы не запрашиваем никаких других прав. -->");
 				}
 			});			
 		}
@@ -68,6 +82,7 @@
 		
 		// Получаем данные пользователя
 		$scope.getUserData = function() {
+			$("#lightbox").css("display", "block");
 			// Проверяем, залогинен ли
 			VK.Auth.getLoginStatus(function(response) {
 				// Если залогинен
@@ -86,6 +101,9 @@
 								// Ответ функции ajaxLoginOrRegister в JSON
 								response = $.parseJSON(response);
 								
+								// Устанавливаем куку о том, что залогинены
+								// $.cookie("logged", response.login);
+								
 								// Редирект на страницу пользователя
 								goTo(response.login);
 								
@@ -95,8 +113,11 @@
 						$scope.$apply();
 					}); 
 				} else {
+					// Убиваем куку о том, что залогинены
+					// $.removeCookie("logged");
+					
 					$("#lightbox").css("display", "none");
-					bootbox.alert(_ALERT_CAUTION + "<b>Не удалось войти.<b><hr>Необходимо разрешить доступ приложению Ratie входа на сайт. Приложение запрашивает доступ ТОЛЬКО к основной информации, чтобы получить данные для быстрой автоматической регистрации! Мы не запрашиваем никаких других прав.");
+					bootbox.alert(_ALERT_CAUTION + " <span style='font-family: RaleWayMedium'>Не удалось войти</span><!-- <br><br>Необходимо разрешить доступ приложению Ratie входа на сайт. Приложение запрашивает доступ ТОЛЬКО к основной информации, чтобы получить данные для быстрой автоматической регистрации! Мы не запрашиваем никаких других прав. -->");
 				}
 			});
 		}

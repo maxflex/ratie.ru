@@ -319,3 +319,7 @@ h3.chat {
 .trans-h:hover {
 	opacity: 1;
 }
+
+.notrans {
+	opacity: 1 !important;
+}
