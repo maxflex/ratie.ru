@@ -245,6 +245,11 @@ h3 {
 		border-top: 1px solid rgba(255,255,255,0.1);
 		border-bottom: 1px solid rgba(255,255,255,0.1);
 		padding: 3px 0;
+		
+		& span {
+			opacity: 0.8;
+		}
+		
 		&:hover {
 			border-top: 1px solid rgba(255,255,255,0.3);
 			border-bottom: 1px solid rgba(255,255,255,0.3);
@@ -255,6 +260,10 @@ h3 {
 			
 			a.login-link {
 				opacity: 1;
+			}
+			
+			span {
+				opacity: 1; 
 			}
 		}
 	}
@@ -293,6 +302,11 @@ h3 {
 	vertical-align: top;
 	
 	&:hover {
+		opacity: 1;
+	}
+	
+	&.active {
+		cursor: default;
 		opacity: 1;
 	}
 	
@@ -922,5 +936,14 @@ fieldset {
 		float: right;
 		margin-right: 0;
 		margin-left: 15px;
+	}
+}
+
+.sociallink {
+	&.inactive {
+		cursor: default;
+		.SocialIconFill {
+			opacity: 0.15 !important;
+		}
 	}
 }

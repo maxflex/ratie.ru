@@ -18,13 +18,13 @@
 						
 			<!-- ПУНКТ МЕНЮ «ПОЛЬЗОВАТЕЛЬ» -->
 			<li <?=(menuActive("user", null, array("user" => $User->login)))?> >
-        		<a href="<?= $User->login ?>"><span class="glyphicon glyphicon-user"></span></a>
+        		<a href="<?= $User->login ?>"><span class="glyphicon glyphicon-align-left"></span></a>
         	 </li>
         	<!-- КОНЕЦ МЕНЮ «ПОЛЬЗОВАТЕЛЬ» -->
 			
 			<!-- ПУНКТ МЕНЮ «НОВОСТИ/ПРОФИЛЬ» -->
 			<?php
-				echo "<li ".menuActive("profile", "").">";
+				echo "<li ".menuActive("profile", null, array(), array("action" => "edit")).">";
 				// Если есть новости, выводим
 				$NewsCount = $User->newsCount();
 				
@@ -36,7 +36,8 @@
 			// Отображаем сам пункт меню
 			?>
         	<a href="profile">
-        		<span class="flaticon-church2"></span>
+        		<!-- <span class="flaticon-church2"></span> -->
+        		<span class="glyphicon glyphicon-user"></span>
         	</a>
 			</li>
 			<!-- КОНЕЦ МЕНЮ «НОВОСТИ/ПОЛЬЗОВАТЕЛЬ» -->

@@ -198,8 +198,17 @@
 			}
 		}
 		
+		/*
+		 * Рейтинг прилагательного для сортировки
+		 */
 		public function adjRate()
 		{
+			$pos = (int) $this->countVotes(self::TYPE_POSITIVE);
+			$neg = (int) $this->countVotes(self::TYPE_NEGATIVE);
+			
+			return $pos - $neg;
+			
+			/* Метод Миши Лукьянова. Он хороший мальчик 
 			$pos = (float) $this->countVotes(self::TYPE_POSITIVE);
 			$neg = (float) $this->countVotes(self::TYPE_NEGATIVE);
 			$sum = $pos + $neg;
@@ -210,7 +219,7 @@
 			
 			$rate = max($pos, $neg);
 			$rate *= $sum;
-			return $rate;
+			return $rate; */
 		}
 		
 		/*

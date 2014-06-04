@@ -13,10 +13,10 @@
 			<?php globalPartial("ava", array("User" => $User)) ?>
 			</div>
 			<div class="row sociallinks">
-										<div class="circle" ng-mouseenter="friends = true" ng-mouseleave="friends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
-					<div class="circle active" ng-mouseenter="followers = true" ng-mouseleave="followers = false" ><span><?= $User->subscribers ?></span></div>
+					<div class="circle" ng-mouseenter="friends = true" ng-mouseleave="friends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
+					<div class="circle" ng-mouseenter="followers = true" ng-mouseleave="followers = false" onclick="goTo('profile/subscribers')"><span><?= $User->subscribers ?></span></div>
 					
-					<div class="circle" ng-mouseenter="following = true" ng-mouseleave="following = false" onclick="goTo('profile/subscriptions')"><span><?= $User->subscriptions ?></span></div>
+					<div class="circle active" ng-mouseenter="following = true" ng-mouseleave="following = false" ><span><?= $User->subscriptions ?></span></div>
 <!-- 					<div class="circle" ng-mouseenter="following = true" ng-mouseleave="following = false"><span>23</span></div>	 -->
 			
 					<h3 ng-show="followers" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-retweet"></span>Подписчики</h3>
@@ -32,7 +32,7 @@
 			<!-- ЗАГОЛОВКИ -->
 			<div class="row">
 				<div class="col-md-6">
-					<h2 class="trans text-white news selected">Мои подписчики <span class="badge news badge-success"><?= $User->subscribers ?></span></h2>		
+					<h2 class="trans text-white news selected">Мои подписки <span class="badge news badge-success"><?= $User->subscribers ?></span></h2>		
 				</div>
 			</div>
 			<!-- КОНЕЦ ЗАГОЛОВКИ -->
@@ -43,29 +43,29 @@
 				<?php
 				
 					// Получаем подписчиков пользователя
-					$Subscribers = $User->Subscribers();
+					$Subscriptions = $User->Subscriptions();
 					
 					// Если подписок нет, выводим сообщение об этом
-					if (!$Subscribers) {
+					if (!$Subscriptions) {
 						echo "<h3 class='trans center-content text-white badge-success animate-show mg-top'>"
-							 ."<span class='glyphicon glyphicon-user'></span>На вас никто не подписан</h3>";
+							 ."<span class='glyphicon glyphicon-user'></span>Вы ни на кого не подписаны</h3>";
 					} else {
 
-						foreach ($Subscribers as $Subscriber) {
+						foreach ($Subscriptions as $Subscription) {
 							// Получаем пользователя, на которого подписаны
-							$SubscriberUser = User::findById($Subscriber->id_user);
+							$SubscriptionUser = User::findById($Subscription->id_user);
 							
 							echo "<div class='subscription-row'>";
 							
 							// Выводим аву
 							createUrl(array(
-								"controller"=> $SubscriberUser->login,
-								"text"		=> '<div style="background-image: url('.$SubscriberUser->avatar.')" class="news-ava '.($SubscriberUser->stretch ? "stretch" : "").'"></div>',
+								"controller"=> $SubscriptionUser->login,
+								"text"		=> '<div style="background-image: url('.$SubscriptionUser->avatar.')" class="news-ava '.($SubscriptionUser->stretch ? "stretch" : "").'"></div>',
 							));
 							
 							createUrl(array(
-								"controller"	=> $SubscriberUser->login,
-								"text"			=> $SubscriberUser->getName(),
+								"controller"	=> $SubscriptionUser->login,
+								"text"			=> $SubscriptionUser->getName(),
 								"htmlOptions"	=> array(
 										"class"	=> "login-link",
 								),

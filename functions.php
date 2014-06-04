@@ -202,9 +202,10 @@
 	 * Проверяет активен ли пункт меню
 	 * $controller	– контроллер, при котором пункт меню активен
 	 * $action		– экшн, при котором пункт меню становится активен
-	 * $params (array) - дополнительные параметры для сравнения
+	 * $paramsNotEqual (array) - дополнительные параметры для сравнения, которые должны быть не равны ВАЖНО: параметр берется из $_GET
+	 * $paramsEqual (array) – дополнитльные параметры для сравнения, которые должны быть равны
 	 */
-	function menuActive($controller, $action = null, $params = array())
+	function menuActive($controller, $action = null, $paramsNotEqual = array(), $paramsEqual = array())
 	{
 		// Проверяем контроллер
 		if ($_GET["controller"] != $controller) {
@@ -216,9 +217,16 @@
 			return;
 		}
 		
-		// Проверяем дополнительные параметры
-		foreach ($params as $param_name => $param_val) {
+		// Проверяем дополнительные параметры НЕРАВЕНСТВА
+		foreach ($paramsNotEqual as $param_name => $param_val) {
 			if ($param_val != $_GET[$param_name]) {
+				return;
+			}
+		}
+		
+		// Проверяем дополнительные параметры РАВЕНСТВА
+		foreach ($paramsEqual as $param_name => $param_val) {
+			if ($param_val == $_GET[$param_name]) {
 				return;
 			}
 		}
