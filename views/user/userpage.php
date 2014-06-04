@@ -1,12 +1,7 @@
-<div class="container" ng-app="UserPage" id="user-page" ng-controller="UserCtrl"
-	<?php
-		// Если просматривается чужая страница – проверять подписку на эту страницу
-		// и добавить id_viewing - ID просматриваемой страницы
-		if (!$own_page) {
-			echo "ng-init='subscribed = $subscribed; id_viewing = $id_viewing'";
-		}
-	?>
->
+<div class="container" ng-app="UserPage" id="user-page" ng-controller="UserCtrl" ng-init="
+	id_viewing = <?= $id_viewing ?>;
+	<?= (!$own_page ? "subscribed = $subscribed" : "") ?>
+">
 	<h1 id="name-lastname" style="text-align: center; color: white"><?= $User->getName() ?></h1>
 	<hr>
 	

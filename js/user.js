@@ -101,7 +101,7 @@ angular.module('UserPage', ['ngAnimate']);
 		$scope.hide = function(adj) {
 			adj.hidden = !adj.hidden;
 			console.log(adj.id);
-			$.post("?controller=user&action=AjaxHide", {"id" : adj.id});
+			$.post("?controller=user&action=AjaxHide", {"id" : adj.id, "id_viewing" : $scope.id_viewing});
 		}
 		
 		// Сообщение о том, что необходимо войти
@@ -273,7 +273,7 @@ angular.module('UserPage', ['ngAnimate']);
 		
 		// Проголосовать (аякс)
 		$scope.ajaxVote = function(id, type) {
-			$.post("?controller=user&action=AjaxVote", {"id" : id, "type" : type})
+			$.post("?controller=user&action=AjaxVote", {"id" : id, "type" : type, "id_viewing" : $scope.id_viewing})
 				.success(function(response) {
 					// Завершение анимации
 					// ajaxEnd();
