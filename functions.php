@@ -230,11 +230,12 @@
 	/*
 	 * Удаляем куку
 	 * $cookie_name – какую куку удаляем
+	 * $domain – где удаляется кука (это нужно было для очистки куки PHPSESSID, она удаляется с домена «/», а ratie_token с пустого только)
 	 */
-	function removeCookie($cookie_name) 
+	function removeCookie($cookie_name, $domain = "") 
 	{
 		unset($_COOKIE[$cookie_name]);
-		setcookie($cookie_name, '', time() - 3600);
+		setcookie($cookie_name, "", time() - 3600, $domain);
 	}
 	
 	/*

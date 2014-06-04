@@ -17,7 +17,7 @@
 		// Дополнительный CSS
 		protected $_css_additional = "";
 		
-		// Проверка на аякс запрос
+		/*// Проверка на аякс запрос
 		private function _isAjaxRequest()
 		{
 			// Проверка на аякс-запрос
@@ -32,7 +32,7 @@
 			} else {
 				$_ajax_request = false;
 			}
-		}
+		} */
 		
 		/*
 		 * Отобразить view
@@ -94,7 +94,8 @@
 				$js = explode(", ", $js);
 				
 				foreach ($js as $script_name) {
-					$this->_js_additional .= "<script src='js/{$script_name}.js' type='text/javascript'></script>";
+					$this->_js_additional .= "<script src='js/{$script_name}.js?ver=".$GLOBALS["settings"]->version."' 
+												type='text/javascript'></script>";
 				}
 			}
 		}
@@ -107,7 +108,7 @@
 			$css = explode(", ", $css);
 			
 			foreach ($css as $css_name) {
-				$this->_css_additional .= "<link href='css/{$css_name}.css' rel='stylesheet'>";
+				$this->_css_additional .= "<link href='css/{$css_name}.css?ver=".$GLOBALS["settings"]->version."' rel='stylesheet'>";
 			}
 		}
 		

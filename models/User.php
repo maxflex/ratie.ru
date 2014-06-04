@@ -149,11 +149,9 @@
 				
 				// Если пользователь найден
 				if ($RememberMeUser) {
-					// Стартуем сессию (обязательно, почему-то без нее не работало)
-					session_start();
-					
-					// Логинимся
-					$RememberMeUser->toSession();
+				
+					// Логинимся (не обновляем токен, создаем сессию)
+					$RememberMeUser->toSession(false, true);
 					
 					if ($redirect) {
 						header("Location: ".$RememberMeUser->login);
@@ -384,9 +382,16 @@
 		/*
 		 * Вход/запись пользователя в сессию
 		 * $update_token – обновлять ли токен в БД (делаеться при авторизации)
+		 * $start_session – стартовать ли сессию?
 		 */
-		public function toSession($update_token = false)
+		public function toSession($update_token = false, $start_session = false)
 		{
+			// Если стартовать сессию
+			if ($start_session) {
+				session_set_cookie_params(3600 * 24,"/"); // PHP сессия на сутки
+				session_start();
+			}
+			
 			// Если обновлять токен
 			if ($update_token) {
 				self::updateToken();
@@ -538,7 +543,7 @@
 		 {
 			 return (Subscription::find(array(
 			 	"condition"	=> "id_user={$id_user}",
-			 )) ? true : false);
+			 )) ? 1 : 0);
 		 }
 		 
 		 /*

@@ -1,6 +1,6 @@
 <div class="container" ng-app="UserPage" id="user-page" ng-controller="UserCtrl" ng-init="
 	id_viewing = <?= $id_viewing ?>;
-	<?= (!$own_page ? "subscribed = $subscribed" : "") ?>
+	<?= (!$own_page ?  ( isset($subscribed) ? "subscribed = $subscribed" : "" ) : "") ?>
 ">
 	<h1 id="name-lastname" style="text-align: center; color: white"><?= $User->getName() ?></h1>
 	<hr>

@@ -52,7 +52,7 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 		
 		// Сообщение о том, что необходимо войти
 		$scope.notLoggedIn = function() {
-			bootbox.alert(_ALERT_CAUTION + "<a href='login'>Войдите</a>, чтобы подписаться на пользователя");
+			bootbox.alert(_ALERT_CAUTION + "<a href='http://ratie.ru/#login'>Войдите</a>, чтобы подписаться на пользователя");
 		}
 		
 		// Оставить комментарий
