@@ -102,7 +102,11 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 		$scope.submitComment = function()
 		{
 			ajaxStart();
-			$.post("?controller=user&action=AjaxLeaveComment", {"comment" : $scope.comment, "id_adjective" : $scope.id_adjective})
+			$.post("?controller=user&action=AjaxLeaveComment", {
+				"comment" 		: $scope.comment, 
+				"id_adjective" 	: $scope.id_adjective, 
+				"id_viewing" 	: $scope.id_viewing
+			})
 				.success(function(resp) {
 					ajaxEnd();
 					

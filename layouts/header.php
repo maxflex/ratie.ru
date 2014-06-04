@@ -4,12 +4,15 @@
     <title><?= $this->_html_title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="анонимная оценка характера мнения ratie рэйти анонимный чат сообщения сп история">
+	<meta name="description" content="Анонимные мнения о друзьях, комментарии и оценки">
     <base href="http://localhost:8888/ratie.ru/">
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
+	<link rel="image_src" href="img/logo/vk_links.png">
 	<link href="compass/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<?= $this->_css_additional ?>
 	<script type="text/javascript" src="js/jquery.js"></script>

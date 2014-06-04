@@ -58,7 +58,7 @@
 				// То пользователя по умолчанию (самого первого)
 				$User = self::findById($default_id);
 			}
-			
+
 			return $User;
 		}
 
@@ -124,8 +124,9 @@
 		
 		/*
 		 * Автовход по Remember-me
+		 * $redirect – нужно ли редиректить на главную страницу пользователя в случае автовхода?
 		 */
-		public static function rememberMeLogin()
+		public static function rememberMeLogin($redirect = true)
 		{
 			// Кука токена хранится в виде: 
 			// 1) Первые 16 символов MD5-хэш
@@ -154,7 +155,9 @@
 					// Логинимся
 					$RememberMeUser->toSession();
 					
-					header("Location: ".$RememberMeUser->login);
+					if ($redirect) {
+						header("Location: ".$RememberMeUser->login);
+					}
 				}
 			}
 		}
@@ -583,7 +586,7 @@
 		 	
 			$this->subscribers		= isset($this->subscribers) ? $this->subscribers : 0;
 			$this->subscriptions	= isset($this->subscriptions) ? $this->subscriptions : 0;
-			$this->anonymous		= 1;
+			$this->anonymous		= 0;
 		 }
 		 
 		 

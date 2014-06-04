@@ -1,7 +1,7 @@
 <div class="container" ng-app="ProfilePage" id="profile-page" ng-controller="ProfileCtrl">
 	<h1 id="name-lastname">
 		<span class="arrow-back big glyphicon glyphicon-chevron-left pull-left path-icon clickable left" onclick="goBack()"></span>
-	<?=$User->first_name." ".$User->last_name?></h1>
+	<?= $User->getName() ?></h1>
 	<hr>
 	
 	<div class="row effect2">

@@ -106,8 +106,6 @@
 								
 								// Редирект на страницу пользователя
 								goTo(response.login);
-								
-								// console.log(response);
 							});
 						console.log($scope.user);
 						$scope.$apply();

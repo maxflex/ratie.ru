@@ -111,6 +111,9 @@
 			if (!$OldNews && !$News) {
 				echo "<h3 class='trans center-content text-white badge-success animate-show mg-top'>"
 					 ."<span class='glyphicon glyphicon-file'></span>Новостная лента пуста</h3>";
+					 
+				echo "<div class='voteme-hint'>По этой ссылке друзья могут сказать, что думают о тебе: 
+						<span onclick='showVoteLink(this)'>http://ratie.ru/".$User->login."</span></div>";
 				return;
 			}
 			
@@ -145,7 +148,7 @@
 			// Сайт держал связь с основной БД, а не подключался к БД пользователя userXXX (иначе последующие новости не отобразятся правильно)
 			User::$initialize_on_new = false;
 			
-			echo '<div class="news-row '.($old ? "old" : "").'">';
+			echo '<div class="news-row '.($old ? "old" : "").'"><div class="left-part">';
 			
 			// Получаем тип новости
 			$NewsType	= NewsType::findById($this->id_news_type);
@@ -211,7 +214,7 @@
 			}
 			
 			// Иконка
-			echo "<a href='$link'>";
+			echo "</div><a href='$link'>";
 			echo '<span class="thumb-circle glyphicon glyphicon-'.($old ? $NewsType->class_old." old " : $NewsType->class_new).' pull-right"></span>';
 			
 			echo '</a></div>';

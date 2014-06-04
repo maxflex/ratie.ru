@@ -1,7 +1,7 @@
 <div class="container" ng-app="ProfilePage" id="profile-page" ng-controller="ProfileCtrl">
 	
 	<img src="img/icon/browser.png" class="path-icon">
-	<h1 id="name-lastname"><?=$User->first_name." ".$User->last_name?></h1>
+	<h1 id="name-lastname"><?= $User->getName() ?></h1>
 	<hr>
 	
 	<div class="row effect2">

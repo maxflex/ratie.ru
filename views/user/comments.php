@@ -2,7 +2,12 @@
 //	preType($_SERVER["QUERY_STRING"]);
 	
 ?>
-<div class="container" ng-app="UserCommentsPage" id="user-comments-page" ng-controller="UserCommentsCtrl" ng-init="subscribed = <?= (!empty($subscribed) ? $subscribed : 0) ?>; id_adjective = <?= $id_adjective ?>; <?= angInit("commentator", $LoggedUser )?>" style="margin-bottom: 35px">
+<div class="container" ng-app="UserCommentsPage" id="user-comments-page" ng-controller="UserCommentsCtrl" ng-init="
+	subscribed		= <?= (!empty($subscribed) ? $subscribed : 0) ?>; 
+	id_adjective 	= <?= $id_adjective ?>; 
+	id_viewing		= <?= $id_viewing ?>;
+	<?= angInit("commentator", $LoggedUser )?>" 
+	style="margin-bottom: 35px">
 	<h1 id="name-lastname"><?=$User->first_name." ".$User->last_name?>
 		<span class="arrow-back big glyphicon glyphicon-chevron-left pull-left path-icon clickable left" onclick="goBack()"></span>
 	</h1>

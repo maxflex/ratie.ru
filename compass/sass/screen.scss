@@ -227,6 +227,13 @@ h3 {
 	& .news-row {
 		margin-bottom: 10px;
 		
+		& .left-part {
+			width: 92%;
+			overflow: hidden;
+			display: inline-block;
+			white-space: nowrap;
+		}
+		
 		&.old {
 			opacity: 0.5;
 		}
@@ -630,6 +637,7 @@ input {
 		height: 42px;
 		width: 42px;
 		margin-right: 10px;
+//		float: left;
 	}
 }
 

@@ -17,6 +17,23 @@
 		// Дополнительный CSS
 		protected $_css_additional = "";
 		
+		// Проверка на аякс запрос
+		private function _isAjaxRequest()
+		{
+			// Проверка на аякс-запрос
+			if (strtolower(mb_strimwidth($_action, 0, 4)) == "ajax") {
+				
+				$_ajax_request = true;
+				
+				// Это аякс-запрос, к скрипту можно обращаться только через AJAX
+				if (strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
+					die("SECURITY RESTRICTION: THIS PAGE ACCEPTS AJAX REQUESTS ONLY (poshel nahuj)");	// Выводим мега-сообщение
+				}
+			} else {
+				$_ajax_request = false;
+			}
+		}
+		
 		/*
 		 * Отобразить view
 		 */

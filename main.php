@@ -25,10 +25,13 @@
 	<title>Ratie | Анонимные мнения о друзьях, комментарии и оценки</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="анонимная оценка характера мнения ratie рэйти анонимный чат сообщения сп история">
+	<meta name="description" content="Анонимные мнения о друзьях, комментарии и оценки">
     <base href="http://localhost:8888/ratie.ru/">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
+	<link rel="image_src" href="img/logo/vk_links.png">
 	<link rel="shortcut icon" href="favicon_main.ico">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>

@@ -12,6 +12,7 @@
 	var _ALERT_MEGAPHONE		=	"<img src='img/icon/64/megaphone.png'>";
 	var _ALERT_PROFILE			=	"<img src='img/icon/64/profile.png'>";
 	var _ALERT_CHAT				=	"<img src='img/icon/64/chat.png'>";
+	var _ALERT_CHAT_LEFT		=	"<img src='img/icon/64/chat.png' class='pull-left'>";
 	
 	$(document).ready(function() {
 		// Анимируем новости на всех страницах
@@ -56,6 +57,17 @@
 	function goBack()
 	{
 		history.back();
+	}
+	
+	// Показыват ссылку для копирования
+	function showVoteLink(element)
+	{
+		bootbox.alert(_ALERT_CHAT_LEFT + "По этой ссылке друзья могут анонимно сказать, что думают о тебе. Разместите ее в социальных сетях, чтобы дать им возможность высказаться:<br><br>" +
+		"<input id='votelink' type='text' class='bootbox-input bootbox-input-text form-control' value='" + element.innerHTML + "'>");
+		
+		setTimeout(function() {
+			$("#votelink").focus();	
+		}, 500)		  
 	}
 
 	

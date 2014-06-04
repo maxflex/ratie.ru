@@ -1,5 +1,13 @@
-<div class="container" ng-app="UserPage" id="user-page" ng-controller="UserCtrl" ng-init="subscribed = <?= $subscribed ?>">
-	<h1 id="name-lastname" style="text-align: center; color: white"><?=$User->first_name." ".$User->last_name?></h1>
+<div class="container" ng-app="UserPage" id="user-page" ng-controller="UserCtrl"
+	<?php
+		// Если просматривается чужая страница – проверять подписку на эту страницу
+		// и добавить id_viewing - ID просматриваемой страницы
+		if (!$own_page) {
+			echo "ng-init='subscribed = $subscribed; id_viewing = $id_viewing'";
+		}
+	?>
+>
+	<h1 id="name-lastname" style="text-align: center; color: white"><?= $User->getName() ?></h1>
 	<hr>
 	
 	<div class="row effect2">
@@ -39,7 +47,9 @@
 			} else {
 				// Если просматривается своя же страница
 				?>
-					<h2 class="trans text-white">Мнения обо мне:</h2>
+					<h2 class="trans text-white">Мнения обо мне:
+						<button class="btn br5 btn-success pull-right" onclick="offerVote()" style="margin-top: 6px">Предложить оценить</button>
+					</h2>
 				<?php
 			}
 		?>
@@ -51,6 +61,16 @@
 					echo ($own_page ? "<span class='glyphicon glyphicon-file'></span>Вас пока никто не оценивал" 
 									: "<span class='glyphicon glyphicon-pencil'></span>Ваше мнение будет первым!");
 					echo '</h3>';
+					
+					// Если своя страница и нет прилагательных -- выводим кнопку «Предложить оценить»
+					if ($own_page) {
+						echo "<button onclick='offerVote()' class='btn btn-primary mg-top btn-large br5' style='margin-top: 75px; width: 100%'>
+						<span class='glyphicon glyphicon-edit'></span>
+						Предложить друзьям оставить первое мнение о Вас анонимно</button>";
+						
+						echo "<div class='voteme-hint'>По этой ссылке друзья могут анонимно высказаться о тебе: 
+						<span onclick='showVoteLink(this)'>http://ratie.ru/".$User->login."</span></div>";
+					}
 				}
 		?>
 		

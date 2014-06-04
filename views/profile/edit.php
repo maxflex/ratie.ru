@@ -55,7 +55,8 @@
 			<!-- ЗАГОЛОВКИ -->
 			<div class="row">
 				<div class="col-md-10">
-				
+				<div class='voteme-hint'>По этой ссылке друзья могут анонимно высказаться о тебе: 
+						<span onclick='showVoteLink(this)'>http://ratie.ru/{{user.login}}</span></div>;
 					<!--
 <div class="edit-row">
 						<h2 class="trans text-white">Имя</h2>

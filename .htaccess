@@ -23,7 +23,7 @@ RewriteRule ^profile$ index.php?controller=profile [QSA,L]
 RewriteRule ^profile/([a-zA-Z0-9_-]+)$ index.php?controller=profile&action=$1 [QSA,L]
 
 # Комментарии прилагательного
-RewriteRule ^([a-zA-Z0-9_-]+)/comments-([0-9]+)$ index.php?controller=user&user=$1&comment=$2 [QSA,L]
+RewriteRule ^([.a-zA-Z0-9_-]+(?<!\.php)(?<!\.html))/comments-([0-9]+)$ index.php?controller=user&user=$1&comment=$2 [QSA,L]
 
 # В другом случае – отображаем пользователя
-RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?controller=user&user=$1 [QSA,L]
+RewriteRule ^([.a-zA-Z0-9_-]+(?<!\.php)(?<!\.html))$ index.php?controller=user&user=$1 [QSA,L]

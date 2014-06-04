@@ -110,7 +110,7 @@ angular.module('UserPage', ['ngAnimate']);
 		}
 		
 		// Добавить мысль о человеке
-		$scope.think = function(){			
+		$scope.think = function(){		
 			// Если нужно показывать
 			if ($scope.intro_message) {
 				
@@ -160,7 +160,7 @@ angular.module('UserPage', ['ngAnimate']);
 				// Анимация загрузки
 				ajaxStart();
 				// Пост-запрос
-				$.post("?controller=user&action=AjaxAddThought", {"adjective" : $scope.adjective})
+				$.post("?controller=user&action=AjaxAddThought", {"adjective" : $scope.adjective, "id_viewing" : $scope.id_viewing})
 					.success(function(response) {
 						// Завершение анимации
 						ajaxEnd();
