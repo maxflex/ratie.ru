@@ -22,7 +22,7 @@
 </svg></a>
 
 -->
-					<div class="circle" ng-mouseenter="friends = true" ng-mouseleave="friends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
+					<div class="circle" ng-mouseenter="vfriends = true" ng-mouseleave="vfriends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
 					<div class="circle" ng-mouseenter="followers = true" ng-mouseleave="followers = false" onclick="goTo('profile/subscribers')"><span><?= $User->subscribers ?></span></div>
 					
 					<div class="circle" ng-mouseenter="following = true" ng-mouseleave="following = false" onclick="goTo('profile/subscriptions')"><span><?= $User->subscriptions ?></span></div>
@@ -32,7 +32,7 @@
 					
 					<h3 ng-show="following" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-ok"></span>Подписки</h3>
 					
-					<h3 ng-show="friends" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-user"></span>Друзья на Ratie</h3>
+					<h3 ng-show="vfriends" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-user"></span>Друзья на Ratie</h3>
 <!-- 					<h3 ng-show="following" class="foll center-content text-white badge-primary animate-show">Подписки</h3>						 -->
 			</div>				
 		</div>

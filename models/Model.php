@@ -177,8 +177,9 @@
 		
 		/*
 		 * Сохранение
+		 * $single_field – если изменять надо только одно поле в БД (чтобы не напрягать БД)
 		 */
-		 public function save()
+		 public function save($single_field = false)
 		 {
 		 	// Перед сохранением
 		 	if (method_exists($this, "beforeSave")) {
@@ -227,20 +228,27 @@
 			}	
 			else
 			{
-				// Составляем запрос на сохранение всего
-			 	foreach($this->mysql_vars as $field)
-			 	{
-			 		if (in_array($field, $this->_exclude_vars)) // Пропускаем поля, которые не надо сохранять
-			 			continue;
-			 		
-			 		// Если текущее поле в формате serialize
-				 	if (in_array($field, $this->_serialized)) {
-				 		$query[] = $field." = '".serialize($this->{$field})."'";	// Сериализуем значение
-				 	} else {
-					 	$query[] = $field." = '".$this->{$field}."'";
+				// Если изменять только одно поле в БД 
+				if ($single_field) {
+					$query[] = $single_field." = '".$this->{$single_field}."'";
+				} else {
+				// Иначе сохраняем все
+					// Составляем запрос на сохранение всего
+				 	foreach($this->mysql_vars as $field)
+				 	{
+				 		if (in_array($field, $this->_exclude_vars)) // Пропускаем поля, которые не надо сохранять
+				 			continue;
+				 		
+				 		// Если текущее поле в формате serialize
+					 	if (in_array($field, $this->_serialized)) {
+					 		$query[] = $field." = '".serialize($this->{$field})."'";	// Сериализуем значение
+					 	} else {
+						 	$query[] = $field." = '".$this->{$field}."'";
+					 	}
 				 	}
-			 	}
-			 					
+				}
+				
+							 					
 				$result = static::dbConnection()->query("UPDATE ".static::$mysql_table." SET ".implode(",", $query)." WHERE id=".$this->id);
 				
 				if ($result) {

@@ -13,17 +13,17 @@
 			<?php globalPartial("ava", array("User" => $User)) ?>
 			</div>
 			<div class="row sociallinks">
-										<div class="circle" ng-mouseenter="friends = true" ng-mouseleave="friends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
+										<div class="circle" ng-mouseenter="vfriends = true" ng-mouseleave="vfriends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>
 					<div class="circle active" ng-mouseenter="followers = true" ng-mouseleave="followers = false" ><span><?= $User->subscribers ?></span></div>
 					
 					<div class="circle" ng-mouseenter="following = true" ng-mouseleave="following = false" onclick="goTo('profile/subscriptions')"><span><?= $User->subscriptions ?></span></div>
 <!-- 					<div class="circle" ng-mouseenter="following = true" ng-mouseleave="following = false"><span>23</span></div>	 -->
 			
-					<h3 ng-show="followers" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-retweet"></span>Подписчики</h3>
+					<h3 ng-show="followers" class="foll center-content text-white badge-success animate-show"><span class="glyphicon glyphicon-retweet"></span>Подписчики</h3>
 					
 					<h3 ng-show="following" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-ok"></span>Подписки</h3>
 					
-					<h3 ng-show="friends" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-user"></span>Друзья на Ratie</h3>
+					<h3 ng-show="vfriends" class="foll center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-user"></span>Друзья на Ratie</h3>
 			</div>				
 		</div>
 		

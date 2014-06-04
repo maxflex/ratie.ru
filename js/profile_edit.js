@@ -123,7 +123,9 @@ angular.module('ProfileEdit', ['ngAnimate', 'NgSwitchery']);
 				$.post("?controller=profile&action=AjaxSave", $scope.user)
 				.success(function(response) {
 					$scope.afterSave(true);
-					console.log(response);
+					
+					// Обновляем ссылку профиля в пункте меню (на случай изменения логина)
+					$("#menu-stats").attr("href", $scope.user.login);
 				})
 				.error(function(response) {
 					$scope.afterSave(false);
