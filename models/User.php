@@ -201,29 +201,11 @@
 				exit();
 			}
 			
-			/***** Проверяем лимит мыслей подряд от одного пользователя *****/
-			/* $count_limit = dbUser()->query("
-				SELECT adjectives.id_first_vote, votes.id, votes.ip
-				FROM adjectives
-				JOIN votes ON adjectives.id_first_vote = votes.id
-				WHERE votes.ip = '".realIp()."'
-				ORDER BY id DESC 
-				LIMIT ".Adjective::INAROW_LIMIT)->num_rows;
-			
-			// Если превышен лимит 
-			if ($count_limit >= Adjective::INAROW_LIMIT) {
-				if ($ajax) {
-					echo "Вы уже оставили слишком много мыслей подряд!";					
-				}
-				// throw new Exception("Пустое или слишком длинное прилагательное");	
-				exit();
-			}
-			/************* КОНЕЦ ПРОВЕРКИ МЫСЛЕЙ ПОДРЯД ***************/
 			/***** Проверяем лимит комментариев подряд от одного пользователя *****/
 			// Получем последние комментарии
 			$LastAdjectives = Adjective::findAll(array(
 				"order"		=> "id DESC",
-				"limit"		=> Adjective::INAROW_LIMIT,
+				"limit"		=> settings()->ADJECTIVE_LIMIT,
 			));
 			
 			// Подсчитываем количество от текущего пользователя
@@ -238,7 +220,7 @@
 				}
 				
 				// Если превышен лимит 
-				if ($count_limit >= Adjective::INAROW_LIMIT) {
+				if ($count_limit >= settings()->ADJECTIVE_LIMIT) {
 					exit("Слишком много комментариев подряд!");					
 				}
 			}

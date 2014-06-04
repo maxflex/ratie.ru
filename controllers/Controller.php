@@ -94,7 +94,7 @@
 				$js = explode(", ", $js);
 				
 				foreach ($js as $script_name) {
-					$this->_js_additional .= "<script src='js/{$script_name}.js?ver=".$GLOBALS["settings"]->version."' 
+					$this->_js_additional .= "<script src='js/{$script_name}.js?ver=".settings()->version."' 
 												type='text/javascript'></script>";
 				}
 			}
@@ -108,7 +108,7 @@
 			$css = explode(", ", $css);
 			
 			foreach ($css as $css_name) {
-				$this->_css_additional .= "<link href='css/{$css_name}.css?ver=".$GLOBALS["settings"]->version."' rel='stylesheet'>";
+				$this->_css_additional .= "<link href='css/{$css_name}.css?ver=".settings()->version."' rel='stylesheet'>";
 			}
 		}
 		

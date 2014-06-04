@@ -11,9 +11,7 @@
 		
 		const TYPE_POSITIVE		= 1;	// Положительные голоса
 		const TYPE_NEGATIVE		= 0;	// Отрицательные голоса
-		
-		const INAROW_LIMIT		= 999; 	// Сколько прилагательных подряд от одного пользователя (против спама)
-		
+				
 		public static $mysql_table	= "adjectives";
 		
 		

@@ -239,6 +239,14 @@
 	}
 	
 	/*
+	 * Функция возвращает настройки $GLOBALS['settings']
+	 */
+	function settings()
+	{
+		return $GLOBALS["settings"];
+	}
+	
+	/*
 	 * Функция просто отображает через H1 (для тестирования)
 	 */
 	function h1($text)
