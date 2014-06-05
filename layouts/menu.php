@@ -1,7 +1,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 <div class="navbar-inner">
   <div class="container" style="width: 80%;">
-    <a class="brand" href="#" style="padding: 0"><img src="img/logo/ratie_longshadow.png" height="50" width="50"></a>
+    <a class="brand" href="#" style="padding: 0 10px 0 0"><img src="img/logo/ratie_longshadow_text.png" height="50" width="159"></a>
 	<div class="top-loader">
 		<img src="img/loader/spinner.gif">
 	</div>

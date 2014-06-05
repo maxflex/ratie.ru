@@ -93,22 +93,24 @@
 						fields	: "first_name,last_name,sex,photo_max,domain,connections"
 					}, function(r) { 
 						$scope.user = r.response[0];
-						
-						$.post("?controller=index&action=ajaxLoginOrRegister", $scope.user)
-							.success(function(response) {
-								console.log(response);
-								
-								// Ответ функции ajaxLoginOrRegister в JSON
-								response = $.parseJSON(response);
-								
-								// Устанавливаем куку о том, что залогинены
-								// $.cookie("logged", response.login);
-								
-								// Редирект на страницу пользователя
-								goTo(response.login);
-							});
 						console.log($scope.user);
-						$scope.$apply();
+						
+						// Получаем ID друзей пользователя
+						VK.Api.call('friends.get', {user_id	: $scope.user.uid}, function(r) { 
+							// Получаем ID всех друзей пользователя
+							$scope.user.friends_ids = r.response;
+							
+							$.post("?controller=index&action=ajaxLoginOrRegister", $scope.user)
+								.success(function(response) {
+									console.log(response);
+									
+									// Ответ функции ajaxLoginOrRegister в JSON
+									response = $.parseJSON(response);
+									
+									// Редирект на страницу пользователя
+									goTo(response.login);
+								});
+						});
 					}); 
 				} else {
 					// Убиваем куку о том, что залогинены

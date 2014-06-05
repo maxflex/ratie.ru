@@ -206,7 +206,7 @@
 			$pos = (int) $this->countVotes(self::TYPE_POSITIVE);
 			$neg = (int) $this->countVotes(self::TYPE_NEGATIVE);
 			
-			return $pos - $neg;
+			return ( ($pos - $neg) + (($pos + $neg) / 10) );
 			
 			/* Метод Миши Лукьянова. Он хороший мальчик 
 			$pos = (float) $this->countVotes(self::TYPE_POSITIVE);

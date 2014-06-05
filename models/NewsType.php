@@ -14,6 +14,7 @@
 		const SUBSCRIBED	= 6;
 		const UNSUBSCRIBED	= 7; 
 		const COMMENT 		= 8;
+		const NEW_VK_FRIEND	= 9;	// Новый друг из ВК появился на Ratie
 		
 		/*====================================== СИСТЕМНЫЕ ФУНКЦИИ ======================================*/
 		

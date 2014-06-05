@@ -111,16 +111,20 @@
 			if (!$OldNews && !$News) {
 				echo "<h3 class='trans center-content text-white badge-success animate-show mg-top'>"
 					 ."<span class='glyphicon glyphicon-file'></span>Новостная лента пуста</h3>";
-					 
-				echo "<div class='voteme-hint'>По этой ссылке друзья могут сказать, что думают о тебе: 
+				
+				// Если просматриваем чужие новости, то не выводить эту ссылку 
+				// if (User::fromSession(false)->id != $User->id) {
+					echo "<div class='voteme-hint'>По этой ссылке друзья могут сказать, что думают о тебе: 
 						<span onclick='showVoteLink(this)'>http://ratie.ru/".$User->login."</span></div>";
+				//}
+				
 				return;
 			}
 			
 			// Если есть новости, отображаем их
 			if ($News) {
 				foreach ($News as $OneNews) {
-					$OneNews->display();
+					$OneNews->display(false, $User);
 				}
 			}
 			
@@ -131,7 +135,7 @@
 			
 			// Отображаем просмотренные новости
 			foreach ($OldNews as $OneNews) {
-				$OneNews->display(true);
+				$OneNews->display(true, $User);
 			}
 		}
 				
@@ -141,7 +145,7 @@
 		 * Отображает одну новость из FEED
 		 * $old – добавлять стили просмотренной новости
 		 */
-		public function display($old = false)
+		public function display($old = false, $ViewdUser = false)
 		{
 			// Отключаем соединение с БД пользователя при создании нового объекта (см. public static $initialize_on_new в модели User)
 			// Это обязательно нужно для того, чтобы после отображения логина ( например,  «пользователь userXXX проголосовал за прилагательное»
@@ -195,26 +199,37 @@
 				}
 			}
 			
+			// Получаем просматривомаего пользователя для формирования ссылки
+			if (!$ViewdUser) {
+				$ViewdUser = User::fromSession(false);	// Если не установлен, то из сессии
+				$_target_blank = "";
+			}
+			
+			// Открывать ссылку с новостью в новом окне?
+			// Если пользователь из сессии, значит, просматриваем свои новости => не надо открывать в новом окне
+			$_target_blank = ($ViewdUser->id == User::fromSession(false)->id ? "" : "target='_blank'");		// Открывать в новом окне
+			
 			// Формируем ссылку
 			switch ($NewsType->id) {
 				case NewsType::SUBSCRIBED:
-				case NewsType::UNSUBSCRIBED: {
+				case NewsType::UNSUBSCRIBED:
+				case NewsType::NEW_VK_FRIEND: {
 					$link = $User->login;
 					break;
 				}
 				
 				case NewsType::COMMENT: {
-					$link = User::fromSession(false)->login."/comments-".$this->id_adjective;
+					$link = $ViewdUser->login."/comments-".$this->id_adjective;
 					break;
 				}
 				
 				default: {
-					$link = User::fromSession(false)->login."#".$this->id_adjective;
+					$link = $ViewdUser->login."#".$this->id_adjective;
 				}
 			}
 			
 			// Иконка
-			echo "</div><a href='$link'>";
+			echo "</div><a href='$link' $_target_blank>";
 			echo '<span class="thumb-circle glyphicon glyphicon-'.($old ? $NewsType->class_old." old " : $NewsType->class_new).' pull-right"></span>';
 			
 			echo '</a></div>';

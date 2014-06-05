@@ -580,6 +580,39 @@
 			$this->anonymous		= 0;
 		 }
 		 
+		 /*
+		  * Уведомляет друзей из ВК о регистрации
+		  * $frieds_ids – массив с ID друзей пользователя
+		  */
+		 public function notifyVkFriends($frieds_ids)
+		 {
+			 if (count($frieds_ids)) {
+				 $condition = implode(",", $frieds_ids);
+			
+				// Находим друзей нового пользователя, которые есть на Ratie	
+				$Friends = User::findAll(array(
+					"condition"	=> "id_vk in ($condition)"
+				));
+				
+				// Если таковые нашлись
+				if ($Friends) {
+					// Уведомляем каждого пользователя о том, что их друг теперь на Ratie =)
+					foreach ($Friends as $Friend) {
+						// Устанавливаем соединение с БД друга для доступа к новостной ленте
+						User::setConnection($Friend->id);
+						
+						// Добавляем новость
+						Feed::create(array(
+							"id_news_type" 	=> NewsType::NEW_VK_FRIEND,
+							"id_user" 		=> $this->id,		
+						));
+					}
+					
+					// Переподключаемся к текущему пользователю
+					User::setConnection($this->id);
+				}
+			}
+		 }
 		 
 		 /*
 		  * Создаем/Обновляем token для автологина

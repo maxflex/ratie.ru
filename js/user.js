@@ -13,6 +13,13 @@ angular.module('UserPage', ['ngAnimate']);
 		
 		// Для плавной загрузки баров, сначала у них ширина 0%, после загрузки – настоящая
 		angular.element(document).ready(function(){
+			// Если получил первое прилагательное - то сообщение о том, что его можно скрывать
+			if ($scope._intro_adj_hide == 1) {
+				bootbox.alert(_ALERT_ADJHIDE + "<div style='font-family: \"RaleWayMedium\"; margin-bottom: 10px'>Вы получили первые мнения.</div>"
+				+ "Скрыть неприятные для Вас мнения можно, нажав на зеленый глаз справа"
+				);
+			}
+			
 			// Старые проценты
 			var old_percent = Array();
 			

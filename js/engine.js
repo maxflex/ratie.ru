@@ -12,6 +12,7 @@
 	var _ALERT_MEGAPHONE		=	"<img src='img/icon/64/megaphone.png'>";
 	var _ALERT_PROFILE			=	"<img src='img/icon/64/profile.png'>";
 	var _ALERT_CHAT				=	"<img src='img/icon/64/chat.png'>";
+	var _ALERT_ADJHIDE			=	"<img src='img/icon/64/hide_adj.png' style='height: 64px; width: 64px' class='pull-left'>";
 	var _ALERT_CHAT_LEFT		=	"<img src='img/icon/64/chat.png' class='pull-left'>";
 	
 	$(document).ready(function() {
