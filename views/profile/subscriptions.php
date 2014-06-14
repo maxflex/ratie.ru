@@ -32,7 +32,7 @@
 			<!-- ЗАГОЛОВКИ -->
 			<div class="row">
 				<div class="col-md-6">
-					<h2 class="trans text-white news selected">Мои подписки <span class="badge news badge-success"><?= $User->subscribers ?></span></h2>		
+					<h2 class="trans text-white news selected">Мои подписки <span class="badge news badge-success"><?= $User->subscriptions ?></span></h2>		
 				</div>
 			</div>
 			<!-- КОНЕЦ ЗАГОЛОВКИ -->

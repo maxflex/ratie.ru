@@ -21,13 +21,17 @@
 		</div>
 		
 		<div class="voting a-center">
-			<span class="eye pointer glyphicon" 
-				ng-class="{ 'text-error glyphicon-eye-close'	: adj.hidden, 
-							'text-success glyphicon-eye-open'	: !adj.hidden
-						}" 
-				ng-mouseenter="hover = true" 
-				ng-mouseleave="hover = false"
-				ng-click="hide(adj)"></span>
+			<!--
+				<span class="eye pointer glyphicon" 
+					ng-class="{ 'text-error glyphicon-eye-close'	: adj.hidden, 
+								'text-success glyphicon-eye-open'	: !adj.hidden
+							}" 
+					ng-mouseenter="hover = true" 
+					ng-mouseleave="hover = false"
+					ng-click="hide(adj)"></span>
+			-->
+			<div ng-hide="adj.hidden" class="eye pointer glyphicon text-success glyphicon-eye-open animate-show-bounce" ng-click="hide(adj)"></div>
+			<div ng-show="adj.hidden" class="eye pointer glyphicon text-error glyphicon-eye-close animate-show-bounce" ng-click="hide(adj)"></div>
 		</div>
 	
 	</div>
@@ -72,6 +76,7 @@
 			</div>
 			
 			<div class="voting a-center">
+			<!--
 				<span class="eye pointer glyphicon" 
 					ng-class="{ 'text-error glyphicon-eye-close'	: adj.hidden, 
 								'text-success glyphicon-eye-open'	: !adj.hidden
@@ -79,6 +84,9 @@
 					ng-mouseenter="hover = true" 
 					ng-mouseleave="hover = false"
 					ng-click="hide(adj)"></span>
+			-->
+				<div ng-hide="adj.hidden" class="eye pointer glyphicon text-success glyphicon-eye-open animate-show-bounce" ng-click="hide(adj)"></div>
+				<div ng-show="adj.hidden" class="eye pointer glyphicon text-error glyphicon-eye-close animate-show-bounce" ng-click="hide(adj)"></div>
 			</div>
 		
 		</div>

@@ -114,11 +114,26 @@
 		public function addVote($ajax = false, $type = 1, $first_time = false)
 		{
 			// Получаем текущего залогиненного пользователя
-			$CurrentUser = User::fromSession(false);
+			$LoggedUser = User::fromSession(false);
 			
 			// Получаем ID пользователя
 			// Если залогенен пользователь и у него выключено анонимное голосование, проставляем ID проголосовавшего в голос
-			$id_user = (($CurrentUser->id && !$CurrentUser->anonymous) ? $CurrentUser->id : 0); 
+			$id_user = (($LoggedUser->id && !$LoggedUser->anonymous) ? $LoggedUser->id : 0); 
+			
+			// Если пользователь залогинен
+			if ($LoggedUser) {
+				// Сообщения после регистрации о публичности
+				if (!$LoggedUser->intro["public"] && !$LoggedUser->anonymous) {
+					$LoggedUser->intro["public"] = 1;
+					$LoggedUser->save();
+				}				
+			
+				// Сообщения после регистрации об анонимности 
+				if (!$LoggedUser->intro["anonymous"] && $LoggedUser->anonymous) {
+					$LoggedUser->intro["anonymous"] = 1;
+					$LoggedUser->save();
+				}
+			}
 			
 			// Проверяем, может уже голосовалось за это прилагательное
 			$Vote = Vote::find(array(

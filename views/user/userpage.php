@@ -44,7 +44,7 @@
 				// Если просматривается своя же страница
 				?>
 					<h2 class="trans text-white">Мнения обо мне:
-						<button class="btn br5 btn-success pull-right" onclick="offerVote()" style="margin-top: 6px">Предложить оценить</button>
+						<button class="btn br5 btn-success pull-right" onclick="offerVote()" style="margin-top: 4px"><span class="glyphicon glyphicon-plus" style="margin: 0"></span></button>
 					</h2>
 				<?php
 			}

@@ -53,6 +53,21 @@ h2 {
 } 
 
 // Анимация NG-SHOW
+.animate-show-bounce{
+	
+	// Параметры анимации
+	&.ng-hide-add, &.ng-hide-remove {
+		@include animation-duration(0.5s);
+		@include animation-fill-mode(both);
+	}
+	
+	// Начало анимации
+	&.ng-hide-remove-active {
+		@include animation-name(bounceIn);
+	}
+} 
+
+// Анимация NG-SHOW
 .animate-show-right{
 	// Параметры анимации
 	&.ng-hide-add, &.ng-hide-remove {

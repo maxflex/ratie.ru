@@ -90,6 +90,7 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 				
 				bootbox.confirm(message, function(ans) {
 					if (ans === true) {
+						$scope.intro_message = 0; // Если уже оставили мнение, больше не показывать сообщение
 						$scope.submitComment();
 					}
 				});

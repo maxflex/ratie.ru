@@ -201,7 +201,7 @@
 				exit();
 			}
 			
-			/***** Проверяем лимит комментариев подряд от одного пользователя *****/
+			/***** Проверяем лимит прилагательных подряд от одного пользователя *****/
 			// Получем последние комментарии
 			$LastAdjectives = Adjective::findAll(array(
 				"order"		=> "id DESC",
@@ -512,7 +512,7 @@
 
 				 // Иначе добавляем подписку
 				 $Sub = new Subscription(array(
-				 	"id_user"		=> $id_user,
+				 	"id_user"			=> $id_user,
 				 	"id_last_seen_news"	=> $id_last_seen_news,
 				 ));
 				 
