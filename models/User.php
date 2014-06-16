@@ -290,12 +290,13 @@
 		
 		/*
 		 * Проверка кол-ва новостей
+		 * $news_type – тип новостей из (NewsType)
 		 */
-		public function newsCount()
+		public function newsCount($news_type = false)
 		{			
 			// Кол-во новостей 
 			$NewsCount = Feed::findAll(array(
-				"condition"	=> "id > {$this->id_last_seen_news}",
+				"condition"	=> "id > {$this->id_last_seen_news}".($news_type ? " AND id_news_type=$news_type" : ""),
 			), true);
 			
 			// Если новостей не нашлось, выводим ноль

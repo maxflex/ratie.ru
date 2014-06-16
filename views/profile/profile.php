@@ -37,27 +37,31 @@
 			</div>				
 		</div>
 		
-		<div class="col-md-6">
+		<div class="col-md-7">
 			
 			<!-- ЗАГОЛОВКИ -->
-			<div class="row">
-				<div class="col-md-6">
+			<div class="row center-t">
+				<div class="col-md-3" style="margin-right: 10px">
 					<h2 class="trans text-white news" 
 						ng-click="subs = false"
 						ng-class="{'selected' : !subs}">Новости <span class="badge news badge-success"><?= $User->newsCount() ?></span></h2>		
 				</div>
 				
-				<div class="col-md-4">
+				<div class="col-md-3" style="margin-right: 4px">
 					<h2 class="trans text-white news" 
 						ng-click="subs = true"
 						ng-class="{'selected' : subs}">Подписки <span class="badge news badge-success"><?= $User->subscriptions ?></span></h2>
+				</div>
+				
+				<div class="col-md-4">
+					<h2 class="trans text-white news">Сообщения <span class="badge news badge-success"><?= $User->newsCount(NewsType::NEW_MESSAGE) ?></span></h2>
 				</div>
 			</div>
 			<!-- КОНЕЦ ЗАГОЛОВКИ -->
 			
 			<!-- КОНТЕНТ -->
 			<div class="row">
-			
+				<div class="col-md-11">
 				<!-- Новости -->
 					<?php
 						partial("profile_news", ["User" => $User]);
@@ -70,6 +74,7 @@
 						partial("profile_subscriptions", ["User" => $User]);
 					?>
 				<!-- КОНЕЦ ПОДПИСКИ -->
+				</div>  
 			</div>
 			<!-- КОНЕЦ КОНТЕНТ -->	
 						

@@ -1,14 +1,14 @@
-/* line 15, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
 h1 {
   font-family: "RaleWayExtraLight", sans-serif;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 21, ../sass/screen.scss */
 h2 {
   font-family: 'RaleWayLight', sans-serif;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 .animate-repeat.ng-move, .animate-repeat.ng-enter, .animate-repeat.ng-leave {
   -webkit-transition: all linear;
   -webkit-transition-delay: 1s;
@@ -24,7 +24,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 34, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .animate-repeat.ng-move-active, .animate-repeat.ng-enter-active {
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
@@ -32,7 +32,7 @@ h2 {
   animation-name: fadeInDown;
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
   -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
@@ -43,7 +43,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 50, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .animate-show.ng-hide-remove-active {
   -webkit-animation-name: fadeInLeft;
   -moz-animation-name: fadeInLeft;
@@ -51,7 +51,7 @@ h2 {
   animation-name: fadeInLeft;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 .animate-show-bounce.ng-hide-add, .animate-show-bounce.ng-hide-remove {
   -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
@@ -62,7 +62,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 65, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 .animate-show-bounce.ng-hide-remove-active {
   -webkit-animation-name: bounceIn;
   -moz-animation-name: bounceIn;
@@ -70,7 +70,7 @@ h2 {
   animation-name: bounceIn;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 .animate-show-right.ng-hide-add, .animate-show-right.ng-hide-remove {
   -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
@@ -81,7 +81,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 79, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 .animate-show-right.ng-hide-remove-active {
   -webkit-animation-name: fadeInRight;
   -moz-animation-name: fadeInRight;
@@ -89,7 +89,7 @@ h2 {
   animation-name: fadeInRight;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .animate-show-hide.ng-hide-add {
   display: block !important;
   -webkit-animation-duration: 0.5s;
@@ -101,14 +101,14 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 95, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 .animate-show-hide.ng-hide-add-active {
   -webkit-animation-name: fadeOut;
   -moz-animation-name: fadeOut;
   -o-animation-name: fadeOut;
   animation-name: fadeOut;
 }
-/* line 100, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .animate-show-hide.ng-hide-remove {
   -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
@@ -119,7 +119,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 106, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .animate-show-hide.ng-hide-remove-active {
   -webkit-animation-name: fadeInLeft;
   -moz-animation-name: fadeInLeft;
@@ -127,7 +127,7 @@ h2 {
   animation-name: fadeInLeft;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 .animate-up-down.ng-hide-add {
   display: block !important;
   -webkit-animation-duration: 0.7s;
@@ -139,14 +139,14 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 122, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .animate-up-down.ng-hide-add-active {
   -webkit-animation-name: fadeOutUp;
   -moz-animation-name: fadeOutUp;
   -o-animation-name: fadeOutUp;
   animation-name: fadeOutUp;
 }
-/* line 127, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .animate-up-down.ng-hide-remove {
   -webkit-animation-duration: 0.7s;
   -moz-animation-duration: 0.7s;
@@ -157,7 +157,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 133, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .animate-up-down.ng-hide-remove-active {
   -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
@@ -165,7 +165,7 @@ h2 {
   animation-name: fadeInDown;
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .animate-fade.ng-hide-add {
   display: block !important;
   -webkit-animation-duration: 0.4s;
@@ -177,14 +177,14 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 149, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 .animate-fade.ng-hide-add-active {
   -webkit-animation-name: fadeOut07;
   -moz-animation-name: fadeOut07;
   -o-animation-name: fadeOut07;
   animation-name: fadeOut07;
 }
-/* line 154, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 .animate-fade.ng-hide-remove {
   -webkit-animation-duration: 0.4s;
   -moz-animation-duration: 0.4s;
@@ -195,7 +195,7 @@ h2 {
   -o-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-/* line 160, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 .animate-fade.ng-hide-remove-active {
   -webkit-animation-name: fadeIn07;
   -moz-animation-name: fadeIn07;
@@ -203,39 +203,39 @@ h2 {
   animation-name: fadeIn07;
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .trans, .vote-count {
   opacity: 0.7;
 }
 
-/* line 169, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .text-error, .text-danger {
   color: #ff0039;
 }
 
-/* line 173, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 .text-error-bright {
   color: #ff3361;
 }
 
-/* line 177, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .text-lime {
   color: #e8ffe0;
 }
 
-/* line 181, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 .vote-count {
   font-size: 16px;
   color: white;
   font-family: 'RaleWayRegular', sans-serif;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 h2.news {
   cursor: pointer;
   display: inline-block !important;
 }
-/* line 191, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 h2.news .badge-success {
   background: #3fb618;
   opacity: 0.8;
@@ -245,27 +245,27 @@ h2.news .badge-success {
   -o-transition: opacity linear 0.2s;
   transition: opacity linear 0.2s;
 }
-/* line 205, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 h2.news:hover {
   opacity: 1;
 }
-/* line 209, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 h2.news.selected {
   opacity: 1 !important;
 }
-/* line 211, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 h2.news.selected .badge-success {
   box-shadow: 0px 0px 8px 2px rgba(56, 158, 21, 0.5);
 }
 
-/* line 220, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 h3.foll {
   width: 50%;
   margin: 10px auto;
   font-size: 20px;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 .news-rounded {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -275,7 +275,7 @@ h3.foll {
   margin-right: 10px;
 }
 
-/* line 235, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .news-div {
   font-family: 'RaleWayMedium', sans-serif;
   margin-top: 30px;
@@ -283,22 +283,22 @@ h3.foll {
   font-size: 17px;
   width: 100%;
 }
-/* line 242, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 .news-div .news-row {
   margin-bottom: 10px;
 }
-/* line 245, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 .news-div .news-row .left-part {
   width: 92%;
   overflow: hidden;
   display: inline-block;
   white-space: nowrap;
 }
-/* line 252, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .news-div .news-row.old {
   opacity: 0.5;
 }
-/* line 257, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .news-div .subscription-row {
   margin-bottom: -1px;
   cursor: pointer;
@@ -306,48 +306,48 @@ h3.foll {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 3px 0;
 }
-/* line 264, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .news-div .subscription-row span {
   opacity: 0.8;
 }
-/* line 268, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 .news-div .subscription-row:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-/* line 272, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .news-div .subscription-row:hover .subscription-arrow {
   color: #41ba18;
 }
-/* line 276, ../sass/screen.scss */
+/* line 278, ../sass/screen.scss */
 .news-div .subscription-row:hover a.login-link {
   opacity: 1;
 }
-/* line 280, ../sass/screen.scss */
+/* line 282, ../sass/screen.scss */
 .news-div .subscription-row:hover span {
   opacity: 1;
 }
-/* line 286, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .news-div .news-seperator {
   opacity: 0.2;
 }
-/* line 290, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .news-div span.voted-adj {
   letter-spacing: 2px;
   opacity: 0.8;
 }
-/* line 295, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .news-div a.login-link {
   letter-spacing: 2px;
   opacity: 0.8;
   color: white;
 }
-/* line 300, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 .news-div a.login-link:hover {
   opacity: 1;
 }
 
-/* line 306, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -363,38 +363,38 @@ h3.foll {
   overflow: hidden;
   vertical-align: top;
 }
-/* line 319, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 .circle:hover {
   opacity: 1;
 }
-/* line 323, ../sass/screen.scss */
+/* line 325, ../sass/screen.scss */
 .circle.active {
   cursor: default;
   opacity: 1;
 }
-/* line 328, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 .circle span {
   display: block;
   margin-top: 16px;
   color: #6e96d1;
 }
-/* line 329, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 .circle span.glyphicon {
   font-size: 32px;
   width: 100%;
 }
 
-/* line 339, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .regular {
   font-family: 'RaleWayRegular', sans-serif !important;
 }
 
-/* line 343, ../sass/screen.scss */
+/* line 345, ../sass/screen.scss */
 .trans-8 {
   opacity: 0.8;
 }
 
-/* line 347, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 .badge-news {
   width: 70px;
   display: inline-block;
@@ -402,7 +402,7 @@ h3.foll {
   opacity: 0.7;
 }
 
-/* line 354, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .thumb-circle {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -422,7 +422,7 @@ h3.foll {
   opacity: 0.8;
   font-size: 20px;
 }
-/* line 367, ../sass/screen.scss */
+/* line 369, ../sass/screen.scss */
 .thumb-circle.old {
   opacity: 1;
   background: white !important;
@@ -431,132 +431,164 @@ h3.foll {
   -o-transition: none;
   transition: none;
 }
-/* line 372, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 .thumb-circle.old.ofor {
   color: #41ba18;
 }
-/* line 375, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .thumb-circle.old.oagainst {
   color: #ff0039;
 }
-/* line 378, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 .thumb-circle.old.oplus {
   color: #0072e6;
 }
-/* line 381, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
+.thumb-circle.old.oblack {
+  color: black;
+  text-indent: 7.5px;
+}
+/* line 387, ../sass/screen.scss */
+.thumb-circle.old.oinfo {
+  color: #9954bb;
+}
+/* line 390, ../sass/screen.scss */
 .thumb-circle.old.ounsub {
   color: #ff0039;
   text-indent: 9.5px;
 }
-/* line 387, ../sass/screen.scss */
+/* line 396, ../sass/screen.scss */
 .thumb-circle:hover {
   background: white !important;
   opacity: 1;
 }
-/* line 392, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 .thumb-circle.for {
   background: #41ba18;
 }
-/* line 394, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 .thumb-circle.for:hover {
   color: #41ba18 !important;
   -webkit-box-shadow: 0px 0px 15px 5px #41ba18;
   -moz-box-shadow: 0px 0px 15px 5px #41ba18;
   box-shadow: 0px 0px 15px 5px #41ba18;
 }
-/* line 400, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 .thumb-circle.against, .thumb-circle.unsub {
   background: #ff0039;
 }
-/* line 402, ../sass/screen.scss */
+/* line 411, ../sass/screen.scss */
 .thumb-circle.against:hover, .thumb-circle.unsub:hover {
   color: #ff0039;
   -webkit-box-shadow: 0px 0px 15px 5px #ff0039;
   -moz-box-shadow: 0px 0px 15px 5px #ff0039;
   box-shadow: 0px 0px 15px 5px #ff0039;
 }
-/* line 408, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 .thumb-circle.plus {
   background: #0072e6;
 }
-/* line 410, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 .thumb-circle.plus:hover {
   color: #0072e6;
   -webkit-box-shadow: 0px 0px 15px 5px #0072e6;
   -moz-box-shadow: 0px 0px 15px 5px #0072e6;
   box-shadow: 0px 0px 15px 5px #0072e6;
 }
-/* line 416, ../sass/screen.scss */
+/* line 425, ../sass/screen.scss */
+.thumb-circle.info {
+  background: #9954bb;
+}
+/* line 427, ../sass/screen.scss */
+.thumb-circle.info:hover {
+  color: #9954bb;
+  -webkit-box-shadow: 0px 0px 15px 5px #9954bb;
+  -moz-box-shadow: 0px 0px 15px 5px #9954bb;
+  box-shadow: 0px 0px 15px 5px #9954bb;
+}
+/* line 433, ../sass/screen.scss */
+.thumb-circle.black {
+  background: black;
+  text-indent: 7.5px;
+}
+/* line 436, ../sass/screen.scss */
+.thumb-circle.black:hover {
+  color: black !important;
+  -webkit-box-shadow: 0px 0px 15px 5px black;
+  -moz-box-shadow: 0px 0px 15px 5px black;
+  box-shadow: 0px 0px 15px 5px black;
+}
+/* line 443, ../sass/screen.scss */
 .thumb-circle.unsub {
   text-indent: 9.5px;
 }
 
-/* line 422, ../sass/screen.scss */
+/* line 449, ../sass/screen.scss */
 .eye {
   opacity: 0.7;
 }
-/* line 425, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 .eye:hover {
   opacity: 1;
 }
-/* line 429, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 .eye.glyphicon-eye-close:hover {
   color: #e60033;
 }
-/* line 433, ../sass/screen.scss */
+/* line 460, ../sass/screen.scss */
 .eye.glyphicon-eye-open:hover {
   color: #379f15;
 }
 
-/* line 438, ../sass/screen.scss */
+/* line 465, ../sass/screen.scss */
 .text-primary {
   color: #0072e6;
 }
 
-/* line 442, ../sass/screen.scss */
+/* line 469, ../sass/screen.scss */
 .a-center {
   text-align: center;
 }
 
-/* line 446, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 .a-right {
   text-align: right;
 }
 
-/* line 450, ../sass/screen.scss */
+/* line 477, ../sass/screen.scss */
 .pointer {
   cursor: pointer;
 }
 
-/* line 454, ../sass/screen.scss */
+/* line 481, ../sass/screen.scss */
 .ava-wrap {
   height: 300px;
   width: 300px;
   position: relative;
   margin: 0 auto;
 }
-/* line 460, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 .ava-wrap .btn {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-top: 40%;
 }
-/* line 464, ../sass/screen.scss */
+/* line 491, ../sass/screen.scss */
 .ava-wrap .btn.first {
   width: 200px;
   margin-top: 28%;
 }
-/* line 469, ../sass/screen.scss */
+/* line 496, ../sass/screen.scss */
 .ava-wrap .btn.second {
   width: 200px;
   margin-top: 10px;
 }
-/* line 474, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 .ava-wrap .btn.half {
   width: 96px;
 }
-/* line 480, ../sass/screen.scss */
+/* line 507, ../sass/screen.scss */
 .ava-wrap .ava-blink {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -568,17 +600,17 @@ h3.foll {
   width: 100%;
   z-index: 2;
 }
-/* line 489, ../sass/screen.scss */
+/* line 516, ../sass/screen.scss */
 .ava-wrap .ava-blink.black {
   background: black;
 }
-/* line 493, ../sass/screen.scss */
+/* line 520, ../sass/screen.scss */
 .ava-wrap .ava-blink.edit-profile {
   -webkit-box-shadow: inset 0 0 100px #6e96d1;
   -moz-box-shadow: inset 0 0 100px #6e96d1;
   box-shadow: inset 0 0 100px #6e96d1;
 }
-/* line 497, ../sass/screen.scss */
+/* line 524, ../sass/screen.scss */
 .ava-wrap .ava-blink.half {
   -webkit-border-radius: 300px;
   -moz-border-radius: 300px 300px 0 0;
@@ -595,14 +627,14 @@ h3.foll {
   width: 300px;
 }
 
-/* line 507, ../sass/screen.scss */
+/* line 534, ../sass/screen.scss */
 .path-icon {
   height: 67px;
   width: 67px;
   position: absolute;
   right: 0;
 }
-/* line 513, ../sass/screen.scss */
+/* line 540, ../sass/screen.scss */
 .path-icon.clickable {
   -webkit-transition: all linear;
   -webkit-transition-delay: 0.3s;
@@ -612,22 +644,22 @@ h3.foll {
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 518, ../sass/screen.scss */
+/* line 545, ../sass/screen.scss */
 .path-icon.clickable:hover {
   opacity: 1;
 }
-/* line 523, ../sass/screen.scss */
+/* line 550, ../sass/screen.scss */
 .path-icon.left {
   left: 0;
 }
 
-/* line 528, ../sass/screen.scss */
+/* line 555, ../sass/screen.scss */
 #name-lastname {
   text-align: center;
   color: white;
 }
 
-/* line 534, ../sass/screen.scss */
+/* line 561, ../sass/screen.scss */
 input[type=text], input[type=password], input[type=email] {
   background: rgba(1, 1, 1, 0.1);
   -webkit-font-smoothing: antialiased;
@@ -638,65 +670,65 @@ input[type=text], input[type=password], input[type=email] {
   padding: 22px 20px;
   width: calc(100% - 40px);
 }
-/* line 544, ../sass/screen.scss */
+/* line 571, ../sass/screen.scss */
 input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled {
   opacity: 0.5;
 }
-/* line 548, ../sass/screen.scss */
+/* line 575, ../sass/screen.scss */
 input[type=text].icon, input[type=password].icon, input[type=email].icon {
   background-repeat: no-repeat;
   background-position: right center;
   padding-right: 70px;
 }
-/* line 553, ../sass/screen.scss */
+/* line 580, ../sass/screen.scss */
 input[type=text].icon.compose, input[type=password].icon.compose, input[type=email].icon.compose {
   background-image: url("../../img/icon/64/compose.png");
 }
-/* line 556, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 input[type=text].icon.login, input[type=password].icon.login, input[type=email].icon.login {
   background-image: url("../../img/icon/64/email.png");
 }
-/* line 559, ../sass/screen.scss */
+/* line 586, ../sass/screen.scss */
 input[type=text].icon.profile, input[type=password].icon.profile, input[type=email].icon.profile {
   background-image: url("../../img/icon/64/profile.png");
 }
-/* line 562, ../sass/screen.scss */
+/* line 589, ../sass/screen.scss */
 input[type=text].icon.globe, input[type=password].icon.globe, input[type=email].icon.globe {
   background-image: url("../../img/icon/64/globe.png");
 }
-/* line 565, ../sass/screen.scss */
+/* line 592, ../sass/screen.scss */
 input[type=text].icon.mail, input[type=password].icon.mail, input[type=email].icon.mail {
   background-image: url("../../img/icon/64/mail.png");
 }
-/* line 569, ../sass/screen.scss */
+/* line 596, ../sass/screen.scss */
 input[type=text].icon.locked, input[type=password].icon.locked, input[type=email].icon.locked {
   background-image: url("../../img/icon/64/locked.png");
 }
-/* line 573, ../sass/screen.scss */
+/* line 600, ../sass/screen.scss */
 input[type=text].icon.unlocked, input[type=password].icon.unlocked, input[type=email].icon.unlocked {
   background-image: url("../../img/icon/64/unlocked.png");
 }
-/* line 576, ../sass/screen.scss */
+/* line 603, ../sass/screen.scss */
 input[type=text].icon.vk, input[type=password].icon.vk, input[type=email].icon.vk {
   background-image: url("../../img/icon/64/vk.png");
 }
-/* line 579, ../sass/screen.scss */
+/* line 606, ../sass/screen.scss */
 input[type=text].icon.twitter, input[type=password].icon.twitter, input[type=email].icon.twitter {
   background-image: url("../../img/icon/64/twitter.png");
 }
-/* line 582, ../sass/screen.scss */
+/* line 609, ../sass/screen.scss */
 input[type=text].icon.instagram, input[type=password].icon.instagram, input[type=email].icon.instagram {
   background-image: url("../../img/icon/64/instagram.png");
 }
 
-/* line 591, ../sass/screen.scss */
+/* line 618, ../sass/screen.scss */
 .edit-row hr {
   width: 118.5%;
   margin: 10px 0;
   opacity: 0.3;
 }
 
-/* line 598, ../sass/screen.scss */
+/* line 625, ../sass/screen.scss */
 .switchery {
   background-color: #fff;
   border: 1px solid #dfdfdf;
@@ -708,7 +740,7 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   vertical-align: middle;
   width: 50px;
 }
-/* line 609, ../sass/screen.scss */
+/* line 636, ../sass/screen.scss */
 .switchery > small {
   background: #fff;
   border-radius: 100%;
@@ -719,60 +751,60 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   width: 30px;
 }
 
-/* line 620, ../sass/screen.scss */
+/* line 647, ../sass/screen.scss */
 .additional-settings {
   margin: 15px auto;
   font-family: 'RaleWayRegular', sans-serif;
   font-size: 22px;
   color: white;
 }
-/* line 625, ../sass/screen.scss */
+/* line 652, ../sass/screen.scss */
 .additional-settings td {
   padding: 10px 0;
   text-align: left !important;
 }
-/* line 628, ../sass/screen.scss */
+/* line 655, ../sass/screen.scss */
 .additional-settings td span {
   margin-left: 5px;
 }
-/* line 632, ../sass/screen.scss */
+/* line 659, ../sass/screen.scss */
 .additional-settings td img {
   height: 32px;
   width: 32px;
 }
-/* line 637, ../sass/screen.scss */
+/* line 664, ../sass/screen.scss */
 .additional-settings tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* line 645, ../sass/screen.scss */
+/* line 672, ../sass/screen.scss */
 .btn.br5 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 649, ../sass/screen.scss */
+/* line 676, ../sass/screen.scss */
 .btn.save {
   width: 87%;
 }
-/* line 653, ../sass/screen.scss */
+/* line 680, ../sass/screen.scss */
 .btn.dialog {
   width: 165px;
 }
 
-/* line 662, ../sass/screen.scss */
+/* line 689, ../sass/screen.scss */
 .bootbox-body, .modal-title {
   font-family: 'RaleWayRegular', sans-serif;
   font-size: 20px;
 }
-/* line 665, ../sass/screen.scss */
+/* line 692, ../sass/screen.scss */
 .bootbox-body img, .modal-title img {
   height: 42px;
   width: 42px;
   margin-right: 10px;
 }
 
-/* line 673, ../sass/screen.scss */
+/* line 700, ../sass/screen.scss */
 .bootbox-input-text {
   font-family: "Open Sans", Calibri, Candara, Arial, sans-serif !important;
   font-weight: normal !important;
@@ -784,31 +816,31 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   border: 1px solid black !important;
 }
 
-/* line 684, ../sass/screen.scss */
+/* line 711, ../sass/screen.scss */
 .saved {
   width: 87%;
   margin: 20px auto;
   font-size: 20px;
 }
 
-/* line 690, ../sass/screen.scss */
+/* line 717, ../sass/screen.scss */
 .subscription-arrow {
   opacity: 0.8;
   font-size: 20px;
   top: 9px;
 }
 
-/* line 696, ../sass/screen.scss */
+/* line 723, ../sass/screen.scss */
 .arrow-back {
   position: absolute;
   top: 20px;
   cursor: pointer;
 }
-/* line 701, ../sass/screen.scss */
+/* line 728, ../sass/screen.scss */
 .arrow-back:hover {
   color: #41ba18;
 }
-/* line 705, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 .arrow-back.big {
   color: white;
   font-size: 35px;
@@ -816,38 +848,38 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
   top: 0;
   line-height: 61px;
 }
-/* line 711, ../sass/screen.scss */
+/* line 738, ../sass/screen.scss */
 .arrow-back.big:hover {
   opacity: 1;
 }
 
-/* line 717, ../sass/screen.scss */
+/* line 744, ../sass/screen.scss */
 .cursor-default {
   cursor: default;
 }
 
-/* line 722, ../sass/screen.scss */
+/* line 749, ../sass/screen.scss */
 button .glyphicon {
   margin-right: 6px;
   font-size: 15px;
 }
 
-/* line 728, ../sass/screen.scss */
+/* line 755, ../sass/screen.scss */
 h3 {
   font-family: 'RaleWayRegular', sans-serif;
 }
-/* line 731, ../sass/screen.scss */
+/* line 758, ../sass/screen.scss */
 h3.mg-top {
   font-family: 'RaleWayLight', sans-serif;
   margin-top: 20px;
 }
-/* line 736, ../sass/screen.scss */
+/* line 763, ../sass/screen.scss */
 h3 .glyphicon {
   margin-right: 8px;
   display: inline;
 }
 
-/* line 746, ../sass/screen.scss */
+/* line 773, ../sass/screen.scss */
 .navbar .nav > li .count {
   position: absolute;
   background: #e60033;
@@ -870,35 +902,35 @@ h3 .glyphicon {
   line-height: 20px;
   z-index: 5;
 }
-/* line 766, ../sass/screen.scss */
+/* line 793, ../sass/screen.scss */
 .navbar .nav > li .count.d1 {
   font-size: 12px;
 }
-/* line 771, ../sass/screen.scss */
+/* line 798, ../sass/screen.scss */
 .navbar .nav > li .glyphicon {
   font-size: 20px;
   top: 0;
 }
-/* line 775, ../sass/screen.scss */
+/* line 802, ../sass/screen.scss */
 .navbar .nav > li .glyphicon.inline {
   font-size: 14px;
   margin-right: 5px;
   top: 1px;
 }
 
-/* line 786, ../sass/screen.scss */
+/* line 813, ../sass/screen.scss */
 label {
   color: white;
   font-size: 22px;
   float: left;
 }
 
-/* line 792, ../sass/screen.scss */
+/* line 819, ../sass/screen.scss */
 .form-group {
   margin-bottom: 10px;
 }
 
-/* line 798, ../sass/screen.scss */
+/* line 825, ../sass/screen.scss */
 fieldset.hidden-thoughts {
   border-top: 1px dashed rgba(171, 171, 171, 0.7);
   border-bottom: none;
@@ -909,7 +941,7 @@ fieldset.hidden-thoughts {
   margin: 0;
   height: 50px;
 }
-/* line 808, ../sass/screen.scss */
+/* line 835, ../sass/screen.scss */
 fieldset.hidden-thoughts legend {
   padding: 0 10px;
   width: auto;
@@ -918,18 +950,18 @@ fieldset.hidden-thoughts legend {
   font-family: 'RaleWayMedium', sans-serif;
   opacity: 0.6;
 }
-/* line 815, ../sass/screen.scss */
+/* line 842, ../sass/screen.scss */
 fieldset.hidden-thoughts legend:hover {
   opacity: 1;
 }
 
-/* line 823, ../sass/screen.scss */
+/* line 850, ../sass/screen.scss */
 .glyphicon.big-icon {
   margin: 0;
   font-size: 23px;
 }
 
-/* line 829, ../sass/screen.scss */
+/* line 856, ../sass/screen.scss */
 .comments-box {
   -webkit-transition: all linear 0.2s;
   -webkit-transition-delay: !important;
@@ -954,7 +986,7 @@ fieldset.hidden-thoughts legend:hover {
   border-radius: 5px 0 0 5px !important;
 }
 
-/* line 855, ../sass/screen.scss */
+/* line 882, ../sass/screen.scss */
 .comments-box:focus {
   background: white;
   outline: none;
@@ -963,7 +995,7 @@ fieldset.hidden-thoughts legend:hover {
   border-color: transparent;
 }
 
-/* line 864, ../sass/screen.scss */
+/* line 891, ../sass/screen.scss */
 .comment-button {
   width: 60px;
   max-height: 56px;
@@ -977,7 +1009,7 @@ fieldset.hidden-thoughts legend:hover {
   border-radius: 0 5px 5px 0 !important;
 }
 
-/* line 877, ../sass/screen.scss */
+/* line 904, ../sass/screen.scss */
 .comment-row {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
   border-top: 1px dashed rgba(255, 255, 255, 0.5);
@@ -985,7 +1017,7 @@ fieldset.hidden-thoughts legend:hover {
   margin: 20px 0 10px;
 }
 
-/* line 884, ../sass/screen.scss */
+/* line 911, ../sass/screen.scss */
 .bubble {
   position: relative;
   width: auto;
@@ -1008,7 +1040,7 @@ fieldset.hidden-thoughts legend:hover {
   font-family: "RaleWayMedium";
   font-size: 16px;
 }
-/* line 904, ../sass/screen.scss */
+/* line 931, ../sass/screen.scss */
 .bubble:after {
   -webkit-transition: all linear;
   -webkit-transition-delay: 0.2s;
@@ -1026,53 +1058,49 @@ fieldset.hidden-thoughts legend:hover {
   width: 0;
   z-index: 1;
 }
-/* line 918, ../sass/screen.scss */
+/* line 945, ../sass/screen.scss */
 .bubble:hover {
   background: white;
 }
-/* line 920, ../sass/screen.scss */
+/* line 947, ../sass/screen.scss */
 .bubble:hover:after {
   border-color: transparent white;
 }
-/* line 925, ../sass/screen.scss */
+/* line 952, ../sass/screen.scss */
 .bubble.active {
   background: white;
 }
-/* line 927, ../sass/screen.scss */
+/* line 954, ../sass/screen.scss */
 .bubble.active:after {
   border-color: transparent white;
 }
-/* line 932, ../sass/screen.scss */
+/* line 959, ../sass/screen.scss */
 .bubble.right {
   margin-left: 0;
   margin-right: 7.5px;
   float: right;
 }
-/* line 937, ../sass/screen.scss */
+/* line 964, ../sass/screen.scss */
 .bubble.right:after {
   border-width: 9px 0 9px 15px;
   left: auto;
   right: -15px;
 }
 
-/* line 945, ../sass/screen.scss */
+/* line 972, ../sass/screen.scss */
 .comment-ava {
   float: left;
   margin-top: 17px;
   margin-right: 15px;
 }
-/* line 950, ../sass/screen.scss */
+/* line 977, ../sass/screen.scss */
 .comment-ava.right {
   float: right;
   margin-right: 0;
   margin-left: 15px;
 }
 
-/* line 958, ../sass/screen.scss */
+/* line 985, ../sass/screen.scss */
 .sociallink.inactive {
-  cursor: default;
-}
-/* line 960, ../sass/screen.scss */
-.sociallink.inactive .SocialIconFill {
-  opacity: 0.15 !important;
+  display: none;
 }

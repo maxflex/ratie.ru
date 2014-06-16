@@ -6,6 +6,8 @@
 	$success-hover:	#379f15;
 	$success-badge: #3fb618;
 	
+	$info:			#9954bb;
+	
 	$danger:		#ff0039;
 	$danger-hover:	#e60033;
 	
@@ -378,6 +380,13 @@ h3 {
 		&.oplus {
 			color: $primary;
 		}
+		&.oblack {
+			color: black;
+			text-indent: 7.5px;
+		}
+		&.oinfo {
+			color: $info;
+		}
 		&.ounsub {
 			color: $danger;
 			text-indent: 9.5px;
@@ -412,6 +421,24 @@ h3 {
 			@include box-shadow(0px 0px 15px 5px $primary);
 		}
 	}
+	
+	&.info {
+		background: $info;
+		&:hover {
+			color: $info;
+			@include box-shadow(0px 0px 15px 5px $info);
+		}
+	}
+	
+	&.black {
+		background: black;
+		text-indent: 7.5px;
+		&:hover {
+			color: black !important;
+			@include box-shadow(0px 0px 15px 5px black);
+		}
+	}
+	
 	
 	&.unsub {
 		@extend .thumb-circle.against;
@@ -956,9 +983,10 @@ fieldset {
 
 .sociallink {
 	&.inactive {
-		cursor: default;
+		display: none;
+		//cursor: default;
 		.SocialIconFill {
-			opacity: 0.15 !important;
+			//opacity: 0.15 !important;
 		}
 	}
 }

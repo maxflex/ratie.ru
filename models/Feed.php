@@ -218,6 +218,11 @@
 					break;
 				}
 				
+				case NewsType::NEW_MESSAGE: {
+					$link = $ViewdUser->login."/messages";
+					break;
+				}
+				
 				case NewsType::COMMENT: {
 					$link = $ViewdUser->login."/comments-".$this->id_adjective;
 					break;

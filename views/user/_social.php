@@ -12,19 +12,18 @@
 <path class="SocialIconFill" d="  M5.904,0.108c3.2,0,5.796,2.596,5.796,5.796c0,3.2-2.596,5.795-5.796,5.795S0.108,9.104,0.108,5.904  C0.108,2.704,2.704,0.108,5.904,0.108L5.904,0.108z M2.518,4.839v2.194h2.256V9.29h2.194V7.033h2.256V4.839H6.968V2.583H4.773v2.256  H2.518z"/></svg><svg ng-show="subscribed" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="56px" height="56px" viewBox="45 15 126 115" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace">
 <path class="SocialIconFill" d="M162.18,41.592c-5.595-9.586-13.185-17.176-22.771-22.771c-9.588-5.595-20.055-8.392-31.408-8.392  c-11.352,0-21.822,2.797-31.408,8.392c-9.587,5.594-17.177,13.184-22.772,22.771C48.225,51.179,45.428,61.649,45.428,73  c0,11.352,2.798,21.82,8.392,31.408c5.595,9.585,13.185,17.176,22.772,22.771c9.587,5.595,20.056,8.392,31.408,8.392  c11.352,0,21.822-2.797,31.408-8.392c9.586-5.594,17.176-13.185,22.771-22.771c5.594-9.587,8.391-20.057,8.391-31.408  C170.57,61.648,167.773,51.178,162.18,41.592z M148.572,63.468l-44.239,44.239c-1.032,1.032-2.281,1.549-3.748,1.549  c-1.412,0-2.634-0.517-3.666-1.549L67.425,78.215c-0.977-0.979-1.466-2.199-1.466-3.666c0-1.521,0.488-2.771,1.466-3.749  l7.414-7.332c1.033-1.032,2.254-1.548,3.667-1.548s2.635,0.516,3.667,1.548l18.413,18.413l33.241-33.16  c1.032-1.032,2.254-1.548,3.666-1.548c1.411,0,2.635,0.516,3.666,1.548l7.414,7.333c0.979,0.977,1.467,2.226,1.467,3.747  C150.04,61.268,149.552,62.49,148.572,63.468z"/>
 </svg></a>
-
-	<?php
-		} 
-	?>
 	
-<!--
-				<a class="sociallink EmailLink" href="#" onclick="bootbox.alert('<center>Функция в разработке и скоро будет доступна!</center>')"  ng-mouseenter="show = true" ng-mouseleave="show = false">
+
+				<a class="sociallink EmailLink" href="<?=$_SERVER["REQUEST_URI"]?>/messages" ng-mouseenter="message = true" ng-mouseleave="message = false">
 				<svg width="400px" height="400px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 					<title>Email</title>
 					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 					<path class="SocialIconFill" d="M47.525,58.4312 C44.0017303,58.4312 40.8759923,60.0775002 38.8740909,62.6461034 L99.75,94.8175812 L163.968171,60.8797969 C162.084984,59.347607 159.678721,58.4312 157.05,58.4312 Z M36.8768341,66.781991 C36.6754591,67.614632 36.5688,68.4849911 36.5688,69.3812 L36.5688,129.6188 C36.5688,135.6864 41.4574,140.5688 47.525,140.5688 L157.05,140.5688 C163.1176,140.5688 168,135.6864 168,129.6188 L168,69.3812 C168,67.6380936 167.597054,65.9928022 166.878815,64.5329757 L99.7671275,100 L99.75,99.9564542 L99.7328725,100 Z M100,0 C155.2286,0 200,44.7714 200,100 C200,155.2286 155.2286,200 100,200 C44.7714,200 0,155.2286 0,100 C0,44.7714 44.7714,0 100,0 Z M173,61.2980665 L171.309648,57 Z M173,61.2980665" id="Email" fill="#444444"></path></g><image src="img/social/Email.png"></image></svg></a>
--->
-				
+
+
+	<?php
+		} 
+	?>		
 				<a class="sociallink VKLink
 				<?php
 					// Выводим ссылку только если она установлена
@@ -93,10 +92,13 @@
 		// Если не своя страница --  то выводим кнопку «Подписаться»
 		if (!$own_page) {
 	?>
-			<h3 ng-show="show" class="chat center-content text-white animate-show-hide" ng-class="{'badge-primary' : !subscribed, 'badge-success' : subscribed}">
+			<h3 ng-show="show" class="chat center-content text-white animate-show" ng-class="{'badge-primary' : !subscribed, 'badge-success' : subscribed}">
 				<span ng-hide="subscribed" class="animate-show"><span class="glyphicon glyphicon-user"></span>Подписаться</span>
 				<span ng-show="subscribed" class="animate-show"><span class="glyphicon glyphicon-ok"></span>Подписка оформлена</span>
 			</h3>
+			
+			<h3 ng-show="message" class="chat center-content text-white badge-primary animate-show"><span class="glyphicon glyphicon-send"></span>Анонимное сообщение</h3>
+			
 	<?php
 		} else {
 	?>
