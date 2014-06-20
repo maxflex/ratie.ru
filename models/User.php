@@ -314,7 +314,36 @@
 			// Если нужно обновлять – обновляем
 			if ($this->id_last_seen_news < $id_last_news) {
 				$this->id_last_seen_news = $id_last_news;
-				$this->save();
+				$this->save("id_last_seen_news");
+			}
+		}		
+		
+		/*
+		 * Получить кол-во новых сообщений
+		 */
+		public function newMessagesCount()
+		{
+			// Кол-во новых сообщений
+			$NewMessagesCount = Comment::findAll(array(
+				"condition"	=> "id > {$this->id_last_seen_message} AND id_adjective=0",
+			), true);
+			
+			// Если новостей не нашлось, выводим ноль
+			return ($NewMessagesCount ? $NewMessagesCount : 0);
+		}
+		
+				/*
+		 * Обновить значения последних просмотренных новостей
+		 */
+		public function updateNewMessagesCount()
+		{	
+			// Получаем новые значения
+			$id_last_message = Comment::lastId();			
+			
+			// Если нужно обновлять – обновляем
+			if ($this->id_last_seen_message < $id_last_message) {
+				$this->id_last_seen_message = $id_last_message;
+				$this->save("id_last_seen_message");
 			}
 		}		
 		

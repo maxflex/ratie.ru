@@ -220,6 +220,15 @@ input[id="adjective"]{
 }
 
 .adj-vote.for.voted {
+/*
+		  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+    -webkit-animation-name: tadaBig;
+  animation-name: tadaBig;*/
+  
 	color: #3fb618;
 }
 
@@ -229,6 +238,15 @@ input[id="adjective"]{
 
 
 .adj-vote.against.voted {
+/*
+	  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+    -webkit-animation-name: tadaBig;
+  animation-name: tadaBig;*/
+  
 	color: #ff0039;
 }
 

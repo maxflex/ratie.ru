@@ -985,8 +985,18 @@ fieldset.hidden-thoughts legend:hover {
   -moz-border-radius: 5px 0 0 5px !important;
   border-radius: 5px 0 0 5px !important;
 }
+/* line 881, ../sass/screen.scss */
+.comments-box.loading {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  background-image: url("../../img/loader/spinner.gif") !important;
+  background-position: 99.5% center !important;
+  background-repeat: no-repeat !important;
+}
 
-/* line 882, ../sass/screen.scss */
+/* line 889, ../sass/screen.scss */
 .comments-box:focus {
   background: white;
   outline: none;
@@ -995,7 +1005,7 @@ fieldset.hidden-thoughts legend:hover {
   border-color: transparent;
 }
 
-/* line 891, ../sass/screen.scss */
+/* line 898, ../sass/screen.scss */
 .comment-button {
   width: 60px;
   max-height: 56px;
@@ -1009,7 +1019,7 @@ fieldset.hidden-thoughts legend:hover {
   border-radius: 0 5px 5px 0 !important;
 }
 
-/* line 904, ../sass/screen.scss */
+/* line 911, ../sass/screen.scss */
 .comment-row {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
   border-top: 1px dashed rgba(255, 255, 255, 0.5);
@@ -1017,7 +1027,7 @@ fieldset.hidden-thoughts legend:hover {
   margin: 20px 0 10px;
 }
 
-/* line 911, ../sass/screen.scss */
+/* line 918, ../sass/screen.scss */
 .bubble {
   position: relative;
   width: auto;
@@ -1040,7 +1050,7 @@ fieldset.hidden-thoughts legend:hover {
   font-family: "RaleWayMedium";
   font-size: 16px;
 }
-/* line 931, ../sass/screen.scss */
+/* line 938, ../sass/screen.scss */
 .bubble:after {
   -webkit-transition: all linear;
   -webkit-transition-delay: 0.2s;
@@ -1058,49 +1068,49 @@ fieldset.hidden-thoughts legend:hover {
   width: 0;
   z-index: 1;
 }
-/* line 945, ../sass/screen.scss */
+/* line 952, ../sass/screen.scss */
 .bubble:hover {
   background: white;
 }
-/* line 947, ../sass/screen.scss */
+/* line 954, ../sass/screen.scss */
 .bubble:hover:after {
   border-color: transparent white;
 }
-/* line 952, ../sass/screen.scss */
+/* line 959, ../sass/screen.scss */
 .bubble.active {
   background: white;
 }
-/* line 954, ../sass/screen.scss */
+/* line 961, ../sass/screen.scss */
 .bubble.active:after {
   border-color: transparent white;
 }
-/* line 959, ../sass/screen.scss */
+/* line 966, ../sass/screen.scss */
 .bubble.right {
   margin-left: 0;
   margin-right: 7.5px;
   float: right;
 }
-/* line 964, ../sass/screen.scss */
+/* line 971, ../sass/screen.scss */
 .bubble.right:after {
   border-width: 9px 0 9px 15px;
   left: auto;
   right: -15px;
 }
 
-/* line 972, ../sass/screen.scss */
+/* line 979, ../sass/screen.scss */
 .comment-ava {
   float: left;
   margin-top: 17px;
   margin-right: 15px;
 }
-/* line 977, ../sass/screen.scss */
+/* line 984, ../sass/screen.scss */
 .comment-ava.right {
   float: right;
   margin-right: 0;
   margin-left: 15px;
 }
 
-/* line 985, ../sass/screen.scss */
+/* line 992, ../sass/screen.scss */
 .sociallink.inactive {
   display: none;
 }

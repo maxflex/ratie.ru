@@ -6,6 +6,8 @@
 	subscribed		= <?= (!empty($subscribed) ? $subscribed : 0) ?>; 
 	id_adjective 	= <?= $id_adjective ?>; 
 	id_viewing		= <?= $id_viewing ?>;
+	own_page		= <?= (!empty($own_page) ? $own_page : 0) ?>;
+	have_messages	= <?= ($have_messages ? 1 : 0) ?>;
 	<?= angInit("commentator", $LoggedUser )?>" 
 	style="margin-bottom: 35px">
 	<h1 id="name-lastname"><?=$User->first_name." ".$User->last_name?>
@@ -19,7 +21,7 @@
 				<?php globalPartial("ava", array("User" => $User)) ?>
 			</a>
 			<!-- СОЦИАЛЬНЫЕ КНОПКИ -->
-			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id)) ?>
+			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id, "user_login" => $User->login)) ?>
 				
 		</div>
 		
@@ -30,6 +32,9 @@
 						<?php
 							if (!$Adjective) {
 								echo "Открытая беседа";
+								if ($own_page) {
+									echo '<button class="btn br5 btn-success pull-right" ng-click="offerChat()" style="margin-top: 4px"><span class="glyphicon glyphicon-plus" style="margin: 0"></span></button>';
+								}
 							} else {
 								echo "Комментарии к «{$Adjective->adjective}»:";
 							}
@@ -38,12 +43,13 @@
 
 					<div class="comment-row">
 						<div style="background-image: url(<?= $LoggedUser->avatar ?>)" class="ava-60 pull-left <?=($LoggedUser->stretch ? "stretch" : "")?>"></div>
-						<input type="text" class="comments-box" ng-model="comment" ng-keydown="watchEnter($event)" placeholder="<?= $Adjective ? "А что думаешь ты?" : (($LoggedUser->id && !$LoggedUser->anonymous) ? "Ваше публичное сообщение здесь" : "Ваше анонимное сообщение здесь") ?>"><button class="btn btn-success comment-button" ng-click="leaveComment()">OK</button> 
+						<input id="comment-input" type="text" class="comments-box" ng-model="comment" ng-keydown="watchEnter($event)" placeholder="<?= $Adjective ? "А что думаешь ты?" : (($LoggedUser->id && !$LoggedUser->anonymous) ? "Ваше публичное сообщение здесь" : "Ваше анонимное сообщение здесь") ?>"><button class="btn btn-success comment-button" ng-click="leaveComment()">OK</button> 
 					</div>
 				</div>
 			</div>
 			
-			<h3 class="trans center-content text-white badge-success animate-show mg-top" ng-show="!comments">
+			<h3 class="trans center-content text-white badge-success animate-show mg-top" 
+				ng-show="<?= $Adjective ? "!comments" : "!have_messages" ?>">
 					<span class='glyphicon glyphicon-comment'></span>
 					<?= $Adjective ? "Ваш комментарий будет первым" : "Ваше сообщение будет первым" ?>
 			</h3>

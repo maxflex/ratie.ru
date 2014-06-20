@@ -877,6 +877,13 @@ fieldset {
 	
 	$br: 5px;
 	@include border-radius($br 0 0 $br !important);
+	
+	&.loading {
+		@include transition(none !important);
+		background-image: url("../../img/loader/spinner.gif") !important;
+		background-position:  99.5% center !important;
+		background-repeat: no-repeat !important;
+	}
 }
 
 .comments-box:focus {

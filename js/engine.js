@@ -17,7 +17,7 @@
 	
 	$(document).ready(function() {
 		// Анимируем новости на всех страницах
-		news_count_top = $("#news-count-top");
+		news_count_top = $(".count");
 		
 		// Если есть новости
 		if (news_count_top.length) {

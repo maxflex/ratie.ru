@@ -30,7 +30,7 @@
 				
 				if ($NewsCount) {
 					// Если кол-во новостей меньше 10, то циферка больше шрифтом
-					echo '<span id="news-count-top" class="count '.($NewsCount < 10 ? 'd1' : '').'">'.$NewsCount.'</span>';
+					echo '<span class="count '.($NewsCount < 10 ? 'd1' : '').'">'.$NewsCount.'</span>';
 				}
 				
 			// Отображаем сам пункт меню
@@ -42,6 +42,28 @@
 			</li>
 			<!-- КОНЕЦ МЕНЮ «НОВОСТИ/ПОЛЬЗОВАТЕЛЬ» -->
 
+
+			<!-- ПУНКТ МЕНЮ «СООБЩЕНИЯ» -->
+			<?php
+				echo "<li ".menuActive("user", null, array("comment" => 0, "user" => ""), array()).">";
+				// Если есть новости, выводим
+				$NewsCount = $User->newMessagesCount();
+				
+				if ($NewsCount) {
+					// Если кол-во новостей меньше 10, то циферка больше шрифтом
+					echo '<span class="count '.($NewsCount < 10 ? 'd1' : '').'">'.$NewsCount.'</span>';
+				}
+				
+			// Отображаем сам пункт меню
+			?>
+        	<a href="messages">
+        		<!-- <span class="flaticon-mail"></span> -->
+				<span class="glyphicon glyphicon-comment"></span>
+        	</a>
+			</li>
+        	<!-- КОНЕЦ МЕНЮ «СООБЩЕНИЯ» -->
+
+			
 			<!-- ПУНКТ МЕНЮ «НАСТРОЙКИ» -->
 			<li <?=(menuActive("profile", "edit"))?> >
         		<a href="profile/edit"><span class="glyphicon glyphicon-th"></span></a>

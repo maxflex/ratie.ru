@@ -10,7 +10,7 @@
 		<div class="col-md-4 center-content">
 			<?php globalPartial("ava", array("User" => $User)) ?>
 			<!-- СОЦИАЛЬНЫЕ КНОПКИ -->
-			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id)) ?>
+			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id, "user_login" => $User->login)) ?>
 				
 		</div>
 		

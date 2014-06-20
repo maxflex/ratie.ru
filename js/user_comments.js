@@ -12,6 +12,9 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 
 		// Действия после загрузки приложения
 		angular.element(document).ready(function(){
+			// Элемент поля ввода сообщения
+			comment_input = $("#comment-input");
+			
 			// Получаем хеш, чтобы поднимать в списке конкретное прилагательное через url#id_adjective
 			hash = window.location.hash.substring(1);
 
@@ -39,7 +42,16 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 			}
 		});
 		
+		$scope.startLoading = function() {
+			comment_input.prop("disabled", true);
+			comment_input.addClass("loading");
+		}
 		
+		$scope.endLoading = function() {
+			comment_input.prop("disabled", false);
+			comment_input.removeClass("loading");
+			comment_input.focus();
+		}
 		
 		// Подписаться/отписаться
 		$scope.subscribe = function(id_user) {
@@ -63,7 +75,7 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 			}
 			
 			// Если нужно показывать сообщение (один раз только показывается для зарегистрированных)
-			if ($scope.intro_message) {
+			if ($scope.intro_message  && !$scope.own_page) {
 				
 				message = "<span style='font-family: RaleWayMedium'><center>";
 				
@@ -102,14 +114,14 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 		// Отправить комментарий
 		$scope.submitComment = function()
 		{
-			ajaxStart();
+			$scope.startLoading();
 			$.post("?controller=user&action=AjaxLeaveComment", {
 				"comment" 		: $scope.comment, 
 				"id_adjective" 	: $scope.id_adjective, 
 				"id_viewing" 	: $scope.id_viewing
 			})
 				.success(function(resp) {
-					ajaxEnd();
+					$scope.endLoading();
 					
 					// Если ответ от сервера – число (ID нового комметария), то добавляем в список 
 					if (parseInt(resp)) {
@@ -138,7 +150,7 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 					
 				})
 				.error(function(){
-					ajaxEnd();
+					$scope.endLoading();
 					bootbox.alert(_ALERT_CAUTION + "Произошла ошибка! Не удалось оставить комментарий.");					
 				});
 		}

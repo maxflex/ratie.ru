@@ -14,7 +14,7 @@
 </svg></a>
 	
 
-				<a class="sociallink EmailLink" href="<?=$_SERVER["REQUEST_URI"]?>/messages" ng-mouseenter="message = true" ng-mouseleave="message = false">
+				<a class="sociallink EmailLink" href="<?= $user_login ?>/messages" ng-mouseenter="message = true" ng-mouseleave="message = false">
 				<svg width="400px" height="400px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 					<title>Email</title>
 					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

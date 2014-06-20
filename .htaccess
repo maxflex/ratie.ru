@@ -18,6 +18,9 @@ RewriteRule ^logout$ index.php?controller=index&action=logout [QSA,L]
 RewriteRule ^login$ index.php?controller=index [QSA,L]
 RewriteRule ^login/vk$ index.php?controller=index&action=auth [QSA,L]
 
+# Сообщения
+RewriteRule ^messages$ index.php?controller=user&comment=0 [QSA,L]
+
 # Профиль
 RewriteRule ^profile$ index.php?controller=profile [QSA,L]
 RewriteRule ^profile/([a-zA-Z0-9_-]+)$ index.php?controller=profile&action=$1 [QSA,L]
