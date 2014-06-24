@@ -11,7 +11,7 @@
 	<?= angInit("commentator", $LoggedUser )?>" 
 	style="margin-bottom: 35px">
 	<h1 id="name-lastname"><?=$User->first_name." ".$User->last_name?>
-		<span class="arrow-back big glyphicon glyphicon-chevron-left pull-left path-icon clickable left" onclick="goBack()"></span>
+		<span ng-hide="(own_page && !id_adjective)" class="arrow-back big glyphicon glyphicon-chevron-left pull-left path-icon clickable left" onclick="goBack()"></span>
 	</h1>
 	<hr>
 	
@@ -43,7 +43,10 @@
 
 					<div class="comment-row">
 						<div style="background-image: url(<?= $LoggedUser->avatar ?>)" class="ava-60 pull-left <?=($LoggedUser->stretch ? "stretch" : "")?>"></div>
-						<input id="comment-input" type="text" class="comments-box" ng-model="comment" ng-keydown="watchEnter($event)" placeholder="<?= $Adjective ? "А что думаешь ты?" : (($LoggedUser->id && !$LoggedUser->anonymous) ? "Ваше публичное сообщение здесь" : "Ваше анонимное сообщение здесь") ?>"><button class="btn btn-success comment-button" ng-click="leaveComment()">OK</button> 
+						<input id="comment-input" type="text" class="comments-box" ng-model="comment" ng-keydown="watchEnter($event)" placeholder="<?= $Adjective ? "А что думаешь ты?" : (($LoggedUser->id && !$LoggedUser->anonymous) ? "Ваше публичное сообщение здесь" : "Ваше анонимное сообщение здесь") ?>"><button class="btn btn-success comment-button" ng-click="leaveComment()">
+						<span ng-hide="id_adjective" class='glyphicon glyphicon-send' style="font-size: 25px"></span>
+						<span ng-show="id_adjective">ОК</span>
+						</button> 
 					</div>
 				</div>
 			</div>

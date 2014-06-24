@@ -3,8 +3,6 @@
 	{
 	
 		/*====================================== ПЕРЕМЕННЫЕ И КОНСТАНТЫ ======================================*/
-
-		public static $mysql_table	= "news_types";
 		
 		const NEW_VOTE		= 1;
 		const VOTE_FOR		= 2;
@@ -15,7 +13,13 @@
 		const UNSUBSCRIBED	= 7; 
 		const COMMENT 		= 8;
 		const NEW_VK_FRIEND	= 9;	// Новый друг из ВК появился на Ratie
-		const NEW_MESSAGE	= 10;	// Новое сообщение на стене
+		const NEW_MESSAGE	= 10;	// Новое сообщение в открытой беседе [НЕ ИСПОЛЬЗУЕТСЯ]
+		const NEW_COMMENT	= 11;	// Прокомментировано мнение, оставленное ТОБОЙ
+		
+		public static $mysql_table	= "news_types";
+		
+		// Какие новости не показывать подписчикам
+		public static $not_show_to_subscribers = array(self::NEW_COMMENT, self::NEW_VK_FRIEND);
 		
 		/*====================================== СИСТЕМНЫЕ ФУНКЦИИ ======================================*/
 		

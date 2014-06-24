@@ -352,8 +352,9 @@
 		 * $id_last_seen_news – id последнего просмотренной новости, если не указан, то $this 
 		 * COMMENT: если из $this, то пользователь просматривает свои же новости, если передается переменная 
 		 * - то просмативает кто-то другой (с какой новости отображать новые/старые)
+		 * $sub_news – получить новости для подписчиков
 		 */
-		public function getNews($id_last_seen_news = false)
+		public function getNews($id_last_seen_news = false, $sub_news = false)
 		{
 			// Если установлен $id_last_seen_vote, то просматриваем новые с него, если нет, берем из $this
 			$id_last_seen_news = ($id_last_seen_news === false ? $this->id_last_seen_news : $id_last_seen_news);
@@ -361,7 +362,8 @@
 			if ($id_last_seen_news) {
 				// Находим новые голоса
 				$News = Feed::findAll(array(
-					"condition"	=> "id > ".$id_last_seen_news,
+					"condition"	=> "id > ".$id_last_seen_news
+						.($sub_news ? " AND id_news_type NOT IN (".implode(',', NewsType::$not_show_to_subscribers).")" : ""), // Новости для подписч.
 					"order"		=> "id DESC",
 				));
 			} else {
@@ -378,7 +380,7 @@
 		 * Получаем просмотренные новости
 		 * см. описание newVotes()
 		 */
-		public function getOldNews($id_last_seen_news = false)
+		public function getOldNews($id_last_seen_news = false, $sub_news = false)
 		{
 			// Если установлен $id_last_seen_vote, то просматриваем новые с него, если нет, берем из $this
 			$id_last_seen_news = ($id_last_seen_news === false ? $this->id_last_seen_news : $id_last_seen_news);
@@ -386,7 +388,8 @@
 			if ($id_last_seen_news) {
 				// Находим новые голоса
 				$OldNews = Feed::findAll(array(
-					"condition"	=> "id <= ".$id_last_seen_news,
+					"condition"	=> "id <= ".$id_last_seen_news
+						.($sub_news ? " AND id_news_type NOT IN (".implode(',', NewsType::$not_show_to_subscribers).")" : ""), // Новости для подписч.
 					"order"		=> "id DESC",
 					"limit"		=> 20,				// Получаем последние 20 новостей
 				));
@@ -724,6 +727,7 @@
 					  `id_user` int(11) NOT NULL DEFAULT '0' COMMENT 'ID пользователя (Если не указан, в новостной ленте будет указан Аноним)',
 					  `id_adjective` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ID прилагательного (само прилагательное вставляется вместо {1})',
 					  `date` datetime NOT NULL COMMENT 'Дата новости',
+					  `additional` INT NULL DEFAULT NULL COMMENT 'Дополнительное поле',
 					  PRIMARY KEY (`id`)
 					) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Новостная лента' AUTO_INCREMENT=1 ;
 					
@@ -734,6 +738,7 @@
 					  `ip` varchar(15) DEFAULT NULL COMMENT 'IP адрес комментатора',
 					  `comment` varchar(255) DEFAULT NULL COMMENT 'Комментарий',
 					  `time` datetime NOT NULL,
+
 					  PRIMARY KEY (`id`)
 					) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Комментарии прилагательных' AUTO_INCREMENT=1 ;
 				");

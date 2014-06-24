@@ -382,7 +382,6 @@ h3 {
 		}
 		&.oblack {
 			color: black;
-			text-indent: 7.5px;
 		}
 		&.oinfo {
 			color: $info;
@@ -432,7 +431,6 @@ h3 {
 	
 	&.black {
 		background: black;
-		text-indent: 7.5px;
 		&:hover {
 			color: black !important;
 			@include box-shadow(0px 0px 15px 5px black);

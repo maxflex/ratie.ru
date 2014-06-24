@@ -10,8 +10,6 @@ comments_loaded = false; // При первой загрузке чата не �
 id_last_comment = false; // ID последнего добавленного комментария (не играть звук, если коммент от себя же)
 
 $(document).ready(function(){
-	$("#user-comments-page").addClass(_page_additional_start_animation);
-	
 	// Инициализация приложения ВК
 	VK.init({
 	  apiId: _vk_app_id
@@ -48,6 +46,12 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 		
 		// Действия после загрузки приложения
 		angular.element(document).ready(function(){	
+			if ($scope.own_page) {
+				$("#user-comments-page").addClass(_page_start_animation);
+			} else {
+				$("#user-comments-page").addClass(_page_additional_start_animation);
+			}
+			
 			// Элемент поля ввода сообщения
 			comment_input = $("#comment-input");
 				
@@ -255,8 +259,8 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 			random_message = offer_messages[Math.floor(Math.random()*offer_messages.length)];
 			
 			VK.Api.call('wall.post', {
-					message: random_message + ": " + document.URL,
-					attachments: document.URL
+					message: random_message + ": " + "http://ratie.ru/" + $scope.commentator.login + "/messages",
+					attachments: "http://ratie.ru/" + $scope.commentator.login + "/messages"
 					
 				}, function(r) {
 					// Если пользователь поделился, увеличеваем кол-во shares

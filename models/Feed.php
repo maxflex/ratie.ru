@@ -91,20 +91,21 @@
 		/*
 		 * Функция отображает все новости
 		 * $id_last_seen	– если FALSE, то отображать свои же новости (иначе указать LAST_SEEN_ID - с какого ID считаются новыми новости)
-		 * $tophr 			– разделительный <hr> будет вверху, вместо отделения между новыми/старыми голосами
+		 * $sub_news		– если true, то отображаются новости подписок, если false – свои новости
+		 *					  Дополнительно: true - разделительный <hr> будет вверху, вместо отделения между новыми/старыми голосами 
 		 */
-		public static function displayNews($User, $id_last_seen = false, $tophr = false)
+		public static function displayNews($User, $id_last_seen = false, $sub_news = false)
 		{
 			// Разделитель вверху
-			if ($tophr) {
+			if ($sub_news) {
 				echo '<hr class="news-seperator">';
 			}
 			
 			// Получаем просмотренные новости
-			$OldNews = $User->getOldNews($id_last_seen);
+			$OldNews = $User->getOldNews($id_last_seen, $sub_news);
 			
 			// Получаем новости
-			$News = $User->getNews($id_last_seen);
+			$News = $User->getNews($id_last_seen, $sub_news);
 			
 			// Проверяем, есть ли вообще новости (После регистрации ничего нет. Если просмотренных новостей нет, то никаких новостей не было вообще)
 			// Если совсем никаких новостей не было
@@ -129,7 +130,7 @@
 			}
 			
 			//  Если вверху не было разделителя, ставим посередине
-			if (!$tophr) {
+			if (!$sub_news) {
 				echo '<hr class="news-seperator">';
 			}			
 			
@@ -190,8 +191,23 @@
 			
 			// Если установлено прилагательное
 			if ($this->id_adjective) {
-				// Получаем прилагательное
-				$Adjective	= Adjective::findById($this->id_adjective);
+				// Если нужно получить чужое прилагательное
+				if ($this->id_news_type == NewsType::NEW_COMMENT) {
+					// Соединение с БД другого пользователя
+					User::setConnection($this->additional);
+					
+					// Получаем информацию о пользователе для генерации ссылки
+					$AdditionalUser = User::findById($this->additional);
+					
+					// Получаем прилагательное
+					$Adjective	= Adjective::findById($this->id_adjective);
+					
+					// Переподключаемся к БД основного пользователя
+					User::setConnection(User::fromSession(false)->id);
+				} else {
+					// Получаем прилагательное
+					$Adjective	= Adjective::findById($this->id_adjective);
+				}
 				
 				// Если нашлось
 				if ($Adjective) {
@@ -225,6 +241,11 @@
 				
 				case NewsType::COMMENT: {
 					$link = $ViewdUser->login."/comments-".$this->id_adjective;
+					break;
+				}
+				
+				case NewsType::NEW_COMMENT: {
+					$link = $AdditionalUser->login."/comments-".$this->id_adjective;
 					break;
 				}
 				

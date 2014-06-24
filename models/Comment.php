@@ -45,4 +45,12 @@
 			$this->_ang_login	= $User->login; 
 			$this->order		= 0;
 		}
+		
+		/*
+		 * Получаем прилагательное комментария
+		 */
+		public function Adjective()
+		{
+			return Adjective::findById($this->id_adjective);
+		}
 	}
