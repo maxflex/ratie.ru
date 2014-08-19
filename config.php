@@ -18,7 +18,7 @@
 		"BASE_ROOT"		=> $_SERVER["DOCUMENT_ROOT"]."/ratie.ru",
 	);
 
-	/*// Контроллеры и модели 
+	// Контроллеры и модели 
 	$_controllers	= array(
 		"", "User", "Index", "Profile", "Test", 
 	);
@@ -26,7 +26,7 @@
 	$_models		= array(
 	 	"Model", "User", "Adjective", "Vote", "DefaultAdjective", "Subscription", "Subscriber", "NewsType",
 	 	"Feed", "Comment",
-	 );*/
+	 );
 	
 	/********************************************************************/
 	
@@ -54,26 +54,6 @@
 	
 	include_once("functions.php");				// Подключаем основные функции
 	
-	require_once("models/Model.php");			// Основная модель подключается первой
-	// Подключаем модели и контроллеры
-	foreach (glob("models/*.php") as $filename)
-	{
-		if (strpos($filename, "_template") || strpos($filename, "Model.php")) {
-			continue;
-		}
-	    include $filename;
-	}
-	
-	require_once("controllers/Controller.php");	// Основной контроллер подключается первым
-	foreach (glob("controllers/*.php") as $filename)
-	{
-		if (strpos($filename, "_Template") || strpos($filename, "/Controller.php")) {
-			continue;
-		}
-	    include $filename;
-	}
-	
-	/*
 	// Подключаем модели
 	foreach($_models as $val)
 	{
@@ -84,5 +64,5 @@
 	foreach($_controllers as $val)
 	{
 		require_once("controllers/{$val}Controller.php");	// Подключаем контроллер
-	}*/
+	}
 ?>
