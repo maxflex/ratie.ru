@@ -20,8 +20,12 @@
 	top: 0.5px;
 	display: inline-block;
 //	-webkit-font-smoothing: antialiased;
+	color: white;
 }
 
-.flaticon-mail:before {
+.flaticon-bell:before {
 	content: "\e000";
+}
+.flaticon-more:before {
+	content: "\e001";
 }

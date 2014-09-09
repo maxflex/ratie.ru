@@ -25,7 +25,10 @@
 	.fancyInput *:focus ~ div .caret{ opacity:.8; box-shadow:0 0 8px #FFF; -webkit-animation:0.4s 40ms caret infinite; animation:0.4s 40ms caret infinite;}
 	.fancyInput .caret:only-child{  }
 	.fancyInput .caret{ font-weight:normal; opacity:0; display:inline-block; width:3px; margin-left:-3px; background:#FFF; border-radius:4px; -moz-user-select:none; }
-	.fancyInput span:not(.deleted) ~ .caret{ position:absolute; margin:0; } /* only Caret which is  */
+	.fancyInput span:not(.deleted) ~ .caret{ 
+	//position:absolute; 
+	margin-left:3px; 
+	} /* only Caret which is  */
 
 		/* lettes */
 		.fancyInput > div span{ -webkit-transition:100ms cubic-bezier(0.08, 0.6, 0.56, 1.4); transition:100ms cubic-bezier(0.08, 0.6, 0.56, 1.4); display:inline-block; position:relative; }

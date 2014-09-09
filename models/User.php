@@ -29,10 +29,10 @@
 				// см. public static $initialize_on_new
 				if (static::$initialize_on_new) {
 					initUserConnection($this->id);
+					
+					// Находим все прилагательные пользователя
+					$this->Adjectives = Adjective::findAll();
 				}
-				
-				// Находим все прилагательные пользователя
-				$this->Adjectives = Adjective::findAll();
 			}
 		}
 		
@@ -198,7 +198,7 @@
 					echo "Слишком короткая/длинная мысль";					
 				}
 				// throw new Exception("Пустое или слишком длинное прилагательное");	
-				exit();
+				return "Слишком короткая/длинная мысль";
 			}
 			
 			/***** Проверяем лимит прилагательных подряд от одного пользователя *****/
@@ -221,7 +221,7 @@
 				
 				// Если превышен лимит 
 				if ($count_limit >= settings()->ADJECTIVE_LIMIT) {
-					exit("Слишком много комментариев подряд!");					
+					return "Слишком много комментариев подряд!";				
 				}
 			}
 			/************* КОНЕЦ ПРОВЕРКИ МЫСЛЕЙ ПОДРЯД ***************/
@@ -257,7 +257,7 @@
 					if ($ajax) {
 						echo $this->first_name." запретил".($this->gender ? "а" : "")." голосование за «{$Adjective->adjective}»";
 					}
-					exit();
+					return $this->first_name." запретил".($this->gender ? "а" : "")." голосование за «{$Adjective->adjective}»";
 				}
 			}
 			
@@ -590,6 +590,15 @@
 		 }
 		 
 		 /*
+		  * Проверка, своя ли страница?
+		  * $id_user – ID другого пользователя. Если равен с текущим, то своя страница
+		  */
+		 public function ownPage($id_user)
+		 {		 	
+			return ($id_user == $this->id);
+		 }
+		 
+		 /*
 		  * Возвращает Имя, Фамалия
 		  * $reverse – Фамилия, Имя
 		  */
@@ -695,6 +704,8 @@
 					  `adjective` varchar(20) NOT NULL COMMENT 'Прилагательное',
 					  `id_first_vote` int(10) unsigned DEFAULT NULL COMMENT 'ID первого голоса за прилагательное (Он добавил, остальные голосуют)',
 					  `hidden` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Видимость прилагательного',
+					  `date` DATETIME NOT NULL COMMENT  'Дата добавления мнения',
+					  
 					  PRIMARY KEY (`id`)
 					) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Отзывы о пользователе (прилагательные)' AUTO_INCREMENT=1 ;
 					
@@ -738,6 +749,7 @@
 					  `ip` varchar(15) DEFAULT NULL COMMENT 'IP адрес комментатора',
 					  `comment` varchar(255) DEFAULT NULL COMMENT 'Комментарий',
 					  `time` datetime NOT NULL,
+					  `deleted` BOOLEAN NOT NULL DEFAULT FALSE COMMENT  'Комментарий удален?',
 
 					  PRIMARY KEY (`id`)
 					) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Комментарии прилагательных' AUTO_INCREMENT=1 ;

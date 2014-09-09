@@ -57,16 +57,35 @@
 					<?= $Adjective ? "Ваш комментарий будет первым" : "Ваше сообщение будет первым" ?>
 			</h3>
 			
+			<?php
+				// Если это страница сообщений, то выводить «Сообщения загружаются..»
+				if (!$Adjective->id) {
+					?>
+					<div class="loading-messages" ng-hide="comments_loaded || !have_messages">
+						<img src="img/loader/spinner.gif">Загрузка сообщений
+					</div>
+					<?php
+				}
+			?>
+			
 			<div ng-init="<?= ( $Adjective ? angInit("comments", $Comments) : "" )?>">
-				<div ng-repeat="comment in comments | <?= ( $Adjective ? "orderBy:['order', 'id']:true" : "orderByPriority | reverse" ) ?>" class="animate-repeat" style="clear: both">
-					<a ng-if="comment._ang_login" target="_blank" href="{{comment._ang_login}}"><div style="background-image: url({{comment._ang_ava}})" class="ava-60 comment-ava" ng-class="{stretch : comment._ang_stretch,  right : comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>)}"></div></a>
+				<div ng-repeat="comment in comments | <?= ( $Adjective ? "orderBy:['order', 'id']:true" : "orderByPriority | reverse" ) ?>" 
+					 ng-class="{'animate-repeat' : (comment.order > 0)}" style="clear: both">
+					<a ng-if="comment._ang_login" target="_blank" href="{{comment._ang_login}}"><div style="background-image: url({{comment._ang_ava}})" class="ava-60 comment-ava" ng-class="{
+					stretch : comment._ang_stretch,  
+					right : comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>),
+					deleted: comment.deleted}"></div></a>
 					
-					<div ng-if="!comment._ang_login" style="background-image: url('img/profile/noava.png')" class="ava-60 comment-ava cursor-default"></div>
+					<div ng-if="!comment._ang_login" style="background-image: url('img/profile/noava.png')" class="ava-60 comment-ava cursor-default"
+					ng-class="{deleted: comment.deleted}"></div>
 					
 					<div class="bubble" ng-class="{
 						right : comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>),
-						active : (comment.order > 0)
+						active : (comment.order > 0),
+						deleted: comment.deleted
 					}">
+						<span class="glyphicon glyphicon-remove icon remove" ng-show="((own_page || comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>)) && !comment.deleted)" ng-click="deleteComment(comment)"></span>
+						<span class="glyphicon glyphicon-ok icon restore" ng-show="comment.deleted" ng-click="restoreComment(comment)"></span>
 						{{comment.comment}}
 					</div>
 				</div>

@@ -38,6 +38,7 @@
 	
 	<!-- БАР-ПРИЛАГАТЕЛЬНОГО -->
 	<div class="adjective-bar progress-primary" style="margin: 2px 0 20px">
+		<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)"></span>
 		<div id="bar-{{adj.id}}" class="bar" style="width: {{adj._ang_pos_percent}}%"></div>
 	</div>
 	</div>
@@ -93,6 +94,7 @@
 		
 		<!-- БАР-ПРИЛАГАТЕЛЬНОГО -->
 		<div class="adjective-bar progress-primary" style="margin: 2px 0 20px">
+			<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)"></span>
 			<div id="bar-{{adj.id}}" class="bar" style="width: {{adj._ang_pos_percent}}%"></div>
 		</div>
 		</div>

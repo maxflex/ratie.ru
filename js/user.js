@@ -325,6 +325,14 @@ angular.module('UserPage', ['ngAnimate']);
 		$scope.comment = function(id_adj) {
 			window.location = document.URL + "/comments-" + id_adj;
 		}
+		
+		// Дополнительная информация
+		$scope.moreInfo = function(id_adj) {
+			$.post("?controller=user&action=AjaxMoreInfo", {"id_adjective" : id_adj, "id_viewing" : $scope.id_viewing})
+				.success(function(resp){
+					bootbox.alert("<span style='font-size: 16px'>" + resp + "</span>");
+			});
+		}
 	}
 	
 

@@ -10,196 +10,165 @@ h2 {
 
 /* line 29, ../sass/screen.scss */
 .animate-repeat.ng-move, .animate-repeat.ng-enter, .animate-repeat.ng-leave {
-  -webkit-transition: all linear;
-  -webkit-transition-delay: 1s;
-  -moz-transition: all linear 1s;
-  -o-transition: all linear 1s;
-  transition: all linear 1s;
-  -webkit-animation-duration: 1s;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
   -moz-animation-duration: 1s;
-  -o-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 36, ../sass/screen.scss */
 .animate-repeat.ng-move-active, .animate-repeat.ng-enter-active {
-  -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
-  -o-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
 
 /* line 46, ../sass/screen.scss */
 .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
-  -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 52, ../sass/screen.scss */
 .animate-show.ng-hide-remove-active {
-  -webkit-animation-name: fadeInLeft;
   -moz-animation-name: fadeInLeft;
-  -o-animation-name: fadeInLeft;
+  -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
 
 /* line 61, ../sass/screen.scss */
 .animate-show-bounce.ng-hide-add, .animate-show-bounce.ng-hide-remove {
-  -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 67, ../sass/screen.scss */
 .animate-show-bounce.ng-hide-remove-active {
-  -webkit-animation-name: bounceIn;
   -moz-animation-name: bounceIn;
-  -o-animation-name: bounceIn;
+  -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
 }
 
 /* line 75, ../sass/screen.scss */
 .animate-show-right.ng-hide-add, .animate-show-right.ng-hide-remove {
-  -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 81, ../sass/screen.scss */
 .animate-show-right.ng-hide-remove-active {
-  -webkit-animation-name: fadeInRight;
   -moz-animation-name: fadeInRight;
-  -o-animation-name: fadeInRight;
+  -webkit-animation-name: fadeInRight;
   animation-name: fadeInRight;
 }
 
 /* line 90, ../sass/screen.scss */
 .animate-show-hide.ng-hide-add {
   display: block !important;
-  -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 97, ../sass/screen.scss */
 .animate-show-hide.ng-hide-add-active {
-  -webkit-animation-name: fadeOut;
   -moz-animation-name: fadeOut;
-  -o-animation-name: fadeOut;
+  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
 }
 /* line 102, ../sass/screen.scss */
 .animate-show-hide.ng-hide-remove {
-  -webkit-animation-duration: 0.5s;
   -moz-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 108, ../sass/screen.scss */
 .animate-show-hide.ng-hide-remove-active {
-  -webkit-animation-name: fadeInLeft;
   -moz-animation-name: fadeInLeft;
-  -o-animation-name: fadeInLeft;
+  -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
 
 /* line 117, ../sass/screen.scss */
 .animate-up-down.ng-hide-add {
   display: block !important;
-  -webkit-animation-duration: 0.7s;
   -moz-animation-duration: 0.7s;
-  -o-animation-duration: 0.7s;
+  -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 124, ../sass/screen.scss */
 .animate-up-down.ng-hide-add-active {
-  -webkit-animation-name: fadeOutUp;
   -moz-animation-name: fadeOutUp;
-  -o-animation-name: fadeOutUp;
+  -webkit-animation-name: fadeOutUp;
   animation-name: fadeOutUp;
 }
 /* line 129, ../sass/screen.scss */
 .animate-up-down.ng-hide-remove {
-  -webkit-animation-duration: 0.7s;
   -moz-animation-duration: 0.7s;
-  -o-animation-duration: 0.7s;
+  -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 135, ../sass/screen.scss */
 .animate-up-down.ng-hide-remove-active {
-  -webkit-animation-name: fadeInDown;
   -moz-animation-name: fadeInDown;
-  -o-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
 
 /* line 144, ../sass/screen.scss */
 .animate-fade.ng-hide-add {
   display: block !important;
-  -webkit-animation-duration: 0.4s;
   -moz-animation-duration: 0.4s;
-  -o-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 151, ../sass/screen.scss */
 .animate-fade.ng-hide-add-active {
-  -webkit-animation-name: fadeOut07;
   -moz-animation-name: fadeOut07;
-  -o-animation-name: fadeOut07;
+  -webkit-animation-name: fadeOut07;
   animation-name: fadeOut07;
 }
 /* line 156, ../sass/screen.scss */
 .animate-fade.ng-hide-remove {
-  -webkit-animation-duration: 0.4s;
   -moz-animation-duration: 0.4s;
-  -o-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
-  -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 /* line 162, ../sass/screen.scss */
 .animate-fade.ng-hide-remove-active {
-  -webkit-animation-name: fadeIn07;
   -moz-animation-name: fadeIn07;
-  -o-animation-name: fadeIn07;
+  -webkit-animation-name: fadeIn07;
   animation-name: fadeIn07;
 }
 
@@ -239,11 +208,10 @@ h2.news {
 h2.news .badge-success {
   background: #3fb618;
   opacity: 0.8;
-  -webkit-transition: opacity linear;
-  -webkit-transition-delay: 0.2s;
-  -moz-transition: opacity linear 0.2s;
-  -o-transition: opacity linear 0.2s;
-  transition: opacity linear 0.2s;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 /* line 207, ../sass/screen.scss */
 h2.news:hover {
@@ -267,8 +235,8 @@ h3.foll {
 
 /* line 229, ../sass/screen.scss */
 .news-rounded {
-  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
   height: 40px;
   display: inline-block;
@@ -349,8 +317,8 @@ h3.foll {
 
 /* line 308, ../sass/screen.scss */
 .circle {
-  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
   height: 56px !important;
   width: 56px !important;
@@ -404,14 +372,13 @@ h3.foll {
 
 /* line 356, ../sass/screen.scss */
 .thumb-circle {
-  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
-  -webkit-transition: all linear;
-  -webkit-transition-delay: 0.3s;
-  -moz-transition: all linear 0.3s;
-  -o-transition: all linear 0.3s;
-  transition: all linear 0.3s;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   color: white;
   height: 40px !important;
   width: 40px !important;
@@ -426,9 +393,9 @@ h3.foll {
 .thumb-circle.old {
   opacity: 1;
   background: white !important;
-  -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
+  -webkit-transition: none;
   transition: none;
 }
 /* line 374, ../sass/screen.scss */
@@ -468,8 +435,8 @@ h3.foll {
 /* line 402, ../sass/screen.scss */
 .thumb-circle.for:hover {
   color: #41ba18 !important;
-  -webkit-box-shadow: 0px 0px 15px 5px #41ba18;
   -moz-box-shadow: 0px 0px 15px 5px #41ba18;
+  -webkit-box-shadow: 0px 0px 15px 5px #41ba18;
   box-shadow: 0px 0px 15px 5px #41ba18;
 }
 /* line 408, ../sass/screen.scss */
@@ -479,8 +446,8 @@ h3.foll {
 /* line 410, ../sass/screen.scss */
 .thumb-circle.against:hover, .thumb-circle.unsub:hover {
   color: #ff0039;
-  -webkit-box-shadow: 0px 0px 15px 5px #ff0039;
   -moz-box-shadow: 0px 0px 15px 5px #ff0039;
+  -webkit-box-shadow: 0px 0px 15px 5px #ff0039;
   box-shadow: 0px 0px 15px 5px #ff0039;
 }
 /* line 416, ../sass/screen.scss */
@@ -490,8 +457,8 @@ h3.foll {
 /* line 418, ../sass/screen.scss */
 .thumb-circle.plus:hover {
   color: #0072e6;
-  -webkit-box-shadow: 0px 0px 15px 5px #0072e6;
   -moz-box-shadow: 0px 0px 15px 5px #0072e6;
+  -webkit-box-shadow: 0px 0px 15px 5px #0072e6;
   box-shadow: 0px 0px 15px 5px #0072e6;
 }
 /* line 424, ../sass/screen.scss */
@@ -501,8 +468,8 @@ h3.foll {
 /* line 426, ../sass/screen.scss */
 .thumb-circle.info:hover {
   color: #9954bb;
-  -webkit-box-shadow: 0px 0px 15px 5px #9954bb;
   -moz-box-shadow: 0px 0px 15px 5px #9954bb;
+  -webkit-box-shadow: 0px 0px 15px 5px #9954bb;
   box-shadow: 0px 0px 15px 5px #9954bb;
 }
 /* line 432, ../sass/screen.scss */
@@ -512,8 +479,8 @@ h3.foll {
 /* line 434, ../sass/screen.scss */
 .thumb-circle.black:hover {
   color: black !important;
-  -webkit-box-shadow: 0px 0px 15px 5px black;
   -moz-box-shadow: 0px 0px 15px 5px black;
+  -webkit-box-shadow: 0px 0px 15px 5px black;
   box-shadow: 0px 0px 15px 5px black;
 }
 /* line 441, ../sass/screen.scss */
@@ -567,8 +534,8 @@ h3.foll {
 }
 /* line 485, ../sass/screen.scss */
 .ava-wrap .btn {
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   margin-top: 40%;
 }
@@ -588,8 +555,8 @@ h3.foll {
 }
 /* line 505, ../sass/screen.scss */
 .ava-wrap .ava-blink {
-  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
   opacity: 0.75;
@@ -604,22 +571,21 @@ h3.foll {
 }
 /* line 518, ../sass/screen.scss */
 .ava-wrap .ava-blink.edit-profile {
-  -webkit-box-shadow: inset 0 0 100px #6e96d1;
   -moz-box-shadow: inset 0 0 100px #6e96d1;
+  -webkit-box-shadow: inset 0 0 100px #6e96d1;
   box-shadow: inset 0 0 100px #6e96d1;
 }
 /* line 522, ../sass/screen.scss */
 .ava-wrap .ava-blink.half {
-  -webkit-border-radius: 300px;
   -moz-border-radius: 300px 300px 0 0;
+  -webkit-border-radius: 300px;
   border-radius: 300px 300px 0 0;
-  -webkit-transform: translate(-17.7%, 14.6%) rotate(-45deg);
   -moz-transform: translate(-17.7%, 14.6%) rotate(-45deg);
   -ms-transform: translate(-17.7%, 14.6%) rotate(-45deg);
-  -o-transform: translate(-17.7%, 14.6%) rotate(-45deg);
+  -webkit-transform: translate(-17.7%, 14.6%) rotate(-45deg);
   transform: translate(-17.7%, 14.6%) rotate(-45deg);
-  -webkit-box-shadow: inset 0 0 50px 50px #6e96d1;
   -moz-box-shadow: inset 0 0 50px 50px #6e96d1;
+  -webkit-box-shadow: inset 0 0 50px 50px #6e96d1;
   box-shadow: inset 0 0 50px 50px #6e96d1;
   height: 150px;
   width: 300px;
@@ -634,11 +600,10 @@ h3.foll {
 }
 /* line 538, ../sass/screen.scss */
 .path-icon.clickable {
-  -webkit-transition: all linear;
-  -webkit-transition-delay: 0.3s;
-  -moz-transition: all linear 0.3s;
-  -o-transition: all linear 0.3s;
-  transition: all linear 0.3s;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
   opacity: 0.5;
   cursor: pointer;
 }
@@ -777,8 +742,8 @@ input[type=text].icon.instagram, input[type=password].icon.instagram, input[type
 
 /* line 670, ../sass/screen.scss */
 .btn.br5 {
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 /* line 674, ../sass/screen.scss */
@@ -881,8 +846,8 @@ h3 .glyphicon {
 .navbar .nav > li .count {
   position: absolute;
   background: #e60033;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   font-size: 10px;
   text-align: center;
@@ -961,11 +926,10 @@ fieldset.hidden-thoughts legend:hover {
 
 /* line 854, ../sass/screen.scss */
 .comments-box {
-  -webkit-transition: all linear 0.2s;
-  -webkit-transition-delay: !important;
-  -moz-transition: all linear 0.2s !important;
-  -o-transition: all linear 0.2s !important;
-  transition: all linear 0.2s !important;
+  -moz-transition: all 0.2s !important;
+  -o-transition: all 0.2s !important;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
   width: calc(98% - 184px) !important;
   color: black !important;
   -webkit-font-smoothing: subpixel-antialiased !important;
@@ -979,15 +943,15 @@ fieldset.hidden-thoughts legend:hover {
   resize: none !important;
   outline: none !important;
   margin: 0 !important;
-  -webkit-border-radius: 5px;
   -moz-border-radius: 5px 0 0 5px !important;
+  -webkit-border-radius: 5px;
   border-radius: 5px 0 0 5px !important;
 }
 /* line 879, ../sass/screen.scss */
 .comments-box.loading {
-  -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;
+  -webkit-transition: none !important;
   transition: none !important;
   background-image: url("../../img/loader/spinner.gif") !important;
   background-position: 99.5% center !important;
@@ -1012,8 +976,8 @@ fieldset.hidden-thoughts legend:hover {
   font-size: 18px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-  -webkit-border-radius: 0;
   -moz-border-radius: 0 5px 5px 0 !important;
+  -webkit-border-radius: 0;
   border-radius: 0 5px 5px 0 !important;
 }
 
@@ -1033,14 +997,13 @@ fieldset.hidden-thoughts legend:hover {
   min-height: 25px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.4);
-  -webkit-border-radius: 22px;
   -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
   border-radius: 22px;
-  -webkit-transition: all linear;
-  -webkit-transition-delay: 0.2s;
-  -moz-transition: all linear 0.2s;
-  -o-transition: all linear 0.2s;
-  transition: all linear 0.2s;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   display: inline-block;
   margin-top: 15px;
   margin-left: 7.5px;
@@ -1049,12 +1012,27 @@ fieldset.hidden-thoughts legend:hover {
   font-size: 16px;
 }
 /* line 936, ../sass/screen.scss */
+.bubble .icon {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  display: none;
+  cursor: pointer;
+}
+/* line 944, ../sass/screen.scss */
+.bubble .icon.remove:hover {
+  color: #e60033;
+}
+/* line 950, ../sass/screen.scss */
+.bubble .icon.restore:hover {
+  color: #379f15;
+}
+/* line 956, ../sass/screen.scss */
 .bubble:after {
-  -webkit-transition: all linear;
-  -webkit-transition-delay: 0.2s;
-  -moz-transition: all linear 0.2s;
-  -o-transition: all linear 0.2s;
-  transition: all linear 0.2s;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   content: "";
   position: absolute;
   top: 23px;
@@ -1066,49 +1044,97 @@ fieldset.hidden-thoughts legend:hover {
   width: 0;
   z-index: 1;
 }
-/* line 950, ../sass/screen.scss */
+/* line 970, ../sass/screen.scss */
 .bubble:hover {
   background: white;
 }
-/* line 952, ../sass/screen.scss */
+/* line 972, ../sass/screen.scss */
+.bubble:hover .icon {
+  display: block;
+}
+/* line 975, ../sass/screen.scss */
 .bubble:hover:after {
   border-color: transparent white;
 }
-/* line 957, ../sass/screen.scss */
+/* line 980, ../sass/screen.scss */
 .bubble.active {
   background: white;
 }
-/* line 959, ../sass/screen.scss */
+/* line 982, ../sass/screen.scss */
 .bubble.active:after {
   border-color: transparent white;
 }
-/* line 964, ../sass/screen.scss */
+/* line 987, ../sass/screen.scss */
 .bubble.right {
   margin-left: 0;
   margin-right: 7.5px;
   float: right;
 }
-/* line 969, ../sass/screen.scss */
+/* line 992, ../sass/screen.scss */
 .bubble.right:after {
   border-width: 9px 0 9px 15px;
   left: auto;
   right: -15px;
 }
+/* line 999, ../sass/screen.scss */
+.bubble.deleted {
+  opacity: 0.25;
+}
 
-/* line 977, ../sass/screen.scss */
+/* line 1004, ../sass/screen.scss */
 .comment-ava {
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   float: left;
   margin-top: 17px;
   margin-right: 15px;
 }
-/* line 982, ../sass/screen.scss */
+/* line 1010, ../sass/screen.scss */
 .comment-ava.right {
   float: right;
   margin-right: 0;
   margin-left: 15px;
 }
+/* line 1016, ../sass/screen.scss */
+.comment-ava.deleted {
+  opacity: 0.25;
+}
 
-/* line 990, ../sass/screen.scss */
+/* line 1022, ../sass/screen.scss */
 .sociallink.inactive {
   display: none;
+}
+
+/* line 1031, ../sass/screen.scss */
+.loading-messages {
+  width: 60%;
+  height: 50px;
+  text-align: center;
+  background: white;
+  padding-top: 25px;
+  margin: 50px auto;
+  font-family: "RaleWayRegular";
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  opacity: 0.5;
+}
+/* line 1042, ../sass/screen.scss */
+.loading-messages img {
+  margin-right: 10px;
+}
+
+/* line 1047, ../sass/screen.scss */
+.more-dots {
+  position: absolute;
+  right: 2%;
+  display: none;
+}
+
+/* line 1056, ../sass/screen.scss */
+.adjective-bar:hover .more-dots {
+  display: block;
 }

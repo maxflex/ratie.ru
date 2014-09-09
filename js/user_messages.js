@@ -6,7 +6,6 @@ if (sound.canPlayType('audio/mpeg;')) {
 	sound.src = "sound/chord.ogg";
 }
 
-comments_loaded = false; // При первой загрузке чата не играть звуковое оповещение
 id_last_comment = false; // ID последнего добавленного комментария (не играть звук, если коммент от себя же)
 
 $(document).ready(function(){
@@ -18,6 +17,7 @@ $(document).ready(function(){
 
 // Подключаем модуль NG-Animate к приложению UserPage
 angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
+	// Обратная сортировка сообщений 
 	.filter('reverse', function() {
       function toArray(list) {
          var k, out = [];
@@ -43,6 +43,9 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 		// Для дополнительной сортировки (каждому новому поднятию в списке $scope.order++, чтоб всегда новое было вверху)
 		$scope.order = 1;		
 		
+		// При первой загрузке чата не играть звуковое оповещение
+		$scope.comments_loaded = false;
+
 		
 		// Действия после загрузки приложения
 		angular.element(document).ready(function(){	
@@ -56,10 +59,10 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 			comment_input = $("#comment-input");
 				
 			// FireBase
-			fb = new Firebase("https://ratie.firebaseio.com/" + $scope.id_viewing);	
+			fb = new Firebase("https://ratie.firebaseio.com/" + $scope.id_viewing).startAt(null).endAt(null);	
 			
-			
-			fb.on('child_added', function(snapshot) {								
+
+			fb.on('child_added', function(snapshot) {					
 				// Если стоит надпись «Ваш комментарий будет первым -- убрать ее
 				if (!$scope.have_messages) {
 					$scope.have_messages = 1;
@@ -70,7 +73,7 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 					$.post("?controller=user&action=AjaxUpdateNewMessagesCount");	
 				}
 				
-				if (comments_loaded && (snapshot.val().id != id_last_comment)) {
+				if ($scope.comments_loaded && (snapshot.val().id != id_last_comment)) {
 					sound.play();
 				}
 								
@@ -114,7 +117,8 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 			$scope.comments = $firebase(fb);
 			
 			$scope.comments.$on("loaded", function() {
-				comments_loaded = true;
+				$scope.comments_loaded = true;
+				console.log($scope.comments);
 			});
 			
 			//console.log($scope.comments);
@@ -276,5 +280,29 @@ angular.module('UserCommentsPage', ['ngAnimate', 'firebase'])
 				$scope.leaveComment();
 			//	$event.currentTarget.blur();
 			}
+		}
+		
+		// Удаление сообщения
+		$scope.deleteComment = function(comment) {
+			comment.deleted = 1;
+		 	setTimeout(function() {
+		 		// Если комментарий не был восстановлен за это время
+		 		if (comment.deleted) {
+			 		comment.$priority = -1;
+					var updated_comment = {};
+					updated_comment[comment.$id] = comment;
+					$scope.comments.$update(updated_comment);
+					$.post("index.php?controller=user&action=AjaxDeleteComment", {"id_comment" : comment.id, "id_user" : $scope.id_viewing});
+		 		}
+		 	}, 3000);
+		}
+		
+		// Восстановить сообщение
+		$scope.restoreComment = function(comment) {
+			comment.deleted = 0;
+			comment.$priority = null;
+			var updated_comment = {};
+			updated_comment[comment.$id] = comment;
+			$scope.comments.$update(updated_comment);
 		}
 	}

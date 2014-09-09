@@ -933,6 +933,26 @@ fieldset {
 	font-family: "RaleWayMedium";
 	font-size: 16px;
 	
+	& .icon {
+		position: absolute; 
+		right: 10px; 
+		font-size: 10px;
+		display: none;
+		cursor: pointer;
+		
+		&.remove {
+			&:hover {
+				color: $danger-hover;
+			}	
+		}
+		
+		&.restore {
+			&:hover {
+				color: $success-hover;
+			}	
+		}
+	}
+	
 	&:after {
 		@include transition(all linear 0.2s);
 		content: "";
@@ -949,6 +969,9 @@ fieldset {
 	
 	&:hover {
 		background: rgba(255,255,255,1);
+		& .icon {
+			display: block;
+		}
 		&:after {
 			border-color: transparent rgba(255,255,255,1)
 		}
@@ -972,9 +995,14 @@ fieldset {
 			right: -15px;
 		}
 	}
+	
+	&.deleted {
+		opacity: 0.25;
+	}
 }
 
 .comment-ava {
+	@include transition(all linear 0.2s);
 	float: left;
 	margin-top: 17px;
 	margin-right: 15px;
@@ -983,6 +1011,10 @@ fieldset {
 		float: right;
 		margin-right: 0;
 		margin-left: 15px;
+	}
+	
+	&.deleted {
+		opacity: 0.25;
 	}
 }
 
@@ -993,5 +1025,36 @@ fieldset {
 		.SocialIconFill {
 			//opacity: 0.15 !important;
 		}
+	}
+}
+
+.loading-messages {
+	width: 60%;
+	height: 50px;
+	text-align: center;
+	background: white;
+	padding-top: 25px;
+	margin: 50px auto;
+	font-family: "RaleWayRegular";
+	@include border-radius(10px);
+	font-size: 18px;
+	opacity: 0.5;
+	& img {
+		margin-right: 10px;
+	}
+}
+
+.more-dots {
+	position: absolute; 
+	right: 2%;
+	display: none;
+}
+
+.adjective-bar {
+//	height: 100px;
+	&:hover {
+		& .more-dots {
+			display: block;
+		}	
 	}
 }

@@ -155,6 +155,22 @@ angular.module('UserCommentsPage', ['ngAnimate']);
 				});
 		}
 		
+		// Удаление сообщения
+		$scope.deleteComment = function(comment) {
+			comment.deleted = 1;
+			$.post("index.php?controller=user&action=AjaxDeleteComment", {"id_comment" : comment.id, "id_user" : $scope.id_viewing});
+		}
+		
+		// Восстановить сообщение
+		$scope.restoreComment = function(comment) {
+			comment.deleted = 0;
+			$.post("index.php?controller=user&action=AjaxDeleteComment", {
+				"id_comment": comment.id, 
+				"id_user" 	: $scope.id_viewing, 
+				"action" 	: "restore"
+			});
+		}
+		
 		$scope.watchEnter = function($event) {
 			// Отправляем комментарий по кнопке Enter
 			if ($event.keyCode == 13) {

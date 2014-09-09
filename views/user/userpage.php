@@ -32,7 +32,7 @@
 				<!-- Псевдо-форма для работы валидаторов AngularJS -->
 				<form name="pseudoForm" novalidate>
 				<div class="adjective-div pull-left">
-					<input type="text" placeholder="<?= $default_adjective ?>" name="adjective" id="adjective" ng-model="adjective" ng-keyup="updateHello()" ng-maxlength="<?= Adjective::MAX_LENGTH ?>" autocomplete="off" ng-pattern="/^[a-zA-Zа-яА-Я\-\ ]+$/">
+					<input type="text" placeholder="<?= $default_adjective ?>" name="adjective" id="adjective" ng-model="adjective" ng-keyup="updateHello()" ng-maxlength="<?= Adjective::MAX_LENGTH ?>" autocomplete="off" ng-pattern="/^[a-zA-Zа-яА-ЯёЁ\-\ ]+$/">
 				</div>
 				
 				<button class="btn btn-success btn-xxl" ng-click="think()" ng-disabled="pseudoForm.$invalid || many_words">ОК!</button>				

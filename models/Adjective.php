@@ -40,6 +40,30 @@
 		/*====================================== ФУНКЦИИ КЛАССА ============================================*/
 		
 		/*
+		 * Перед сохранением
+		 */
+		public function beforeSave()
+		{
+			// Если сохраняем в первый раз
+			if ($this->isNewRecord) {
+				$this->date = now(); // Устанавливаем дату добавления мнения
+			}
+		}
+		
+		
+		/*
+		 * Получаем автора мнения
+		 */
+		public function getAuthor()
+		{
+			// Отключаем инициализацию подключения к БД
+			User::$initialize_on_new = false;
+			
+			// Возвращаем автора мнения
+			return User::findById($this->getFirstVote()->id_user);
+		}
+		
+		/*
 		 * Объект первого голоса
 		 */
 		public function getFirstVote()
@@ -54,7 +78,7 @@
 		public function getComments($count = false)
 		{
 			return Comment::findAll(array(
-				"condition" => "id_adjective={$this->id}",
+				"condition" => "id_adjective={$this->id} AND deleted=0",
 			), $count);
 		}
 		

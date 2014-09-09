@@ -139,8 +139,8 @@
 			// Получаем все данные из таблицы
 			$result = static::dbConnection()->query("SELECT * FROM ".static::$mysql_table." WHERE id=".$id);
 					
-			// Если успешно получили
-			if ($result)
+			// Если запрос без ошибок и что-то нашлось
+			if ($result->num_rows)
 			{
 				// Создаем объект
 				$array = $result->fetch_assoc();
