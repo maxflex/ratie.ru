@@ -36,8 +36,11 @@
 		
 		/*
 		 * Отобразить view
+		 * $view – название файла вьюхи без .php
+		 * $vars – массив с переменными, которые передадутсься на вью
+		 * $global_view – глобальный вью
 		 */
-		protected function render($view, $vars = array())
+		protected function render($view, $vars = array(), $global_view = false)
 		{
 			// Рендер лэйаута
 			include_once(BASE_ROOT."/layouts/header.php");
@@ -51,7 +54,13 @@
 				}
 			}
 			
-			include_once(BASE_ROOT."/views/".(!empty($this->_viewsFolder) ? $this->_viewsFolder."/" : "")."{$view}.php");
+			// Обычный вью
+			if (!$global_view) {
+				include_once(BASE_ROOT."/views/".(!empty($this->_viewsFolder) ? $this->_viewsFolder."/" : "")."{$view}.php");
+			} else {
+			// Если нужно отобразить глобальный вью
+				include_once(BASE_ROOT."/views/_global_views/{$view}.php");
+			}
 			
 			// Рендер лэйаута
 			include_once(BASE_ROOT."/layouts/footer.php");

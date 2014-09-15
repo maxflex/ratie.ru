@@ -52,6 +52,21 @@ h2 {
 	&.ng-hide-remove-active {
 		@include animation-name(fadeInLeft);
 	}
+}
+
+// Анимация NG-SHOW
+.animate-show-fadeIn{
+	
+	// Параметры анимации
+	&.ng-hide-add, &.ng-hide-remove {
+		@include animation-duration(0.5s);
+		@include animation-fill-mode(both);
+	}
+	
+	// Начало анимации
+	&.ng-hide-remove-active {
+		@include animation-name(fadeIn);
+	}
 } 
 
 // Анимация NG-SHOW
@@ -66,6 +81,21 @@ h2 {
 	// Начало анимации
 	&.ng-hide-remove-active {
 		@include animation-name(bounceIn);
+	}
+} 
+
+// Анимация NG-SHOW
+.animate-show-down{
+	
+	// Параметры анимации
+	&.ng-hide-add, &.ng-hide-remove {
+		@include animation-duration(0.5s);
+		@include animation-fill-mode(both);
+	}
+	
+	// Начало анимации
+	&.ng-hide-remove-active {
+		@include animation-name(fadeInDown);
 	}
 } 
 
@@ -162,7 +192,7 @@ h2 {
 	&.ng-hide-remove-active {
 		@include animation-name(fadeIn07);
 	}
-} 
+}
 
 .trans {
 	opacity: 0.7;
@@ -313,7 +343,7 @@ h3 {
 	display: inline-block;
 	opacity: 0.4;
 	font-size: 22px;
-	font-family: 'RaleWayRegular', sans-serif;
+	font-family: 'RaleWayMedium', sans-serif;
 	cursor: pointer;
 	overflow: hidden;
 	vertical-align: top;
@@ -445,12 +475,6 @@ h3 {
 }
 
 .eye {
-	opacity: 0.7;
-	
-	&:hover {
-		opacity: 1;
-	}
-	
 	&.glyphicon-eye-close:hover {
 		color: $danger-hover;
 	}
@@ -1021,9 +1045,12 @@ fieldset {
 .sociallink {
 	&.inactive {
 		display: none;
-		//cursor: default;
+	}
+	
+	&.disabled {
+		cursor: default;
 		.SocialIconFill {
-			//opacity: 0.15 !important;
+			opacity: 0.15 !important;
 		}
 	}
 }
@@ -1048,13 +1075,82 @@ fieldset {
 	position: absolute; 
 	right: 2%;
 	display: none;
+	color: white;
+	&.blue {
+		color: #0074e6;
+	}
+}
+
+.bar-eye {
+	position: absolute;
+	right: 7%;
+	top: 0;
+	color: white;
+	display: none;
+	&.blue {
+		color: #0074e6;
+	}
 }
 
 .adjective-bar {
 //	height: 100px;
 	&:hover {
-		& .more-dots {
+		& .more-dots, & .bar-eye {
 			display: block;
-		}	
+		}
+	}
+}
+
+.tools-top-div {
+	text-align: right; 
+	color: white; 
+	padding-right: 4px; 
+	margin-bottom: 11px;
+	font-family: 'RaleWayMedium';
+}
+
+span.chat {
+	display: block;
+	position: relative;
+	z-index: -999;
+	font-size: 18px;
+	margin-top: 5px;
+	font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
+	& .glyphicon {
+		margin-right: 4px;
+		top: 3px;
+	}
+}
+
+.adjective-bar {
+	&.update {
+		height: 50px;
+		& .update-info {
+			color: black;
+			top: 15px;
+			position: absolute;
+			font-family: 'RaleWayMedium';
+			font-size: 18px;
+			width: auto;
+			display: inline-block;
+		}
+		@include border-radius(5px);
+		& .bar {
+			background-color: #149bdf;
+			background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+			background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+			background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+			background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+			background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+			-webkit-background-size: 40px 40px;
+			 -moz-background-size: 40px 40px;
+			   -o-background-size: 40px 40px;
+			      background-size: 40px 40px;
+		}
+		&.active {
+			& .bar {
+				@include animation(progress-bar-stripes 2s linear infinite);
+			}
+		}
 	}
 }

@@ -1,5 +1,5 @@
 <!-- СПИСОК ПРИЛАГАТЕЛЬНЫХ -->	
-<div ng-repeat="adj in adjectives | filter: {_ang_hidden : 0} | orderBy:['_ang_new_order', '_ang_order', 'id']:true"   class="adjective-row animate-repeat">
+<div ng-repeat="adj in adjectives | filter: {_ang_hidden : 0} | orderBy:order_expression:true"   class="adjective-row animate-repeat">
 					
 	<span class="adjective-toptext">{{adj._ang_adjective}}</span>
 	
@@ -19,26 +19,18 @@
 					<span ng-click="comment(adj.id)" class="glyphicon glyphicon-comment text-white trans-h"></span>
 					<span class="vote-count">{{adj._ang_comment_count}}</span>
 		</div>
-		
-		<div class="voting a-center">
-			<!--
-				<span class="eye pointer glyphicon" 
-					ng-class="{ 'text-error glyphicon-eye-close'	: adj.hidden, 
-								'text-success glyphicon-eye-open'	: !adj.hidden
-							}" 
-					ng-mouseenter="hover = true" 
-					ng-mouseleave="hover = false"
-					ng-click="hide(adj)"></span>
-			-->
-			<div ng-hide="adj.hidden" class="eye pointer glyphicon text-success glyphicon-eye-open animate-show-bounce" ng-click="hide(adj)"></div>
-			<div ng-show="adj.hidden" class="eye pointer glyphicon text-error glyphicon-eye-close animate-show-bounce" ng-click="hide(adj)"></div>
-		</div>
 	
 	</div>
 	
 	<!-- БАР-ПРИЛАГАТЕЛЬНОГО -->
 	<div class="adjective-bar progress-primary" style="margin: 2px 0 20px">
-		<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)"></span>
+		<div ng-hide="adj.hidden" class="eye pointer glyphicon glyphicon-eye-open animate-show-bounce bar-eye trans-h" 
+			ng-click="hide(adj)" 
+			ng-class="{'blue' : (adj._ang_pos_percent <= 92)}"></div>
+		<div ng-show="adj.hidden" class="eye pointer glyphicon glyphicon-eye-close animate-show-bounce bar-eye trans-h" 
+			ng-click="hide(adj)" 
+			ng-class="{'blue' : (adj._ang_pos_percent <= 92)}"></div>
+		<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)" ng-class="{'blue' : (adj._ang_pos_percent <= 94)}"></span>
 		<div id="bar-{{adj.id}}" class="bar" style="width: {{adj._ang_pos_percent}}%"></div>
 	</div>
 	</div>
@@ -55,7 +47,7 @@
 	    <legend class="text-white" ng-click="showHidden()">{{ !show_hidden && 'Показать скрытые мнения: <?= $hidden_count ?>' || 'Свернуть скрытые мнения' }}</legend>
 	</fieldset>​
 <div class="animate-up-down" ng-show="show_hidden" id="hidden-thoughts">
-	<div ng-repeat="adj in adjectives | filter: {_ang_hidden : 1} | orderBy:['_ang_new_order', '_ang_order', 'id']:true"   class="adjective-row animate-repeat trans">
+	<div ng-repeat="adj in adjectives | filter: {_ang_hidden : 1} | orderBy:order_expression:true"   class="adjective-row animate-repeat trans">
 						
 		<span class="adjective-toptext">{{adj._ang_adjective}}</span>
 		
@@ -75,26 +67,17 @@
 					<span ng-click="comment(adj.id)" class="glyphicon glyphicon-comment text-white trans-h"></span>
 					<span class="vote-count">{{adj._ang_comment_count}}</span>
 			</div>
-			
-			<div class="voting a-center">
-			<!--
-				<span class="eye pointer glyphicon" 
-					ng-class="{ 'text-error glyphicon-eye-close'	: adj.hidden, 
-								'text-success glyphicon-eye-open'	: !adj.hidden
-							}" 
-					ng-mouseenter="hover = true" 
-					ng-mouseleave="hover = false"
-					ng-click="hide(adj)"></span>
-			-->
-				<div ng-hide="adj.hidden" class="eye pointer glyphicon text-success glyphicon-eye-open animate-show-bounce" ng-click="hide(adj)"></div>
-				<div ng-show="adj.hidden" class="eye pointer glyphicon text-error glyphicon-eye-close animate-show-bounce" ng-click="hide(adj)"></div>
-			</div>
-		
 		</div>
 		
 		<!-- БАР-ПРИЛАГАТЕЛЬНОГО -->
 		<div class="adjective-bar progress-primary" style="margin: 2px 0 20px">
-			<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)"></span>
+			<div ng-hide="adj.hidden" class="eye pointer glyphicon glyphicon-eye-open animate-show-bounce bar-eye trans-h" 
+				ng-click="hide(adj)" 
+				ng-class="{'blue' : (adj._ang_pos_percent <= 92)}"></div>
+			<div ng-show="adj.hidden" class="eye pointer glyphicon glyphicon-eye-close animate-show-bounce bar-eye trans-h" 
+				ng-click="hide(adj)" 
+				ng-class="{'blue' : (adj._ang_pos_percent <= 92)}"></div>
+			<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)" ng-class="{'blue' : (adj._ang_pos_percent <= 94)}"></span>
 			<div id="bar-{{adj.id}}" class="bar" style="width: {{adj._ang_pos_percent}}%"></div>
 		</div>
 		</div>

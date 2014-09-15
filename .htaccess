@@ -12,6 +12,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^dev$ index.php?controller=test [QSA,L]
 RewriteRule ^dev/([a-zA-Z0-9_-]+)$ index.php?controller=test&action=$1 [QSA,L]
 
+# Обновление
+RewriteRule ^update$ index.php?controller=update [QSA,L]
+RewriteRule ^update/([a-zA-Z0-9_-]+)$ index.php?controller=update&action=$1 [QSA,L]
+
 # Api
 RewriteRule ^api/([a-zA-Z0-9_-]+)$ index.php?controller=api&action=$1 [QSA,L]
 
@@ -33,6 +37,9 @@ RewriteRule ^([.a-zA-Z0-9_-]+(?<!\.php)(?<!\.html))/messages$ index.php?controll
 
 # Комментарии прилагательного
 RewriteRule ^([.a-zA-Z0-9_-]+(?<!\.php)(?<!\.html))/comments-([0-9]+)$ index.php?controller=user&user=$1&comment=$2 [QSA,L]
+
+# Подписчики, подписки и друзья пользователя
+RewriteRule ^([.a-zA-Z0-9_-]+(?<!\.php)(?<!\.html))/([a-zA-Z]+)$ index.php?controller=user&user=$1&action=SubsFriends&page=$2 [QSA,L]
 
 # В другом случае – отображаем пользователя
 RewriteRule ^([.a-zA-Z0-9_-]+(?<!\.php)(?<!\.html))$ index.php?controller=user&user=$1 [QSA,L]

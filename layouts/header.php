@@ -8,20 +8,20 @@
 	<meta name="description" content="Анонимные мнения о друзьях, комментарии и оценки">
     <base href="http://localhost:8888/ratie.ru/">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
+    <link href="css/bootstrap.css?ver=<?= settings()->version ?>" rel="stylesheet">
+    <link href="css/animate.css?ver=<?= settings()->version ?>" rel="stylesheet">
+	<link href="css/style.css?ver=<?= settings()->version ?>" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/flaticon.css?ver=<?= settings()->version ?>">
 	<link rel="image_src" href="img/logo/vk_links.png">
-	<link href="compass/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="compass/stylesheets/screen.css?ver=<?= settings()->version ?>" media="screen, projection" rel="stylesheet" type="text/css" />
 	<?= $this->_css_additional ?>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootbox.js"></script>
 	<script type="text/javascript" src="js/angular.js"></script>
 	<script type="text/javascript" src="js/angular-animate.js"></script>
-	<script type="text/javascript" src="js/_settings.js"></script>
-	<script type="text/javascript" src="js/engine.js"></script>
+	<script type="text/javascript" src="js/_settings.js?ver=<?= settings()->version ?>"></script>
+	<script type="text/javascript" src="js/engine.js?ver=<?= settings()->version ?>"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

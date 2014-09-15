@@ -20,8 +20,16 @@
 			<a href="<?= $User->login ?>">
 				<?php globalPartial("ava", array("User" => $User)) ?>
 			</a>
-			<!-- СОЦИАЛЬНЫЕ КНОПКИ -->
-			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id, "user_login" => $User->login)) ?>
+			<!-- ДРУЗЬЯ/ПОДПИСЧИКИ/ПОДПИСКИ -->
+			<?php
+				globalPartial("buttons", array(
+					"User" 			=> $User,
+					"own_page"		=> $own_page,
+					"subscribed"	=> $subscribed,
+					"no_message_button"	=> ($id_adjective ? false : true),
+				));
+			?>
+			
 				
 		</div>
 		
@@ -84,13 +92,12 @@
 						active : (comment.order > 0),
 						deleted: comment.deleted
 					}">
-						<span class="glyphicon glyphicon-remove icon remove" ng-show="((own_page || comment.id_user == (commentator.id != 0 ? commentator.id : <?= $User->id ?>)) && !comment.deleted)" ng-click="deleteComment(comment)"></span>
+						<span class="glyphicon glyphicon-remove icon remove" ng-show="((own_page || ((comment.id_user == commentator.id) && comment.id_user!=0)) && !comment.deleted)" ng-click="deleteComment(comment)"></span>
 						<span class="glyphicon glyphicon-ok icon restore" ng-show="comment.deleted" ng-click="restoreComment(comment)"></span>
 						{{comment.comment}}
 					</div>
 				</div>
 			</div>
-		
 	</div>
 	
 <?php

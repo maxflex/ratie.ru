@@ -268,7 +268,7 @@
 	function relativeDate($date) // $date --> время в формате Unix time
 	{
 		if ($date == "0000-00-00 00:00:00") {
-			return;
+			return "Время неизвестно";
 		}
 		
 		$date = strtotime($date);

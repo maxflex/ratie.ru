@@ -4,9 +4,9 @@
 	
 		/*====================================== ПЕРЕМЕННЫЕ И КОНСТАНТЫ ======================================*/
 
-		const SALT 				= "32dg9823dldfg2o001-2134>?erj&*(&(*^";	// Для генерации кук
+		const SALT 					= "32dg9823dldfg2o001-2134>?erj&*(&(*^";	// Для генерации кук
 		
-		protected $_serialized = array("social", "intro"); // поле social в БД сериализовано
+		protected $_serialized 		= array("social", "intro"); // поле social в БД сериализовано
 
 		public static $mysql_table	= "users";
 		
@@ -56,7 +56,10 @@
 			// Если пользователь не нашелся (и нужно подставлять по умолчанию
 			if (!$User && $default_id) {
 				// То пользователя по умолчанию (самого первого)
-				$User = self::findById($default_id);
+				//$User = self::findById($default_id);
+				
+				// Возвращаем не найденного пользователя
+				return self::notFound();
 			}
 
 			return $User;
@@ -158,6 +161,21 @@
 					}
 				}
 			}
+		}
+		
+		/*
+		 * Возвращает пустого пользователя (когда пользователь не найден)
+		 */
+		public static function notFound()
+		{
+			return new User(array(
+			//	"isNewRecord"		=> true,
+			//	"id"				=> self::ID_NOT_FOUND,
+				"not_found"			=> true,
+				"first_name"		=> "Пользователь",
+				"last_name"			=> "не найден",
+				"avatar"			=> "img/profile/user_not_found.jpg",
+			));
 		}
 				
 		/*====================================== ФУНКЦИИ КЛАССА ======================================*/
@@ -589,6 +607,18 @@
 			 return ($Subscribers ? $Subscribers : array()); // Чтобы не было WARNING: Invalid argument supplied for foreach
 		 }
 		 
+		  /*
+		  * Получаем друзей
+		  */
+		 public function Friends()
+		 {
+			 $Friends = Friend::findAll(array(
+			 	"order"	=> "id DESC",
+			 ));
+			 
+			 return ($Friends ? $Friends : array()); // Чтобы не было WARNING: Invalid argument supplied for foreach
+		 }
+		 
 		 /*
 		  * Проверка, своя ли страница?
 		  * $id_user – ID другого пользователя. Если равен с текущим, то своя страница
@@ -638,6 +668,22 @@
 				
 				// Если таковые нашлись
 				if ($Friends) {
+					
+					// Подключаемся к БД текущего пользователя
+					User::setConnection($this->id);
+					
+					// Добавляем друзей к текущему пользователю
+					// ОБЯЗАТЕЛЬНО в отдельном цикле, чтобы не переподключаться между базами данных
+					foreach ($Friends as $Friend) {
+						// Добавляем друга в БД
+						if (Friend::add($Friend->id)) {
+							$this->friends++;			// Увеличеваем счетчик друзей	
+						}
+					}
+					
+					// Сохраняем пользователя для обновления счетчика друзей
+					$this->save("friends");
+					
 					// Уведомляем каждого пользователя о том, что их друг теперь на Ratie =)
 					foreach ($Friends as $Friend) {
 						// Устанавливаем соединение с БД друга для доступа к новостной ленте
@@ -648,6 +694,12 @@
 							"id_news_type" 	=> NewsType::NEW_VK_FRIEND,
 							"id_user" 		=> $this->id,		
 						));
+						
+						// Добавляем друга
+						if (Friend::add($this->id)) {
+							$Friend->friends++;
+							$Friend->save("friends");
+						}
 					}
 					
 					// Переподключаемся к текущему пользователю
@@ -750,9 +802,14 @@
 					  `comment` varchar(255) DEFAULT NULL COMMENT 'Комментарий',
 					  `time` datetime NOT NULL,
 					  `deleted` BOOLEAN NOT NULL DEFAULT FALSE COMMENT  'Комментарий удален?',
-
 					  PRIMARY KEY (`id`)
 					) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Комментарии прилагательных' AUTO_INCREMENT=1 ;
+					
+					CREATE TABLE `friends` (
+					  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+					  `id_user` int(10) unsigned DEFAULT NULL COMMENT 'ID пользователя Ratie',
+					  PRIMARY KEY (`id`)
+					) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Друзья из ВК на Ratie' AUTO_INCREMENT=1 ;
 				");
 				
 				// echo "ERROR=".$new_db->error."\n";

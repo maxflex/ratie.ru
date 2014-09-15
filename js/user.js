@@ -11,12 +11,29 @@ angular.module('UserPage', ['ngAnimate']);
 		// Для дополнительной сортировки (каждому новому поднятию в списке $scope.order++, чтоб всегда новое было вверху)
 		$scope.order = 1;
 		
+		// Получаем куку типа сортировки
+		$scope.order_type = parseInt($.cookie("order_type"));
+		
+		// Если кука сортировки не установлена
+		if (isNaN($scope.order_type)) {
+			// Устанавливаем на пол года
+			$scope.order_type = 1;
+			$.cookie("order_type", 1);
+		}
+		
+		// Выражения сортировки
+		if ($scope.order_type) {
+			$scope.order_expression =  ['_ang_new_order', '_ang_order', 'id'];
+		} else {
+			$scope.order_expression =  ['_ang_new_order', 'id'];
+		}
+		
 		// Для плавной загрузки баров, сначала у них ширина 0%, после загрузки – настоящая
 		angular.element(document).ready(function(){
 			// Если получил первое прилагательное - то сообщение о том, что его можно скрывать
 			if ($scope._intro_adj_hide == 1) {
 				bootbox.alert(_ALERT_ADJHIDE + "<div style='font-family: \"RaleWayMedium\"; margin-bottom: 10px'>Вы получили первые мнения.</div>"
-				+ "Скрыть неприятные для Вас мнения можно, нажав на зеленый глаз справа"
+				+ "Скрыть неприятные для Вас мнения можно, нажав на глаз справа"
 				);
 			}
 			
@@ -323,7 +340,7 @@ angular.module('UserPage', ['ngAnimate']);
 		
 		// Комментировать прилагательное
 		$scope.comment = function(id_adj) {
-			window.location = document.URL + "/comments-" + id_adj;
+			window.location = removeUrlHash(document.URL) + "/comments-" + id_adj;
 		}
 		
 		// Дополнительная информация
@@ -332,6 +349,19 @@ angular.module('UserPage', ['ngAnimate']);
 				.success(function(resp){
 					bootbox.alert("<span style='font-size: 16px'>" + resp + "</span>");
 			});
+		}
+		
+		// Изменить сортировку
+		$scope.changeOrder = function() {
+			if ($scope.order_type) {
+				$scope.order_type = false;	// Новые
+				$.cookie("order_type", 0);
+				$scope.order_expression = ['_ang_new_order', 'id'];
+			} else {
+				$scope.order_type = true;	// Популярные
+				$.cookie("order_type", 1);
+				$scope.order_expression = ['_ang_new_order', '_ang_order', 'id'];
+			}
 		}
 	}
 	

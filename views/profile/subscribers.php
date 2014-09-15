@@ -10,7 +10,9 @@
 				<div class="ava-blink edit-profile animate-fade" ng-hide="!ehover">
 					<button class="btn btn-success btn-large" onclick="goTo('profile/edit')"><span class="glyphicon glyphicon-pencil"></span>Редактировать профиль</button>
 				</div>
-			<?php globalPartial("ava", array("User" => $User)) ?>
+			<a href="<?= $User->login ?>">
+				<?php globalPartial("ava", array("User" => $User)) ?>
+			</a>
 			</div>
 			<div class="row sociallinks">
 										<div class="circle" ng-mouseenter="vfriends = true" ng-mouseleave="vfriends = false" ng-click="getFriends()"><span class="glyphicon glyphicon-user"></span></div>

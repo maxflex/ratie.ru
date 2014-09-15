@@ -1,4 +1,5 @@
-<div ng-repeat="adj in adjectives | orderBy:['_ang_new_order', '_ang_order', 'id']:true"   class="adjective-row animate-repeat">
+<!-- СПИСОК ПРИЛАГАТЕЛЬНЫХ -->
+<div ng-repeat="adj in adjectives | orderBy:order_expression:true"   class="adjective-row animate-repeat">
 				
 			<span class="adjective-toptext">{{adj._ang_adjective}}</span>
 			
@@ -23,7 +24,7 @@
 			
 			<!-- БАР-ПРИЛАГАТЕЛЬНОГО -->
 			<div class="adjective-bar progress-primary" style="margin: 2px 0 20px">
-				<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)"></span>
+				<span class="flaticon-more more-dots trans-h" ng-click="moreInfo(adj.id)" ng-class="{'blue' : (adj._ang_pos_percent <= 94)}"></span>
 				<div id="bar-{{adj.id}}" class="bar" style="width: {{adj._ang_pos_percent}}%"></div>
 			</div>
 		</div>

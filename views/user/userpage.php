@@ -9,8 +9,15 @@
 	<div class="row effect2">
 		<div class="col-md-4 center-content">
 			<?php globalPartial("ava", array("User" => $User)) ?>
-			<!-- СОЦИАЛЬНЫЕ КНОПКИ -->
-			<?php partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id, "user_login" => $User->login)) ?>
+			<!-- ДРУЗЬЯ/ПОДПИСЧИКИ/ПОДПИСКИ -->
+			<?php
+				globalPartial("buttons", array(
+					"User" 			=> $User,
+					"own_page"		=> $own_page,
+					"subscribed"	=> $subscribed,
+				));
+			?>
+			<?php// partial("social", array("social" => $User->social, "own_page" => $own_page, "id_user" => $User->id, "user_login" => $User->login)) ?>
 				
 		</div>
 		
@@ -24,7 +31,7 @@
 					<h2 class="trans text-white animate-show" ng-hide="pseudoForm.adjective.$error.pattern || pseudoForm.adjective.$error.maxlength || many_words">
 						Я думаю, что <?=$User->first_name?> {{adjective}}</h2>
 					<h2 class="trans text-error animate-show" ng-show="pseudoForm.adjective.$error.pattern">Вводить можно только буквы</h2>
-					<h2 class="trans text-error animate-show" ng-show="pseudoForm.adjective.$error.maxlength">Слишком длинная мысль</h2>
+					<h2 class="trans text-error animate-show" ng-show="pseudoForm.adjective.$error.maxlength">Слишком длинное мнение</h2>
 					<h2 class="trans text-error animate-show" ng-show="many_words">Два слова – максимум</h2>
 
 				</div>
@@ -70,7 +77,24 @@
 				}
 		?>
 		
-		<div class="row" style="margin-top: 30px" id="adjective-list-angular" ng-init="<?= angInit("adjectives", $Adjectives) ?>">
+		<div class="row" style="margin-top: 10px" id="adjective-list-angular" ng-init="<?= angInit("adjectives", $Adjectives) ?>">
+		
+		<?php
+			// Если есть мнения, выводить тулбар с сортировкой
+			if ($Adjectives) {
+		?>
+			<!-- ТУЛБАР СОРТИРОВКА -->	
+			<div class="tools-top-div">
+				<span ng-show='order_type && order_hint' class="animate-show-fadeIn">Популярные</span>
+				<span ng-show='!order_type && order_hint' class="animate-show-fadeIn">Новые</span>
+				<span class="glyphicon glyphicon-sort trans-h" ng-click="changeOrder()" 
+					ng-mouseenter="order_hint = true" 
+					ng-mouseleave="order_hint = false">
+				</span>
+			</div>
+		<?php
+			}
+		?>
 		
 		<?php
 			/*******  ЕСЛИ ПОЛЬЗОВАТЕЛЬ ПРОСМАТРИВАЕТ СВОЮ ЖЕ СТРАНИЦУ *********/

@@ -67,8 +67,21 @@
 		"<input id='votelink' type='text' class='bootbox-input bootbox-input-text form-control' value='" + element.innerHTML + "'>");
 		
 		setTimeout(function() {
-			$("#votelink").focus();	
-		}, 500)		  
+		//	$("#votelink").focus();	
+			$("#votelink").focus().select();
+		}, 500);
+	}
+	
+	// Убирает хэш из URL
+	function removeUrlHash(url)
+	{
+		index = url.indexOf('#');
+		
+		if (index > 0) {
+		  return url.substring(0, index);
+		} else {
+			return url;
+		}
 	}
 
 	

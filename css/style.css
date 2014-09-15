@@ -294,12 +294,6 @@ input[id="adjective"]{
 	min-width: 35px; 
 }
 
-h3.chat {
-	width: 70%;
-	margin: 0 auto;
-	font-size: 20px;
-}
-
 .badge.followers {
 	font-family: 'RaleWayExtraLight', sans-serif;
 	font-size: 14px;
